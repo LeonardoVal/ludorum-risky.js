@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html><head>
+	<title>Console: ludorum-risky.</title>
+	<meta charset="UTF-8"/>
+	<script src="lib/require.js"></script>
+</head><body onload="main();">
+	<script type="text/javascript">
+function main() {
+	require.config({ 
+		paths: {
+			'creatartis-base': 'lib/creatartis-base',
+			'sermat': 'lib/sermat-amd',
+			'ludorum': 'lib/ludorum',
+			'ludorum-risky': 'lib/ludorum-risky'
+		},
+	});
+	require(['creatartis-base', 'sermat', 'ludorum', 'ludorum-risky'], function (base, Sermat, ludorum, ludorum_risky) {
+		window.base = base;
+		window.Sermat = Sermat;
+		window.ludorum = ludorum;
+		window.ludorum_risky = ludorum_risky;
+		(function (s){ // See: <http://jsconsole.com>.
+			s.src = 'lib/jsconsole/inject.js';
+			document.body.appendChild(s);
+		})(document.createElement('script'));
+	}, function (error) {
+		throw error;
+	});
+}
+	</script>
+</body></html>

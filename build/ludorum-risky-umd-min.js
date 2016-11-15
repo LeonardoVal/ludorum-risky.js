@@ -1,0 +1,2 @@
+!function(a,b){"use strict";"function"==typeof define&&define.amd?define(["creatartis-base","ludorum"],b):"object"==typeof exports&&module.exports?module.exports=b(require("creatartis-base"),require("ludorum")):a.ludorum_risky=b(a,a.base,a.ludorum)}(this,function(a,b){"use strict";var c={};return c});
+//# sourceMappingURL=ludorum-risky-umd-min.js.map
