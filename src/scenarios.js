@@ -1,543 +1,575 @@
-/**
+/** # Scenarios
+
+Scenarios are maps with armies already distributed. They are used to test the automatic players and
+the to assess the game.
 */
-exports.scenarios = {};
-
-exports.scenarios.whiteOceania = { /////////////////////////////////////////////////////////////////
-	"Afghanistan": ["Green", 12],
-	"Alaska": ["Black", 12],
-	"Alberta": ["Blue", 12],
-	"Argentina": ["Red", 9],
-	"Brazil": ["Green", 2],
-	"Central America": ["Yellow", 12],
-	"China": ["White", 6],
-	"Congo": ["Black", 2],
-	"East Africa": ["Blue", 1],
-	"Eastern Australia": ["White", 1],
-	"Eastern United States": ["Green", 2],
-	"Egypt": ["Yellow", 2],
-	"Great Britain": ["Blue", 1],
-	"Greenland": ["Red", 2],
-	"Iceland": ["Blue", 3],
-	"India": ["White", 6],
-	"Indonesia": ["White", 1],
-	"Irkutsk": ["Yellow", 1],
-	"Japan": ["Black", 2],
-	"Kamchatka": ["Green", 1],
-	"Madagascar": ["Black", 1],
-	"Middle East": ["Yellow", 2],
-	"Mongolia": ["Red", 4],
-	"New Guinea": ["White", 1],
-	"North Africa": ["Red", 1],
-	"Northern Europe": ["Blue", 1],
-	"Northwest Territory": ["Blue", 1],
-	"Ontario": ["Black", 1],
-	"Peru": ["Green", 1],
-	"Quebec": ["Yellow", 1],
-	"Scandinavia": ["Green", 1],
-	"Siam": ["White", 4],
-	"Siberia": ["Yellow", 1],
-	"South Africa": ["Red", 1],
-	"Southern Europe": ["Blue", 1],
-	"Ukraine": ["Black", 1],
-	"Ural": ["Red", 1],
-	"Venezuela": ["Black", 1],
-	"Western Australia": ["White", 1],
-	"Western Europe": ["Yellow", 1],
-	"Western United States": ["Red", 2],
-	"Yakutsk": ["Green", 1]
-};
-
-exports.scenarios.blackOceania = { /////////////////////////////////////////////////////////////////
-	"Afghanistan": ["Green", 12],
-	"Alaska": ["White", 12],
-	"Alberta": ["Blue", 12],
-	"Argentina": ["Red", 9],
-	"Brazil": ["Green", 2],
-	"Central America": ["Yellow", 12],
-	"China": ["Black", 6],
-	"Congo": ["White", 2],
-	"East Africa": ["Blue", 1],
-	"Eastern Australia": ["Black", 1],
-	"Eastern United States": ["Green", 2],
-	"Egypt": ["Yellow", 2],
-	"Great Britain": ["Blue", 1],
-	"Greenland": ["Red", 2],
-	"Iceland": ["Blue", 3],
-	"India": ["Black", 6],
-	"Indonesia": ["Black", 1],
-	"Irkutsk": ["Yellow", 1],
-	"Japan": ["White", 2],
-	"Kamchatka": ["Green", 1],
-	"Madagascar": ["White", 1],
-	"Middle East": ["Yellow", 2],
-	"Mongolia": ["Red", 4],
-	"New Guinea": ["Black", 1],
-	"North Africa": ["Red", 1],
-	"Northern Europe": ["Blue", 1],
-	"Northwest Territory": ["Blue", 1],
-	"Ontario": ["White", 1],
-	"Peru": ["Green", 1],
-	"Quebec": ["Yellow", 1],
-	"Scandinavia": ["Green", 1],
-	"Siam": ["Black", 4],
-	"Siberia": ["Yellow", 1],
-	"South Africa": ["Red", 1],
-	"Southern Europe": ["Blue", 1],
-	"Ukraine": ["White", 1],
-	"Ural": ["Red", 1],
-	"Venezuela": ["White", 1],
-	"Western Australia": ["Black", 1],
-	"Western Europe": ["Yellow", 1],
-	"Western United States": ["Red", 2],
-	"Yakutsk": ["Green", 1]
-};
-
-exports.scenarios.whiteAfrica = { //////////////////////////////////////////////////////////////////
-	"Afghanistan": ["Green", 12],
-	"Alaska": ["Black", 12],
-	"Alberta": ["Blue", 12],
-	"Argentina": ["Red", 9],
-	"Brazil": ["White", 5],
-	"Central America": ["Yellow", 12],
-	"China": ["Black", 2],
-	"Congo": ["White", 1],
-	"East Africa": ["White", 4],
-	"Eastern Australia": ["Blue", 1],
-	"Eastern United States": ["Green", 2],
-	"Egypt": ["White", 5],
-	"Great Britain": ["Blue", 1],
-	"Greenland": ["Red", 2],
-	"Iceland": ["Blue", 3],
-	"India": ["Yellow", 2],
-	"Indonesia": ["Black", 1],
-	"Irkutsk": ["Yellow", 1],
-	"Japan": ["Black", 2],
-	"Kamchatka": ["Green", 1],
-	"Madagascar": ["White", 1],
-	"Middle East": ["Yellow", 2],
-	"Mongolia": ["Red", 4],
-	"New Guinea": ["Red", 1],
-	"North Africa": ["White", 3],
-	"Northern Europe": ["Blue", 1],
-	"Northwest Territory": ["Blue", 1],
-	"Ontario": ["Black", 1],
-	"Peru": ["Green", 1],
-	"Quebec": ["Yellow", 1],
-	"Scandinavia": ["Green", 1],
-	"Siam": ["Green", 2],
-	"Siberia": ["Yellow", 1],
-	"South Africa": ["White", 1],
-	"Southern Europe": ["Blue", 1],
-	"Ukraine": ["Black", 1],
-	"Ural": ["Red", 1],
-	"Venezuela": ["Black", 1],
-	"Western Australia": ["Red", 1],
-	"Western Europe": ["Yellow", 1],
-	"Western United States": ["Red", 2],
-	"Yakutsk": ["Green", 1]
-};
-
-exports.scenarios.blackAfrica = { //////////////////////////////////////////////////////////////////
-	"Afghanistan": ["Green", 12],
-	"Alaska": ["White", 12],
-	"Alberta": ["Blue", 12],
-	"Argentina": ["Red", 9],
-	"Brazil": ["Black", 5],
-	"Central America": ["Yellow", 12],
-	"China": ["White", 2],
-	"Congo": ["Black", 1],
-	"East Africa": ["Black", 4],
-	"Eastern Australia": ["Blue", 1],
-	"Eastern United States": ["Green", 2],
-	"Egypt": ["Black", 5],
-	"Great Britain": ["Blue", 1],
-	"Greenland": ["Red", 2],
-	"Iceland": ["Blue", 3],
-	"India": ["Yellow", 2],
-	"Indonesia": ["White", 1],
-	"Irkutsk": ["Yellow", 1],
-	"Japan": ["White", 2],
-	"Kamchatka": ["Green", 1],
-	"Madagascar": ["Black", 1],
-	"Middle East": ["Yellow", 2],
-	"Mongolia": ["Red", 4],
-	"New Guinea": ["Red", 1],
-	"North Africa": ["Black", 3],
-	"Northern Europe": ["Blue", 1],
-	"Northwest Territory": ["Blue", 1],
-	"Ontario": ["White", 1],
-	"Peru": ["Green", 1],
-	"Quebec": ["Yellow", 1],
-	"Scandinavia": ["Green", 1],
-	"Siam": ["Green", 2],
-	"Siberia": ["Yellow", 1],
-	"South Africa": ["Black", 1],
-	"Southern Europe": ["Blue", 1],
-	"Ukraine": ["White", 1],
-	"Ural": ["Red", 1],
-	"Venezuela": ["White", 1],
-	"Western Australia": ["Red", 1],
-	"Western Europe": ["Yellow", 1],
-	"Western United States": ["Red", 2],
-	"Yakutsk": ["Green", 1]
-};
-
-exports.scenarios.spreadOut = { //////////////////////////////////////////////////////////////////
-	"Afghanistan":["Yellow",3],
-	"Alaska":["White",3],
-	"Alberta":["White",3],
-	"Argentina":["White",2],
-	"Brazil":["Green",3],
-	"Central America":["Blue",2],
-	"China":["White",4],
-	"Congo":["Blue",3],
-	"East Africa":["Yellow",4],
-	"Eastern Australia":["Green",2],
-	"Eastern United States":["Black",6],
-	"Egypt":["Red",3],
-	"Great Britain":["Red",4],
-	"Greenland":["White",1],
-	"Iceland":["Red",2],
-	"India":["Yellow",3],
-	"Indonesia":["Green",4],
-	"Irkutsk":["White",5],
-	"Japan":["Green",4],
-	"Kamchatka":["Red",3],
-	"Madagascar":["Red",2],
-	"Middle East":["Yellow",3],
-	"Mongolia":["Black",5],
-	"New Guinea":["Black",3],
-	"North Africa":["Black",2],
-	"Northern Europe":["Green",1],
-	"Northwest Territory":["Yellow",2],
-	"Ontario":["Yellow",2],
-	"Peru":["Blue",2],
-	"Quebec":["Green",4],
-	"Scandinavia":["Blue",3],
-	"Siam":["Yellow",3],
-	"Siberia":["Black",1],
-	"South Africa":["Red",3],
-	"Southern Europe":["Black",1],
-	"Ukraine":["Blue",3],
-	"Ural":["Green",2],
-	"Venezuela":["White",2],
-	"Western Australia":["Red",3],
-	"Western Europe":["Blue",3],
-	"Western United States":["Blue",4],
-	"Yakutsk":["Black",2]
-};
-
-exports.scenarios.spreadOutBlack = { //////////////////////////////////////////////////////////////////
-	"Afghanistan":["Yellow",3],
-	"Alaska":["Black",3],
-	"Alberta":["Black",3],
-	"Argentina":["Black",2],
-	"Brazil":["Green",3],
-	"Central America":["Blue",2],
-	"China":["Black",4],
-	"Congo":["Blue",3],
-	"East Africa":["Yellow",4],
-	"Eastern Australia":["Green",2],
-	"Eastern United States":["White",6],
-	"Egypt":["Red",3],
-	"Great Britain":["Red",4],
-	"Greenland":["Black",1],
-	"Iceland":["Red",2],
-	"India":["Yellow",3],
-	"Indonesia":["Green",4],
-	"Irkutsk":["Black",5],
-	"Japan":["Green",4],
-	"Kamchatka":["Red",3],
-	"Madagascar":["Red",2],
-	"Middle East":["Yellow",3],
-	"Mongolia":["White",5],
-	"New Guinea":["White",3],
-	"North Africa":["White",2],
-	"Northern Europe":["Green",1],
-	"Northwest Territory":["Yellow",2],
-	"Ontario":["Yellow",2],
-	"Peru":["Blue",2],
-	"Quebec":["Green",4],
-	"Scandinavia":["Blue",3],
-	"Siam":["Yellow",3],
-	"Siberia":["White",1],
-	"South Africa":["Red",3],
-	"Southern Europe":["White",1],
-	"Ukraine":["Blue",3],
-	"Ural":["Green",2],
-	"Venezuela":["Black",2],
-	"Western Australia":["Red",3],
-	"Western Europe":["Blue",3],
-	"Western United States":["Blue",4],
-	"Yakutsk":["White",2]
-};
-
-exports.scenarios.spreadOutV2 = { ////////////////////////////////////////////////////////////////////
-	"Afghanistan": ["Black", 3],
-	"Alaska": ["Yellow", 3],
-	"Alberta": ["Blue", 3],
-	"Argentina": ["Green", 2],
-	"Brazil": ["Red", 3],
-	"Central America": ["Black", 3],
-	"China": ["Yellow", 3],
-	"Congo": ["White", 3],
-	"East Africa": ["Green", 3],
-	"Eastern Australia": ["Black", 4],
-	"Eastern United States": ["Yellow", 3],
-	"Egypt": ["Yellow", 3],
-	"Great Britain": ["White", 3],
-	"Greenland": ["Blue", 3],
-	"Iceland": ["Red", 3],
-	"India": ["Blue", 3],
-	"Indonesia": ["Green", 5],
-	"Irkutsk": ["Red", 3],
-	"Japan": ["Black", 1],
-	"Kamchatka": ["Green", 3],
-	"Madagascar": ["Red", 2],
-	"Middle East": ["White", 3],
-	"Mongolia": ["White", 1],
-	"New Guinea": ["White", 5],
-	"North Africa": ["Black", 3],
-	"Northern Europe": ["Green", 3],
-	"Northwest Territory": ["Black", 3],
-	"Ontario": ["Green", 3],
-	"Peru": ["White", 2],
-	"Quebec": ["White", 3],
-	"Scandinavia": ["Black", 3],
-	"Siam": ["Red", 3],
-	"Siberia": ["Green", 1],
-	"South Africa": ["Blue", 2],
-	"Southern Europe": ["Blue", 3],
-	"Ukraine": ["Red", 3],
-	"Ural": ["Blue", 3],
-	"Venezuela": ["Blue", 3],
-	"Western Australia": ["Yellow", 4],
-	"Western Europe": ["Yellow", 3],
-	"Western United States": ["Red", 3],
-	"Yakutsk": ["Yellow", 1]	
-};
-
-exports.scenarios.spreadOute1 = { ////////////////////////////////////////////////////////////////////
-        "Afghanistan":["White",3],
-        "Alaska":["Red",2],
-        "Alberta":["Yellow",4],
-        "Argentina":["Blue",3],
-        "Brazil":["Green",2],
-        "Central America":["Red",2],
-        "China":["Red",4],
-        "Congo":["Black",2],
-        "East Africa":["Red",5],
-        "Eastern Australia":["Yellow",3],
-        "Eastern United States":["White",4],
-        "Egypt":["Black",2],
-        "Great Britain":["Yellow",2],
-        "Greenland":["Red",1],
-        "Iceland":["Green",3],
-        "India":["Red",4],
-        "Indonesia":["Black",3],
-        "Irkutsk":["Yellow",3],
-        "Japan":["White",2],
-        "Kamchatka":["White",4],
-        "Madagascar":["Yellow",1],
-        "Middle East":["Green",1],
-        "Mongolia":["Blue",1],
-        "New Guinea":["Blue",4],
-        "North Africa":["Yellow",3],
-        "Northern Europe":["Black",2],
-        "Northwest Territory":["Green",4],
-        "Ontario":["Red",2],
-        "Peru":["Black",3],
-        "Quebec":["Green",4],
-        "Scandinavia":["Blue",4],
-        "Siam":["Black",4],
-        "Siberia":["Green",3],
-        "South Africa":["Green",3],
-        "Southern Europe":["White",2],
-        "Ukraine":["Blue",3],
-        "Ural":["Black",4],
-        "Venezuela":["White",1],
-        "Western Australia":["Blue",2],
-        "Western Europe":["Blue",3],
-        "Western United States":["Yellow",4],
-        "Yakutsk":["White",4]
-};
-
-exports.scenarios.whiteSpreadOut = { ///////////////////////////////////////////////////////////////
-	"Afghanistan": ["Blue", 1],
-	"Alaska": ["Black", 1],
-	"Alberta": ["Black", 2],
-	"Argentina": ["Yellow", 1],
-	"Brazil": ["Yellow", 1],
-	"Central America": ["Yellow", 12],
-	"China": ["Green", 1],
-	"Congo": ["Yellow", 2],
-	"East Africa": ["Blue", 1],
-	"Eastern Australia": ["White", 1],
-	"Eastern United States": ["White", 6],
-	"Egypt": ["Blue", 12],
-	"Great Britain": ["Red", 1],
-	"Greenland": ["White", 1],
-	"Iceland": ["Red", 1],
-	"India": ["Blue", 1],
-	"Indonesia": ["Green", 2],
-	"Irkutsk": ["Black", 2],
-	"Japan": ["White", 1],
-	"Kamchatka": ["Black", 12],
-	"Madagascar": ["Blue", 1],
-	"Middle East": ["Blue", 3],
-	"Mongolia": ["Green", 1],
-	"New Guinea": ["Green", 2],
-	"North Africa": ["Yellow", 2],
-	"Northern Europe": ["White", 4],
-	"Northwest Territory": ["Black", 1],
-	"Ontario": ["Black", 1],
-	"Peru": ["White", 1],
-	"Quebec": ["Black", 1],
-	"Scandinavia": ["Red", 4],
-	"Siam": ["Green", 1],
-	"Siberia": ["Green", 12],
-	"South Africa": ["Blue", 1],
-	"Southern Europe": ["Red", 2],
-	"Ukraine": ["Red", 9],
-	"Ural": ["Red", 1],
-	"Venezuela": ["Yellow", 1],
-	"Western Australia": ["Green", 1],
-	"Western Europe": ["Red", 2],
-	"Western United States": ["Yellow", 1],
-	"Yakutsk": ["White", 6]	
-};
-
-exports.scenarios.blackSpreadOut = { ///////////////////////////////////////////////////////////////
-	"Afghanistan": ["Blue", 1],
-	"Alaska": ["White", 1],
-	"Alberta": ["White", 2],
-	"Argentina": ["Yellow", 1],
-	"Brazil": ["Yellow", 1],
-	"Central America": ["Yellow", 12],
-	"China": ["Green", 1],
-	"Congo": ["Yellow", 2],
-	"East Africa": ["Blue", 1],
-	"Eastern Australia": ["Black", 1],
-	"Eastern United States": ["Black", 6],
-	"Egypt": ["Blue", 12],
-	"Great Britain": ["Red", 1],
-	"Greenland": ["Black", 1],
-	"Iceland": ["Red", 1],
-	"India": ["Blue", 1],
-	"Indonesia": ["Green", 2],
-	"Irkutsk": ["White", 2],
-	"Japan": ["Black", 1],
-	"Kamchatka": ["White", 12],
-	"Madagascar": ["Blue", 1],
-	"Middle East": ["Blue", 3],
-	"Mongolia": ["Green", 1],
-	"New Guinea": ["Green", 2],
-	"North Africa": ["Yellow", 2],
-	"Northern Europe": ["Black", 4],
-	"Northwest Territory": ["White", 1],
-	"Ontario": ["White", 1],
-	"Peru": ["Black", 1],
-	"Quebec": ["White", 1],
-	"Scandinavia": ["Red", 4],
-	"Siam": ["Green", 1],
-	"Siberia": ["Green", 12],
-	"South Africa": ["Blue", 1],
-	"Southern Europe": ["Red", 2],
-	"Ukraine": ["Red", 9],
-	"Ural": ["Red", 1],
-	"Venezuela": ["Yellow", 1],
-	"Western Australia": ["Green", 1],
-	"Western Europe": ["Red", 2],
-	"Western United States": ["Yellow", 1],
-	"Yakutsk": ["Black", 6]	
-};
-
-exports.scenarios.allTotalitiesButWhite = { ////////////////////////////////////////////////////////
-	"Afghanistan": ["White", 6],
-	"Alaska": ["Black", 5],
-	"Alberta": ["Black", 2],
-	"Argentina": ["Yellow", 1],
-	"Brazil": ["Yellow", 7],
-	"Central America": ["Yellow", 2],
-	"China": ["Green", 1],
-	"Congo": ["Blue", 1],
-	"East Africa": ["Blue", 1],
-	"Eastern Australia": ["Green", 1],
-	"Eastern United States": ["Black", 5],
-	"Egypt": ["Blue", 6],
-	"Great Britain": ["Red", 1],
-	"Greenland": ["White", 1],
-	"Iceland": ["Red", 4],
-	"India": ["Green", 1],
-	"Indonesia": ["Green", 3],
-	"Irkutsk": ["White", 1],
-	"Japan": ["White", 1],
-	"Kamchatka": ["Yellow", 1],
-	"Madagascar": ["Blue", 1],
-	"Middle East": ["Blue", 3],
-	"Mongolia": ["Yellow", 2],
-	"New Guinea": ["Green", 3],
-	"North Africa": ["Blue", 7],
-	"Northern Europe": ["Red", 1],
-	"Northwest Territory": ["Black", 1],
-	"Ontario": ["Black", 1],
-	"Peru": ["Yellow", 1],
-	"Quebec": ["Black", 1],
-	"Scandinavia": ["Red", 4],
-	"Siam": ["Green", 10],
-	"Siberia": ["White", 1],
-	"South Africa": ["Blue", 1],
-	"Southern Europe": ["Red", 2],
-	"Ukraine": ["Red", 6],
-	"Ural": ["White", 4],
-	"Venezuela": ["Yellow", 6],
-	"Western Australia": ["Green", 1],
-	"Western Europe": ["Red", 2],
-	"Western United States": ["Black", 5],
-	"Yakutsk": ["White", 6]
-};
-
-exports.scenarios.allTotalitiesButBlack = { ////////////////////////////////////////////////////////
-	"Afghanistan": ["Black", 6],
-	"Alaska": ["White", 5],
-	"Alberta": ["White", 2],
-	"Argentina": ["Yellow", 1],
-	"Brazil": ["Yellow", 7],
-	"Central America": ["Yellow", 2],
-	"China": ["Green", 1],
-	"Congo": ["Blue", 1],
-	"East Africa": ["Blue", 1],
-	"Eastern Australia": ["Green", 1],
-	"Eastern United States": ["White", 5],
-	"Egypt": ["Blue", 6],
-	"Great Britain": ["Red", 1],
-	"Greenland": ["Black", 1],
-	"Iceland": ["Red", 4],
-	"India": ["Green", 1],
-	"Indonesia": ["Green", 3],
-	"Irkutsk": ["Black", 1],
-	"Japan": ["Black", 1],
-	"Kamchatka": ["Yellow", 1],
-	"Madagascar": ["Blue", 1],
-	"Middle East": ["Blue", 3],
-	"Mongolia": ["Yellow", 2],
-	"New Guinea": ["Green", 3],
-	"North Africa": ["Blue", 7],
-	"Northern Europe": ["Red", 1],
-	"Northwest Territory": ["White", 1],
-	"Ontario": ["White", 1],
-	"Peru": ["Yellow", 1],
-	"Quebec": ["White", 1],
-	"Scandinavia": ["Red", 4],
-	"Siam": ["Green", 10],
-	"Siberia": ["Black", 1],
-	"South Africa": ["Blue", 1],
-	"Southern Europe": ["Red", 2],
-	"Ukraine": ["Red", 6],
-	"Ural": ["Black", 4],
-	"Venezuela": ["Yellow", 6],
-	"Western Australia": ["Green", 1],
-	"Western Europe": ["Red", 2],
-	"Western United States": ["White", 5],
-	"Yakutsk": ["Black", 6]
-};
+var scenarios = exports.scenarios = (function () {
+	var armies = function (c, n) {
+			return [c, n|0];
+		},
+		White = armies.bind(null, "White"),
+		Yellow = armies.bind(null, "Yellow"),
+		Red = armies.bind(null, "Red"),
+		Blue = armies.bind(null, "Blue"),
+		Green = armies.bind(null, "Green"),
+		Black = armies.bind(null, "Black");
+	return iterable({
+		/** ## White oceania #######################################################################
+		
+		This scenario asigns the whole Oceania and 3 adjacent territories in Asia to the White 
+		player. All other players are scattered evenly on the rest of the map.
+		*/
+		whiteOceania: [
+			Green(12), //Afghanistan
+			Black(12), //Alaska
+			Blue(12), //Alberta
+			Red(9), //Argentina
+			Green(2), //Brazil
+			Yellow(12), //Central America
+			White(6), //China
+			Black(2), //Congo
+			Blue(1), //East Africa
+			White(1), //Eastern Australia
+			Green(2), //Eastern United States
+			Yellow(2), //Egypt
+			Blue(1), //Great Britain
+			Red(2), //Greenland
+			Blue(3), //Iceland
+			White(6), //India
+			White(1), //Indonesia
+			Yellow(1), //Irkutsk
+			Black(2), //Japan
+			Green(1), //Kamchatka
+			Black(1), //Madagascar
+			Yellow(2), //Middle East
+			Red(4), //Mongolia
+			White(1), //New Guinea
+			Red(1), //North Africa
+			Blue(1), //Northern Europe
+			Blue(1), //Northwest Territory
+			Black(1), //Ontario
+			Green(1), //Peru
+			Yellow(1), //Quebec
+			Green(1), //Scandinavia
+			White(4), //Siam
+			Yellow(1), //Siberia
+			Red(1), //South Africa
+			Blue(1), //Southern Europe
+			Black(1), //Ukraine
+			Red(1), //Ural
+			Black(1), //Venezuela
+			White(1), //Western Australia
+			Yellow(1), //Western Europe
+			Red(2), //Western United States
+			Green(1) //Yakutsk
+		],
+		/** ## Black Oceania #######################################################################
+		*/
+		blackOceania: [
+			Green(12), //Afghanistan
+			White(12), //Alaska
+			Blue(12), //Alberta
+			Red(9), //Argentina
+			Green(2), //Brazil
+			Yellow(12), //Central America
+			Black(6), //China
+			White(2), //Congo
+			Blue(1), //East Africa
+			Black(1), //Eastern Australia
+			Green(2), //Eastern United States
+			Yellow(2), //Egypt
+			Blue(1), //Great Britain
+			Red(2), //Greenland
+			Blue(3), //Iceland
+			Black(6), //India
+			Black(1), //Indonesia
+			Yellow(1), //Irkutsk
+			White(2), //Japan
+			Green(1), //Kamchatka
+			White(1), //Madagascar
+			Yellow(2), //Middle East
+			Red(4), //Mongolia
+			Black(1), //New Guinea
+			Red(1), //North Africa
+			Blue(1), //Northern Europe
+			Blue(1), //Northwest Territory
+			White(1), //Ontario
+			Green(1), //Peru
+			Yellow(1), //Quebec
+			Green(1), //Scandinavia
+			Black(4), //Siam
+			Yellow(1), //Siberia
+			Red(1), //South Africa
+			Blue(1), //Southern Europe
+			White(1), //Ukraine
+			Red(1), //Ural
+			White(1), //Venezuela
+			Black(1), //Western Australia
+			Yellow(1), //Western Europe
+			Red(2), //Western United States
+			Green(1) //Yakutsk
+		],
+		/** ## White Africa ########################################################################
+		*/
+		whiteAfrica: [
+			Green(12), //Afghanistan
+			Black(12), //Alaska
+			Blue(12), //Alberta
+			Red(9), //Argentina
+			White(5), //Brazil
+			Yellow(12), //Central America
+			Black(2), //China
+			White(1), //Congo
+			White(4), //East Africa
+			Blue(1), //Eastern Australia
+			Green(2), //Eastern United States
+			White(5), //Egypt
+			Blue(1), //Great Britain
+			Red(2), //Greenland
+			Blue(3), //Iceland
+			Yellow(2), //India
+			Black(1), //Indonesia
+			Yellow(1), //Irkutsk
+			Black(2), //Japan
+			Green(1), //Kamchatka
+			White(1), //Madagascar
+			Yellow(2), //Middle East
+			Red(4), //Mongolia
+			Red(1), //New Guinea
+			White(3), //North Africa
+			Blue(1), //Northern Europe
+			Blue(1), //Northwest Territory
+			Black(1), //Ontario
+			Green(1), //Peru
+			Yellow(1), //Quebec
+			Green(1), //Scandinavia
+			Green(2), //Siam
+			Yellow(1), //Siberia
+			White(1), //South Africa
+			Blue(1), //Southern Europe
+			Black(1), //Ukraine
+			Red(1), //Ural
+			Black(1), //Venezuela
+			Red(1), //Western Australia
+			Yellow(1), //Western Europe
+			Red(2), //Western United States
+			Green(1) //Yakutsk
+		],
+		/** ## Black Africa ########################################################################
+		*/
+		blackAfrica: [
+			Green(12), //Afghanistan
+			White(12), //Alaska
+			Blue(12), //Alberta
+			Red(9), //Argentina
+			Black(5), //Brazil
+			Yellow(12), //Central America
+			White(2), //China
+			Black(1), //Congo
+			Black(4), //East Africa
+			Blue(1), //Eastern Australia
+			Green(2), //Eastern United States
+			Black(5), //Egypt
+			Blue(1), //Great Britain
+			Red(2), //Greenland
+			Blue(3), //Iceland
+			Yellow(2), //India
+			White(1), //Indonesia
+			Yellow(1), //Irkutsk
+			White(2), //Japan
+			Green(1), //Kamchatka
+			Black(1), //Madagascar
+			Yellow(2), //Middle East
+			Red(4), //Mongolia
+			Red(1), //New Guinea
+			Black(3), //North Africa
+			Blue(1), //Northern Europe
+			Blue(1), //Northwest Territory
+			White(1), //Ontario
+			Green(1), //Peru
+			Yellow(1), //Quebec
+			Green(1), //Scandinavia
+			Green(2), //Siam
+			Yellow(1), //Siberia
+			Black(1), //South Africa
+			Blue(1), //Southern Europe
+			White(1), //Ukraine
+			Red(1), //Ural
+			White(1), //Venezuela
+			Red(1), //Western Australia
+			Yellow(1), //Western Europe
+			Red(2), //Western United States
+			Green(1) //Yakutsk
+		],
+		/** ## Spread out ##########################################################################
+		*/
+		spreadOut: [
+			Yellow(3), //Afghanistan
+			White(3), //Alaska
+			White(3), //Alberta
+			White(2), //Argentina
+			Green(3), //Brazil
+			Blue(2), //Central America
+			White(4), //China
+			Blue(3), //Congo
+			Yellow(4), //East Africa
+			Green(2), //Eastern Australia
+			Black(6), //Eastern United States
+			Red(3), //Egypt
+			Red(4), //Great Britain
+			White(1), //Greenland
+			Red(2), //Iceland
+			Yellow(3), //India
+			Green(4), //Indonesia
+			White(5), //Irkutsk
+			Green(4), //Japan
+			Red(3), //Kamchatka
+			Red(2), //Madagascar
+			Yellow(3), //Middle East
+			Black(5), //Mongolia
+			Black(3), //New Guinea
+			Black(2), //North Africa
+			Green(1), //Northern Europe
+			Yellow(2), //Northwest Territory
+			Yellow(2), //Ontario
+			Blue(2), //Peru
+			Green(4), //Quebec
+			Blue(3), //Scandinavia
+			Yellow(3), //Siam
+			Black(1), //Siberia
+			Red(3), //South Africa
+			Black(1), //Southern Europe
+			Blue(3), //Ukraine
+			Green(2), //Ural
+			White(2), //Venezuela
+			Red(3), //Western Australia
+			Blue(3), //Western Europe
+			Blue(4), //Western United States
+			Black(2) //Yakutsk
+		],
+		/** ## Spread out Black ####################################################################
+		*/
+		spreadOutBlack: [
+			Yellow(3), //Afghanistan
+			Black(3), //Alaska
+			Black(3), //Alberta
+			Black(2), //Argentina
+			Green(3), //Brazil
+			Blue(2), //Central America
+			Black(4), //China
+			Blue(3), //Congo
+			Yellow(4), //East Africa
+			Green(2), //Eastern Australia
+			White(6), //Eastern United States
+			Red(3), //Egypt
+			Red(4), //Great Britain
+			Black(1), //Greenland
+			Red(2), //Iceland
+			Yellow(3), //India
+			Green(4), //Indonesia
+			Black(5), //Irkutsk
+			Green(4), //Japan
+			Red(3), //Kamchatka
+			Red(2), //Madagascar
+			Yellow(3), //Middle East
+			White(5), //Mongolia
+			White(3), //New Guinea
+			White(2), //North Africa
+			Green(1), //Northern Europe
+			Yellow(2), //Northwest Territory
+			Yellow(2), //Ontario
+			Blue(2), //Peru
+			Green(4), //Quebec
+			Blue(3), //Scandinavia
+			Yellow(3), //Siam
+			White(1), //Siberia
+			Red(3), //South Africa
+			White(1), //Southern Europe
+			Blue(3), //Ukraine
+			Green(2), //Ural
+			Black(2), //Venezuela
+			Red(3), //Western Australia
+			Blue(3), //Western Europe
+			Blue(4), //Western United States
+			White(2) //Yakutsk
+		],
+		/** ## Spread out version 2 ################################################################
+		*/
+		spreadOutV2: [
+			Black(3), //Afghanistan
+			Yellow(3), //Alaska
+			Blue(3), //Alberta
+			Green(2), //Argentina
+			Red(3), //Brazil
+			Black(3), //Central America
+			Yellow(3), //China
+			White(3), //Congo
+			Green(3), //East Africa
+			Black(4), //Eastern Australia
+			Yellow(3), //Eastern United States
+			Yellow(3), //Egypt
+			White(3), //Great Britain
+			Blue(3), //Greenland
+			Red(3), //Iceland
+			Blue(3), //India
+			Green(5), //Indonesia
+			Red(3), //Irkutsk
+			Black(1), //Japan
+			Green(3), //Kamchatka
+			Red(2), //Madagascar
+			White(3), //Middle East
+			White(1), //Mongolia
+			White(5), //New Guinea
+			Black(3), //North Africa
+			Green(3), //Northern Europe
+			Black(3), //Northwest Territory
+			Green(3), //Ontario
+			White(2), //Peru
+			White(3), //Quebec
+			Black(3), //Scandinavia
+			Red(3), //Siam
+			Green(1), //Siberia
+			Blue(2), //South Africa
+			Blue(3), //Southern Europe
+			Red(3), //Ukraine
+			Blue(3), //Ural
+			Blue(3), //Venezuela
+			Yellow(4), //Western Australia
+			Yellow(3), //Western Europe
+			Red(3), //Western United States
+			Yellow(1) //Yakutsk	
+		],
+		/** ## Spread out E1 #######################################################################
+		*/
+		spreadOute1: [
+			White(3), //Afghanistan
+			Red(2), //Alaska
+			Yellow(4), //Alberta
+			Blue(3), //Argentina
+			Green(2), //Brazil
+			Red(2), //Central America
+			Red(4), //China
+			Black(2), //Congo
+			Red(5), //East Africa
+			Yellow(3), //Eastern Australia
+			White(4), //Eastern United States
+			Black(2), //Egypt
+			Yellow(2), //Great Britain
+			Red(1), //Greenland
+			Green(3), //Iceland
+			Red(4), //India
+			Black(3), //Indonesia
+			Yellow(3), //Irkutsk
+			White(2), //Japan
+			White(4), //Kamchatka
+			Yellow(1), //Madagascar
+			Green(1), //Middle East
+			Blue(1), //Mongolia
+			Blue(4), //New Guinea
+			Yellow(3), //North Africa
+			Black(2), //Northern Europe
+			Green(4), //Northwest Territory
+			Red(2), //Ontario
+			Black(3), //Peru
+			Green(4), //Quebec
+			Blue(4), //Scandinavia
+			Black(4), //Siam
+			Green(3), //Siberia
+			Green(3), //South Africa
+			White(2), //Southern Europe
+			Blue(3), //Ukraine
+			Black(4), //Ural
+			White(1), //Venezuela
+			Blue(2), //Western Australia
+			Blue(3), //Western Europe
+			Yellow(4), //Western United States
+			White(4) //Yakutsk
+		],
+		/** ## White spread out ####################################################################
+		*/
+		whiteSpreadOut: [
+			Blue(1), //Afghanistan
+			Black(1), //Alaska
+			Black(2), //Alberta
+			Yellow(1), //Argentina
+			Yellow(1), //Brazil
+			Yellow(12), //Central America
+			Green(1), //China
+			Yellow(2), //Congo
+			Blue(1), //East Africa
+			White(1), //Eastern Australia
+			White(6), //Eastern United States
+			Blue(12), //Egypt
+			Red(1), //Great Britain
+			White(1), //Greenland
+			Red(1), //Iceland
+			Blue(1), //India
+			Green(2), //Indonesia
+			Black(2), //Irkutsk
+			White(1), //Japan
+			Black(12), //Kamchatka
+			Blue(1), //Madagascar
+			Blue(3), //Middle East
+			Green(1), //Mongolia
+			Green(2), //New Guinea
+			Yellow(2), //North Africa
+			White(4), //Northern Europe
+			Black(1), //Northwest Territory
+			Black(1), //Ontario
+			White(1), //Peru
+			Black(1), //Quebec
+			Red(4), //Scandinavia
+			Green(1), //Siam
+			Green(12), //Siberia
+			Blue(1), //South Africa
+			Red(2), //Southern Europe
+			Red(9), //Ukraine
+			Red(1), //Ural
+			Yellow(1), //Venezuela
+			Green(1), //Western Australia
+			Red(2), //Western Europe
+			Yellow(1), //Western United States
+			White(6) //Yakutsk	
+		],
+		/** ## Black spread out ####################################################################
+		*/
+		blackSpreadOut: [
+			Blue(1), //Afghanistan
+			White(1), //Alaska
+			White(2), //Alberta
+			Yellow(1), //Argentina
+			Yellow(1), //Brazil
+			Yellow(12), //Central America
+			Green(1), //China
+			Yellow(2), //Congo
+			Blue(1), //East Africa
+			Black(1), //Eastern Australia
+			Black(6), //Eastern United States
+			Blue(12), //Egypt
+			Red(1), //Great Britain
+			Black(1), //Greenland
+			Red(1), //Iceland
+			Blue(1), //India
+			Green(2), //Indonesia
+			White(2), //Irkutsk
+			Black(1), //Japan
+			White(12), //Kamchatka
+			Blue(1), //Madagascar
+			Blue(3), //Middle East
+			Green(1), //Mongolia
+			Green(2), //New Guinea
+			Yellow(2), //North Africa
+			Black(4), //Northern Europe
+			White(1), //Northwest Territory
+			White(1), //Ontario
+			Black(1), //Peru
+			White(1), //Quebec
+			Red(4), //Scandinavia
+			Green(1), //Siam
+			Green(12), //Siberia
+			Blue(1), //South Africa
+			Red(2), //Southern Europe
+			Red(9), //Ukraine
+			Red(1), //Ural
+			Yellow(1), //Venezuela
+			Green(1), //Western Australia
+			Red(2), //Western Europe
+			Yellow(1), //Western United States
+			Black(6) //Yakutsk	
+		],
+		/** ## All totalities but White ############################################################
+		*/
+		allTotalitiesButWhite: [
+			White(6), //Afghanistan
+			Black(5), //Alaska
+			Black(2), //Alberta
+			Yellow(1), //Argentina
+			Yellow(7), //Brazil
+			Yellow(2), //Central America
+			Green(1), //China
+			Blue(1), //Congo
+			Blue(1), //East Africa
+			Green(1), //Eastern Australia
+			Black(5), //Eastern United States
+			Blue(6), //Egypt
+			Red(1), //Great Britain
+			White(1), //Greenland
+			Red(4), //Iceland
+			Green(1), //India
+			Green(3), //Indonesia
+			White(1), //Irkutsk
+			White(1), //Japan
+			Yellow(1), //Kamchatka
+			Blue(1), //Madagascar
+			Blue(3), //Middle East
+			Yellow(2), //Mongolia
+			Green(3), //New Guinea
+			Blue(7), //North Africa
+			Red(1), //Northern Europe
+			Black(1), //Northwest Territory
+			Black(1), //Ontario
+			Yellow(1), //Peru
+			Black(1), //Quebec
+			Red(4), //Scandinavia
+			Green(10), //Siam
+			White(1), //Siberia
+			Blue(1), //South Africa
+			Red(2), //Southern Europe
+			Red(6), //Ukraine
+			White(4), //Ural
+			Yellow(6), //Venezuela
+			Green(1), //Western Australia
+			Red(2), //Western Europe
+			Black(5), //Western United States
+			White(6) //Yakutsk
+		],
+		/** ## All totalities but Black ############################################################
+		*/
+		allTotalitiesButBlack: [
+			Black(6), //Afghanistan
+			White(5), //Alaska
+			White(2), //Alberta
+			Yellow(1), //Argentina
+			Yellow(7), //Brazil
+			Yellow(2), //Central America
+			Green(1), //China
+			Blue(1), //Congo
+			Blue(1), //East Africa
+			Green(1), //Eastern Australia
+			White(5), //Eastern United States
+			Blue(6), //Egypt
+			Red(1), //Great Britain
+			Black(1), //Greenland
+			Red(4), //Iceland
+			Green(1), //India
+			Green(3), //Indonesia
+			Black(1), //Irkutsk
+			Black(1), //Japan
+			Yellow(1), //Kamchatka
+			Blue(1), //Madagascar
+			Blue(3), //Middle East
+			Yellow(2), //Mongolia
+			Green(3), //New Guinea
+			Blue(7), //North Africa
+			Red(1), //Northern Europe
+			White(1), //Northwest Territory
+			White(1), //Ontario
+			Yellow(1), //Peru
+			White(1), //Quebec
+			Red(4), //Scandinavia
+			Green(10), //Siam
+			Black(1), //Siberia
+			Blue(1), //South Africa
+			Red(2), //Southern Europe
+			Red(6), //Ukraine
+			Black(4), //Ural
+			Yellow(6), //Venezuela
+			Green(1), //Western Australia
+			Red(2), //Western Europe
+			White(5), //Western United States
+			Black(6) //Yakutsk
+		]
+	}).mapApply(function (n, ts) { // Now turn the arrays into objects.
+		return [n, Iterable.zip(MAPS.classic.territories, ts).toObject()];
+	}).toObject();
+})();
