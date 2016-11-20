@@ -3,7 +3,7 @@
 var path = require('path');
 
 var sourceFiles = ['__prologue__',
-	'probabilities', 'maps', 'Risk', 'RiskPlayer', 'players', 'scenarios',
+	'probabilities', 'maps', 'Risk', 'players', 'scenarios',
 	'__epilogue__'].map(function (module) {
 		return 'src/'+ module +'.js';
 	});
@@ -84,9 +84,8 @@ module.exports = function(grunt) {
 			options: {
 				configFile: 'tests/karma.conf.js'
 			},
-			build: { browsers: ['PhantomJS'] },
+			build: { browsers: ['Firefox'] },
 			chrome: { browsers: ['Chrome'] },
-			firefox: { browsers: ['Firefox'] },
 			iexplore: { browsers: ['IE'] }
 		},
 		docker: { //////////////////////////////////////////////////////////////////////////////////
@@ -112,7 +111,7 @@ module.exports = function(grunt) {
 // Register tasks. /////////////////////////////////////////////////////////////////////////////////
 	grunt.registerTask('compile', ['concat:build_umd', 'jshint:build_umd', 'uglify:build_umd', 'copy:test']); 
 	grunt.registerTask('test', ['compile', 'karma:build']); 
-	grunt.registerTask('test-all', ['test', 'karma:chrome', 'karma:firefox', 'karma:iexplore']);
+	grunt.registerTask('test-all', ['test', 'karma:chrome', 'karma:iexplore']);
 	grunt.registerTask('build', ['test', 'docker:document']);
 	grunt.registerTask('default', ['build']);
 };
