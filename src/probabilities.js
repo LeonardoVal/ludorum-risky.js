@@ -100,7 +100,8 @@ involve many attacks.
 The calculations assume that both players use as many armies as they can, and that the attacks
 continue until all armies of either player get destroyed.
 */
-var conquestProbability = exports.conquestProbability = function conquestProbability(attackCount, defenseCount, cache, attackProbs) {
+var conquestProbability = exports.conquestProbability = function conquestProbability(attackCount, 
+		defenseCount, cache, attackProbs) {
 	cache = cache || CONQUEST_PROBABILITIES;
 	attackProbs = attackProbs || ATTACK_PROBABILITIES;
 	if (attackCount < 1) {

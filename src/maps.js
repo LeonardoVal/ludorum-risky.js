@@ -9,7 +9,8 @@ var BoardMap = exports.BoardMap = declare({
 	constructor: function RiskyMap(territories, continents, bonuses) {
 		/** + the board must have at least 2 territories.
 		*/
-		raiseIf(!territories || Object.keys(territories).length < 2, "Illegal territory definition ", JSON.stringify(territories), "!");
+		raiseIf(!territories || Object.keys(territories).length < 2, "Illegal territory definition ", 
+			JSON.stringify(territories), "!");
 		continents = continents || {};
 		bonuses = bonuses || {};
 		
@@ -21,7 +22,8 @@ var BoardMap = exports.BoardMap = declare({
 			fs.forEach(function (f) {
 				/** + all frontiers must be between declared territories.
 				*/
-				raiseIf(!territories.hasOwnProperty(f), "Territory ", t, " has a frontier with an unknown territory ", f, "!");
+				raiseIf(!territories.hasOwnProperty(f), "Territory ", t, 
+					" has a frontier with an unknown territory ", f, "!");
 				/** + a territory cannot have a frontier with itself.
 				*/
 				raiseIf(t === f, "Territory ", t, " has a frontier with itself!");
@@ -39,7 +41,8 @@ var BoardMap = exports.BoardMap = declare({
 			ts.forEach(function (t) {
 				/** + all continents' territories must be declared.
 				*/
-				raiseIf(!territories.hasOwnProperty(t), "Continent ", c, " has an unknown territory ", t, "!");
+				raiseIf(!territories.hasOwnProperty(t), "Continent ", c, " has an unknown territory ", 
+					t, "!");
 			});
 			return c;
 		}).sorted().toArray());
@@ -52,8 +55,7 @@ var BoardMap = exports.BoardMap = declare({
 		Object.freeze(this);
 	},
 	
-	/** TODO
-	`territoryContinent` return the continent of the territory.
+	/** The method `territoryContinent` return the continent of the given territory.
 	*/
 	territoryContinent: function (t) {
 		return iterable(this.continentTerritories).filterApply(function (c, ts) {
@@ -69,7 +71,7 @@ var BoardMap = exports.BoardMap = declare({
 		}).toArray().toString();
 	},
 
-	/** `adjacent` is a predicate that tells if two territories are adjacent.
+	/** Two territories are `adjacent` if if they share a frontier or a lane in the map.
 	*/
 	adjacent: function (t1, t2) {
 		return this.adjacents[t1] && this.adjacents[t1].indexOf(t2) >= 0;
@@ -85,7 +87,7 @@ var BoardMap = exports.BoardMap = declare({
 		}).flatten();
 	},
 	
-	/** `bonus` returns the bonus for a continent or continents, or zero if it is not defined.
+	/** The `bonus` method returns the bonus for a continent or continents.
 	*/
 	bonus: function bonus() {
 		var result = 0;
@@ -128,7 +130,7 @@ var MAPS = exports.MAPS = {
 		"CyanContinent": 2
 	}),
 	
-	/** + `classic` is the map of the original Risk.
+	/** + `classic` is the map of the original Risk by Parker Brothers.
 	*/
 	classic: new BoardMap({ // territories.
 		"Alaska": ["Alberta", "Northwest Territory", "Kamchatka"],
