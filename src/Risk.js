@@ -735,7 +735,7 @@ var Risk = exports.Risk = declare(Game, {
 		return armies;
 	},
 	
-		/** An `armyDistribution` is an object with a property for every territory in the map, 
+	/** An `armyDistribution` is an object with a property for every territory in the map, 
 	mapping to an array `["<territory>", <armiesNumber>]`.
 	*/
 	'static armyDistribution': function armyDistribution(players, boardMap) {
@@ -757,60 +757,5 @@ var Risk = exports.Risk = declare(Game, {
 			vec.splice(aux, 1);
 		});
 		return armies;
-	},
-	
-	// ## Heuristics and AI ########################################################################
-	
-	/** `Risk.heuristics` is a bundle of helper functions to build heuristic evaluation functions 
-	for this game.
-	*/
-	'static heuristics': {
-		territoryCount: function territoryCount(game, player) {
-			return game.playerTerritories(player).length / game.boardMap.territories.length;
-		},
-		territoryHeuristic: function territoryHeuristic(game, player) {
-			var armies = game.uncompressGameState(game.armies),
-				counts = {},
-				totalCount = 0;
-			iterable(armies).forEachApply(function (n, t) {
-				counts[t[0]] = (counts[t[0]] |0) + 1;
-				totalCount++;
-			});
-			var countMax = -Infinity,
-				countMin = +Infinity,
-				playerCount = 0;
-			iterable(counts).forEachApply(function (p, c) {
-				if (countMax < c) countMax = c;
-				if (countMin > c) countMin = c;
-				playerCount++;
-			});
-			return countMax === countMin ? 0 
-				: ((counts[player] |0) - totalCount / playerCount) / (countMax - countMin);
-		},
-		continentCount: function continentCount(game, player) {
-			return game.playerContinents(player).length / game.boardMap.continents.length;
-		},
-		heuristicPru: function heuristicPru(game, player) {
-			//return ((game.playerContinents(player).length + 1) / game.boardMap.continents.length) * (game.playerTerritories(player).length / game.boardMap.territories.length);
-			return (game.playerContinents(player).length * 4 + game.playerTerritories(player).length) / (game.boardMap.continents.length * 4 + game.boardMap.territories.length);
-		},
-		heuristicReinforcements: function heuristicReinforcements(game, player) {
-			return game.playerReinforcements(player) / 38 - 0.5;
-		},
-		heuristicConquestProbability: function heuristicConquestProbability(game, player) {
-			var count = 0;
-			return game.conflictFrontiers(player).mapApply(function (t1, t2){
-				var c1 = game.armyCount(t1),
-					c2 = game.armyCount(t2);
-				count++;
-				return conquestProbability(c1, c2) - conquestProbability(c2, c1); 
-			}).sum() / count;
-		},
-		heuristic2: function heuristic2(game, player) {
-			var b = 0.8;
-			return b * Risk.heuristics.heuristicPru(game, player) +
-				(1 - b) * Risk.heuristics.heuristicConquestProbability(game, player);
-		}
-		//TODO
-	},	
+	}	
 }); // declare Risk
