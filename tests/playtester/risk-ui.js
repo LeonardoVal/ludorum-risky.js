@@ -4,7 +4,7 @@
 	'img': '../lib/require-image',
 // Dependencies
 	'creatartis-base': '../lib/creatartis-base', 
-	'sermat': '../lib/sermat-amd',
+	'sermat': '../lib/sermat',
 	'ludorum': '../lib/ludorum',
 	'ludorum-risky': '../lib/ludorum-risky',
 	//'firebase' : 'https://www.gstatic.com/firebasejs/3.1.0/firebase.js'
@@ -223,7 +223,7 @@ require([
 		//players[0] = p; //TODO
 		
 		
-		players[0] = new RiskUIPlayer({ Risk: Risk });
+		//players[0] = new RiskUIPlayer({ Risk: Risk });
 		//players[0] = new ludorum_risky.players.RiskSimplePlayer({ name: 'Player#0' });
 		
 		var match = APP.match = new ludorum.Match(APP.game, APP.players);

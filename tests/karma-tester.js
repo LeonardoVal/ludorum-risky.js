@@ -44,7 +44,7 @@ beforeEach(function() { // Add custom matchers.
 require.config({ // Configure RequireJS.
 	baseUrl: '/base', // Karma serves files under /base, which is the basePath from your config file
 	paths: {
-		'sermat': '/base/tests/lib/sermat-amd',
+		'sermat': '/base/tests/lib/sermat',
 		'creatartis-base': '/base/tests/lib/creatartis-base',
 		'ludorum': '/base/tests/lib/ludorum',
 		'ludorum-risky': '/base/tests/lib/ludorum-risky'

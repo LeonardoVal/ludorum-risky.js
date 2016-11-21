@@ -1,6 +1,4 @@
 ﻿// Karma configuration
-// Generated on Fri Apr 04 2014 17:58:52 GMT-0300 (Hora estándar de Montevideo)
-
 module.exports = function(config) {
   config.set({
 
@@ -18,7 +16,7 @@ module.exports = function(config) {
       {pattern: 'tests/lib/ludorum.js', included: false},
 	  {pattern: 'tests/lib/ludorum-risky.js', included: false},
       {pattern: 'tests/lib/creatartis-base.js', included: false},
-	  {pattern: 'tests/lib/sermat-amd.js', included: false},
+	  {pattern: 'tests/lib/sermat.js', included: false},
     ],
 
     // list of files to exclude
@@ -29,7 +27,7 @@ module.exports = function(config) {
     preprocessors: {
 		'tests/lib/ludorum.js': ['sourcemap'],
 		'tests/lib/creatartis-base.js': ['sourcemap'],
-		'tests/lib/sermat-amd.js': ['sourcemap'],
+		'tests/lib/sermat.js': ['sourcemap'],
 		'tests/lib/ludorum-risky.js': ['sourcemap']
 	},
 
@@ -53,7 +51,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Firefox'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
