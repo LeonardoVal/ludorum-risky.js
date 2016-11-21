@@ -5,7 +5,7 @@ Implementation of the Risk game
 var Risk = exports.Risk = declare(Game, {
 	name: 'Risk',
 	
-	/** 
+	/** There are six players, each named after a colour.
 	*/
 	players: ["White", "Yellow", "Red", "Green", "Blue", "Black"],
 	
@@ -161,11 +161,8 @@ var Risk = exports.Risk = declare(Game, {
 		}).toArray();
 	},
 	
-	/**
-	TODO
-	
-	The `playerPendingTerritories` returns an object listing pending terrritories to complete the
-	continent by the given `player` (or the active player by default).
+	/**	The `playerPendingTerritories` method returns an object listing pending terrritories to 
+	complete the continent by the given `player` (or the active player by default).
 	*/
 	playerPendingTerritories: function playerPendingTerritories(player) {
 		player = player || this.activePlayer();
@@ -184,8 +181,8 @@ var Risk = exports.Risk = declare(Game, {
 		return cT; 
 	},
 	
-	/** TODO
-	The `hasPresence` return true if the given `player` (or the active player by default) has presence in continent.
+	/** The `hasPresence` method return true if the given `player` (or the active player by default) 
+	has presence in continent.
 	*/
 	hasPresence: function hasPresence(player, continent) {
 		player = player || this.activePlayer();
@@ -199,9 +196,8 @@ var Risk = exports.Risk = declare(Game, {
 		return aux; 
 	},
 	
-	/** TODO
-	The `continentAdyacent` return true if the given `player` (or the active player by default) has a territory 
-	adyacent to (or in) continent.
+	/** The `continentAdyacent` method return true if the given `player` (or the active player by 
+	default) has a territory adyacent to (or in) continent.
 	*/
 	continentAdyacent: function continentAdyacent(player, continent) {
 		player = player || this.activePlayer();
@@ -266,13 +262,15 @@ var Risk = exports.Risk = declare(Game, {
 		return this.players[p1]; // Only one player is in the board if the loop did not abort.
 	},
 	
-	/** The board is `moreHalfDominated` when more than 50% of territories are controlled by the same player. If that is
-	the case this function returns this player, else returns `null`.
+	/** The board is `moreHalfDominated` when more than 50% of territories are controlled by the 
+	same player. If that is the case this function returns this player, else returns `null`.
 	*/
 	moreHalfDominated: function moreHalfDominated() {
-		if(this.playerTerritories(this.activePlayer()).length > 21){// && this.playerContinents(this.activePlayer()).length > 0) {
-				return this.activePlayer();
-		}else{
+		var halfTerritoryCount = Math.round(this.boardMap.territories.length / 2),
+			activePlayerCount = this.playerTerritories(this.activePlayer()).length;
+		if (activePlayerCount > halfTerritoryCount) {
+			return this.activePlayer();
+		} else {
 			return null;
 		}
 	},
@@ -429,18 +427,18 @@ var Risk = exports.Risk = declare(Game, {
 	
 	isValidReinforce: function isValidReinforce(move, onError){ 
 		var stage = this.stage;
-		if(stage[0] !== this.STAGES.REINFORCE){
+		if (stage[0] !== this.STAGES.REINFORCE) {
 			if (onError) onError("Cannot reinforce in this stage (" + stage + ")!");
 			return false;
 		}		
 		var remaining = stage[1] - move[2];
-		if(!Math.floor(remaining + 1) || remaining < 0 || move[2] < 1 ){ 
+		if (!Math.floor(remaining + 1) || remaining < 0 || move[2] < 1 ) { 
 			if (onError) onError("Cannot reinforce " + move[2] + " armies!");
 			return false;
 		} 
 		var armies = this.uncompressGameState(this.armies),
 			activePlayer = this.activePlayer();
-		if(!armies[move[1]] || armies[move[1]][0] !== activePlayer){
+		if (!armies[move[1]] || armies[move[1]][0] !== activePlayer) {
 			if (onError) onError("Cannot reinforce territory " + move[1] + " because active player " + activePlayer + " does not own it!");
 			return false;
 		}
@@ -452,20 +450,20 @@ var Risk = exports.Risk = declare(Game, {
 		var armies = this.uncompressGameState(this.armies),
 			stage = this.stage,
 			activePlayer = this.activePlayer();
-		if(stage[0] !== this.STAGES.ATTACK){
+		if (stage[0] !== this.STAGES.ATTACK) {
 			if (onError) onError("Cannot attack in this stage (" + stage + ")!");
 			return false;
 		}	
-		if(!armies[move[1]] || armies[move[1]][0] !== activePlayer){
+		if (!armies[move[1]] || armies[move[1]][0] !== activePlayer) {
 			if (onError) onError("Cannot attack from " + move[1] + "!");
 			return false;
 		}
-		if(!armies[move[2]] || armies[move[2]][0] === activePlayer){
+		if (!armies[move[2]] || armies[move[2]][0] === activePlayer) {
 			if (onError) onError("Cannot attack to " + move[2] + "!");
 			return false;
 		}
 		var remaining = armies[move[1]][1] - move[3];
-		if(!Math.floor(remaining + 1) || remaining < 1 || move[3] > 3 || move[3] < 1){ 
+		if (!Math.floor(remaining + 1) || remaining < 1 || move[3] > 3 || move[3] < 1) { 
 			if (onError) onError("Cannot attack with " + move[3] + " armies!");
 			return false;
 		}
@@ -474,14 +472,14 @@ var Risk = exports.Risk = declare(Game, {
 	
 	isValidOccupy: function isValidOccupy(move, onError){
 		var stage = this.stage;
-		if(stage[0] !== this.STAGES.OCCUPY) {
+		if (stage[0] !== this.STAGES.OCCUPY) {
 			if (onError) onError("Cannot occupy in this stage (" + stage + ")!");
 			return false;
 		}
 		var armies = this.uncompressGameState(this.armies),
 			activePlayer = this.activePlayer(), 
 			remaining = armies[stage[1]][1] - move[1];
-		if(remaining < 1 || !Math.floor(move[1]) || armies[stage[1]][1] < move[1] || move[1] < 1){
+		if (remaining < 1 || !Math.floor(move[1]) || armies[stage[1]][1] < move[1] || move[1] < 1) {
 			if (onError) onError("Cannot occupy territory " + stage[2] + " with " + move[1] + " armies!");
 			return false;
 		}
@@ -490,21 +488,21 @@ var Risk = exports.Risk = declare(Game, {
 	
 	isValidFortify: function isValidFortify(move, onError){
 		var stage = this.stage;
-		if(stage[0] !== this.STAGES.FORTIFY) {
+		if (stage[0] !== this.STAGES.FORTIFY) {
 			if (onError) onError("Cannot fortify in this stage (" + stage + ")!");
 			return false;
 		}
 		var armies = this.uncompressGameState(this.armies),
 			activePlayer = this.activePlayer();
-		if(!armies[move[1]] || armies[move[1]][0] !== activePlayer){
+		if (!armies[move[1]] || armies[move[1]][0] !== activePlayer) {
 			if (onError) onError("Cannot fortify from territory " + move[1] + "!");
 			return false;
 		}
-		if(!armies[move[2]] || armies[move[2]][0] !== activePlayer || !this.boardMap.adjacent(move[1], move[2])){
+		if (!armies[move[2]] || armies[move[2]][0] !== activePlayer || !this.boardMap.adjacent(move[1], move[2])) {
 			if (onError) onError("Cannot fortify to territory " + move[2] + "!");
 			return false;
 		}
-		if(!Math.floor(move[3]) || move[3] < 1 || armies[move[1]][1] <= move[3]){
+		if (!Math.floor(move[3]) || move[3] < 1 || armies[move[1]][1] <= move[3]) {
 			if (onError) onError("Cannot fortify with " + move[3] + " armies!");
 			return false;
 		}
@@ -534,7 +532,7 @@ var Risk = exports.Risk = declare(Game, {
 	game's `stage` should be in the form `[STAGES.REINFORCE, amount]`.
 	*/
 	nextReinforce: function nextReinforce(move) {
-		if (this.isValidReinforce(move, raise)){
+		if (this.isValidReinforce(move, raise)) {
 			var stage = this.stage, 
 				armies = this.uncompressGameState(this.armies),
 				remaining = stage[1] - move[2],
@@ -558,60 +556,35 @@ var Risk = exports.Risk = declare(Game, {
 	nextAttack: function nextAttack(move, haps) {
 		var stage = this.stage,
 			activePlayer = this.activePlayer();
-		//this.isValidAttack(move);
-		
-		
-		//raiseIf(!control[0], control[1]);
-			
-		//raiseIf(stage[0] !== this.STAGES.ATTACK,
-		//	"Cannot attack in this stage (", stage, ")!");
-		
 		if (!haps) { // Dice rolls are provided.
 			var aleaKey = 'A'+ move[3] +'D'+ Math.min(2, this.armyCount(move[2])),
 				alea = ATTACK_ALEATORIES[aleaKey];
 			raiseIf(!alea, "Could not find aleatory for ", aleaKey, "!");
 			return new ludorum.Contingent({ rolls: alea }, this, base.obj(activePlayer, move));
-		} else { // Dice rolls not available.
-			if(this.isValidAttack(move, raise)){
-				var armies = this.uncompressGameState(this.armies);
-				
-/* 				raiseIf(!armies[move[1]] || armies[move[1]][0] !== activePlayer,
-					"Cannot attack from ", move[1], "!");
-				raiseIf(!armies[move[2]] || armies[move[2]][0] === activePlayer,
-					"Cannot attack to ", move[1], "!"); */
-				armies[move[1]][1] += haps.rolls.attack; // Change the board.
-				armies[move[2]][1] += haps.rolls.defence;
-				var conquest = armies[move[2]][1] < 1;
-				if (conquest) {
-					armies[move[2]][0] = activePlayer;
-				}
-				return new this.constructor({
-					boardMap: this.boardMap,
-					stage: conquest ? [this.STAGES.OCCUPY, move[1], move[2]] : this.stage,
-					round: this.round,
-					rounds: this.rounds,
-					armies: armies,
-					activePlayer: this.activePlayer()
-				});
+		} else if (this.isValidAttack(move, raise)) { // Dice rolls not available.
+			var armies = this.uncompressGameState(this.armies);
+			armies[move[1]][1] += haps.rolls.attack; // Change the board.
+			armies[move[2]][1] += haps.rolls.defence;
+			var conquest = armies[move[2]][1] < 1;
+			if (conquest) {
+				armies[move[2]][0] = activePlayer;
 			}
-		}//*/
-		
-		
+			return new this.constructor({
+				boardMap: this.boardMap,
+				stage: conquest ? [this.STAGES.OCCUPY, move[1], move[2]] : this.stage,
+				round: this.round,
+				rounds: this.rounds,
+				armies: armies,
+				activePlayer: this.activePlayer()
+			});
+		}
 	},
 	
 	/** After a successful attack the attacker must occupy the conquered territory. The `move` 
 	should be in the form `["OCCUPY", integer]`.
 	*/
 	nextOccupy: function nextOccupy(move) {
-		
-/*		var stage = this.stage;
-		
- 		raiseIf(stage[0] !== this.STAGES.OCCUPY,
-			"Cannot occupy in this stage (", stage, ")!");
-		
-		raiseIf(armies[stage[1]][1] < move[1] || move[1] < 1,
-			"Cannot occupy territory ", stage[2], " with ", move[1], " armies!"); */
-		if(this.isValidOccupy(move, raise)){
+		if (this.isValidOccupy(move, raise)) {
 			var stage = this.stage,
 				armies = this.uncompressGameState(this.armies),
 				activePlayer = this.activePlayer();
@@ -633,18 +606,7 @@ var Risk = exports.Risk = declare(Game, {
 	`["FORTIFY", territoryFrom, territoryTo, amount]`.
 	*/
 	nextFortify: function nextFortify(move) {
-		
-		if(this.isValidFortify(move, raise)){
-			/* var stage = this.stage;
-			raiseIf(stage[0] !== this.STAGES.FORTIFY,
-				"Cannot fortify in this stage (", stage, ")!");
-
-			raiseIf(!armies[move[1]] || armies[move[1]][0] !== activePlayer,
-				"Cannot fortify from territory ", move[1], "!");
-			raiseIf(!armies[move[2]] || armies[move[2]][0] !== activePlayer,
-				"Cannot fortify to territory ", move[2], "!");
-			raiseIf(move[3] < 1 || armies[move[1]][1] <= move[3],
-				"Cannot fortify with ", move[3], " armies!"); */
+		if (this.isValidFortify(move, raise)) {
 			var armies = this.uncompressGameState(this.armies),
 				activePlayer = this.activePlayer();
 			armies[move[1]][1] -= move[3]; // Change the board.
