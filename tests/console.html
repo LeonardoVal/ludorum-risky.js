@@ -1,15 +1,46 @@
 ﻿<!DOCTYPE html>
 <html><head>
-	<title>Console: ludorum-risky.</title>
+	<title>ludorum-risky tester.</title>
 	<meta charset="UTF-8"/>
+	<style>
+body { font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", serif; }
+h1 { text-align: center; }
+a { color: black; text-decoration: none; }
+#reference tr td { padding: 0.5em; }
+.ref-code { font-family: "Courier New", Courier, monospace; background-color: black; color: white; }
+	</style>
 	<script src="lib/require.js"></script>
 </head><body onload="main();">
+	<h1><a href="http://github.com/LeonardoVal/ludorum-risky.js" target="_blank">ludorum-risky</a> tester</h1>
+	<p>This page has the <code>ludorum-risky</code> library loaded. Open your browser Javascript console to test. In Windows use: Ctrl+Shift+J in Chrome, Ctrl+Shift+K in Firefox, F12 in Internet Explorer, Ctrl+Shift+I in Opera.</p>
+	
+	<h2>Reference</h2>
+	<table id="reference"><tr>
+		<td class="ref-code">ludorum_risky</td>
+		<td>Namespace of the library at <code>window</code> level.</td>
+	</tr><tr>
+		<td class="ref-code">base <i>// creatartis.js</i><br/>Sermat <i>// sermat.js</i><br/>ludorum <i>// ludorum.js</i></td>
+		<td>Dependencies are also available at <code>window</code> level.</td>
+	</tr><tr>
+		<td class="ref-code">ludorum_risky.Risk</td>
+		<td>Implementation of Risk-like games as a subclass of <code>ludorum.Game</code>. The constructor can be used like this: <code><b>new</b> ludorum_risky.Risk({ boardMap: ludorum_risky.MAPS.classic, rounds: 100 })</code>.</td>
+	</tr><tr>
+		<td class="ref-code">ludorum_risky.MAPS<br/>ludorum_risky.MAPS.classic</td>
+		<td>Map definitions to use with <code>ludorum_risky.Risk</code>.</td>
+	</tr><tr>
+		<td class="ref-code">ludorum_risky.players<br/>ludorum_risky.players.RiskContinentPlayer</td>
+		<td>Automatic players implementations.</td>
+	</tr></table>
+
+	<p style="text-align:center;"><a href="mailto:leonardo.val@creatartis.com">&copy; 2015-2016 Leonardo Val</a> - 
+		<a href="http://github.com/LeonardoVal/ludorum-risky.js" target="_blank">ludorum-risky.js@GitHub</a>
+	</p>
 	<script type="text/javascript">
 function main() {
 	require.config({ 
 		paths: {
 			'creatartis-base': 'lib/creatartis-base',
-			'sermat': 'lib/sermat-amd',
+			'sermat': 'lib/sermat',
 			'ludorum': 'lib/ludorum',
 			'ludorum-risky': 'lib/ludorum-risky'
 		},
@@ -19,10 +50,6 @@ function main() {
 		window.Sermat = Sermat;
 		window.ludorum = ludorum;
 		window.ludorum_risky = ludorum_risky;
-		(function (s){ // See: <http://jsconsole.com>.
-			s.src = 'lib/jsconsole/inject.js';
-			document.body.appendChild(s);
-		})(document.createElement('script'));
 	}, function (error) {
 		throw error;
 	});
