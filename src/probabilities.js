@@ -6,7 +6,7 @@ dice probabilities is important for making good automatic players.
 
 // ## Attacks ######################################################################################
 
-/** The `attackProbabilities` function calculates the chances of success and failure of all 
+/** The `attackProbabilities` function calculates the chances of success and failure of all
 possible attacks, given an attack army count and a defense army count.
 
 Warning! At counts higher than 3 it can get really slow.
@@ -37,34 +37,34 @@ exports.attackProbabilities = function attackProbabilities(attackCount, defenseC
 	}
 	return result;
 };
-	
+
 /** The `ATTACK_PROBABILITIES` for the common scenarios have been pre-calculated. The keys are
-defined like `/A\d+D\d+/` where each number is the amount of losses, for attacker and 
+defined like `/A\d+D\d+/` where each number is the amount of losses, for attacker and
 defender.
 */
-var ATTACK_PROBABILITIES = exports.ATTACK_PROBABILITIES = { 
+var ATTACK_PROBABILITIES = exports.ATTACK_PROBABILITIES = {
 	A1D1: { A1D0: 0.5833333333333334, A0D1: 0.4166666666666667},
 	A1D2: { A1D0: 0.7453703703703703, A0D1: 0.25462962962962965},
 	A2D1: { A1D0: 0.4212962962962963, A0D1: 0.5787037037037037},
-	A2D2: { A1D1: 0.32407407407407407, A2D0: 0.44830246913580246, A0D2: 0.22762345679012347}, 
+	A2D2: { A1D1: 0.32407407407407407, A2D0: 0.44830246913580246, A0D2: 0.22762345679012347},
 	A3D1: { A1D0: 0.3402777777777778, A0D1: 0.6597222222222222},
 	A3D2: { A1D1: 0.3357767489711934, A2D0: 0.2925668724279835, A0D2: 0.37165637860082307}
 };
 
-/** The aleatory variable used with Risk-like games does not consider all posible dice rolls. Most 
-dice rolls can be grouped in at 2 or 3 different results. Hence, only the results and their 
+/** The aleatory variable used with Risk-like games does not consider all posible dice rolls. Most
+dice rolls can be grouped in at 2 or 3 different results. Hence, only the results and their
 probabilities are considered.
 */
 var AttackAleatory = declare(ludorum.aleatories.Aleatory, {
 	constructor: function UniformAleatory(distribution) {
 		raiseIf(distribution.length < 1, "Aleatory cannot have an empty distribution!");
-		this.__distribution__ = distribution;
+		this.__distribution__ = iterable(distribution);
 	},
-	
+
 	distribution: function distribution() {
 		return this.__distribution__;
 	},
-	
+
 	value: function value(random) {
 		return (random || Randomness.DEFAULT).weightedChoice(this.__distribution__);
 	},
@@ -72,7 +72,7 @@ var AttackAleatory = declare(ludorum.aleatories.Aleatory, {
 	'static __SERMAT__': {
 		identifier: 'AttackAleatory',
 		serializer: function serialize_UniformAleatory(obj) {
-			return [this.__distribution__];
+			return [obj.__distribution__.toArray()];
 		}
 	}
 });
@@ -94,13 +94,13 @@ var ATTACK_ALEATORIES = exports.ATTACK_ALEATORIES = iterable(ATTACK_PROBABILITIE
 // ## Conquests ####################################################################################
 
 /** The conquest probability is the chance of a certain number of attackers to defeat a certain
-number of defenders. It is different from the attack probability, since a conquest may usually 
+number of defenders. It is different from the attack probability, since a conquest may usually
 involve many attacks.
 
 The calculations assume that both players use as many armies as they can, and that the attacks
 continue until all armies of either player get destroyed.
 */
-var conquestProbability = exports.conquestProbability = function conquestProbability(attackCount, 
+var conquestProbability = exports.conquestProbability = function conquestProbability(attackCount,
 		defenseCount, cache, attackProbs) {
 	cache = cache || CONQUEST_PROBABILITIES;
 	attackProbs = attackProbs || ATTACK_PROBABILITIES;
@@ -119,10 +119,10 @@ var conquestProbability = exports.conquestProbability = function conquestProbabi
 			if (attackCount === 1) {
 				result = attackProbs.A1D1.A1D0;
 			} else if (attackCount === 2) {
-				result = attackProbs.A2D1.A1D0 + 
+				result = attackProbs.A2D1.A1D0 +
 					attackProbs.A2D1.A0D1 * conquestProbability(attackCount - 1, defenseCount, cache, attackProbs);
 			} else if (attackCount >= 3) {
-				result = attackProbs.A3D1.A1D0 + 
+				result = attackProbs.A3D1.A1D0 +
 					attackProbs.A3D1.A0D1 * conquestProbability(attackCount - 1, defenseCount, cache, attackProbs);
 			}
 		}
@@ -130,7 +130,7 @@ var conquestProbability = exports.conquestProbability = function conquestProbabi
 			if (attackCount === 1) {
 				result = attackProbs.A1D2.A1D0 * conquestProbability(attackCount, defenseCount - 1, cache, attackProbs);
 			} else if (attackCount === 2) {
-				result = attackProbs.A2D2.A2D0 + 
+				result = attackProbs.A2D2.A2D0 +
 					attackProbs.A2D2.A1D1 * conquestProbability(attackCount - 1, defenseCount - 1, cache, attackProbs);
 			}
 		}

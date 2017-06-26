@@ -4,29 +4,29 @@ Implementation of the Risk game
 */
 var Risk = exports.Risk = declare(Game, {
 	name: 'Risk',
-	
+
 	/** There are six players, each named after a colour.
 	*/
 	players: ["White", "Yellow", "Red", "Green", "Blue", "Black"],
-	
+
 	/** The active player can be in one of the following stages in his turn:
-	
+
 	+ `REINFORCE`: The player is reinforcing the owned territories with more armies. This stage has
 	the number of reinforcements available.
-	
+
 	+ `ATTACK`: After reinforcements, the player can attack neighbouring enemy territories.
 
 	+ `OCCUPY`: After a successful attack, the player must decide with how many armies to occupy the
 	invaded territory. This stage has the territory from which the attack was made, and the attacked
 	territory.
-	
-	+ `FORTIFY`: After all attacks, the turn ends by regrouping forces from one territory to 
+
+	+ `FORTIFY`: After all attacks, the turn ends by regrouping forces from one territory to
 	another.
 	*/
 	STAGES: {
 		REINFORCE: 0, ATTACK: 1, OCCUPY: 2, FORTIFY: 3
 	},
-	
+
 	/** The constructor takes the following parameters:
 	*/
 	constructor: function Risk(params) {
@@ -38,7 +38,7 @@ var Risk = exports.Risk = declare(Game, {
 			/** + `stage`: An array containing the current game stage information.
 			*/
 			.array('stage', { ignore: true })
-			/** + `round`: The current round number. A round is completed after all players have 
+			/** + `round`: The current round number. A round is completed after all players have
 			finished their turns.
 			*/
 			.integer('round', { coerce: true, defaultValue: 0 })
@@ -64,9 +64,9 @@ var Risk = exports.Risk = declare(Game, {
 			this.stage = [this.STAGES.REINFORCE, this.playerReinforcements()];
 		}
 	},
-	
+
 	// ## Game state management ####################################################################
-	
+
 	/** An `emptyGameState` is an object with a property for every territory in the map, mapping to
 	an array `["", 0]` (no player and no armies).
 	*/
@@ -75,15 +75,15 @@ var Risk = exports.Risk = declare(Game, {
 			return [territory, ["", 0]];
 		}).toObject();
 	},
-	
-	/** To optimize memory requirements, the game state is compressed in a string. The `state` 
-	argument must be an object with a member for every territory, with a value of the form 
+
+	/** To optimize memory requirements, the game state is compressed in a string. The `state`
+	argument must be an object with a member for every territory, with a value of the form
 	`[string, integer]` representing the player controlling the territory and the number of armies
 	present in it.
-	
-	This is translated in a string with one character per territory, in the same order as 
-	`this.map.territories`. Each character's code is calculated by multiplying the army count by the 
-	number of players and adding the player index in `this.players` (or zero if no player owns the 
+
+	This is translated in a string with one character per territory, in the same order as
+	`this.map.territories`. Each character's code is calculated by multiplying the army count by the
+	number of players and adding the player index in `this.players` (or zero if no player owns the
 	territory).
 	*/
 	compressGameState: function compressGameState(state) {
@@ -99,8 +99,8 @@ var Risk = exports.Risk = declare(Game, {
 			return String.fromCharCode(charCode);
 		}).join('');
 	},
-	
-	/** Uncompressing the game state takes a string and returns the object describing the board 
+
+	/** Uncompressing the game state takes a string and returns the object describing the board
 	state.
 	*/
 	uncompressGameState: function uncompressGameState(compressed) {
@@ -113,8 +113,8 @@ var Risk = exports.Risk = declare(Game, {
 		});
 		return state;
 	},
-	
-	/** The `playerOf` a `territory` is the name of the player that has armies in the given 
+
+	/** The `playerOf` a `territory` is the name of the player that has armies in the given
 	territory.
 	*/
 	playerOf: function (territory) {
@@ -122,7 +122,7 @@ var Risk = exports.Risk = declare(Game, {
 			armies = this.armies.charCodeAt(i);
 		return armies ? this.players[armies % this.players.length] : "";
 	},
-	
+
 	/** The `armyCount` of a `territory` is amount of armies present in said territory.
 	*/
 	armyCount: function (territory) {
@@ -130,7 +130,7 @@ var Risk = exports.Risk = declare(Game, {
 			armies = this.armies.charCodeAt(i);
 		return armies ? Math.floor(armies / this.players.length) : 0;
 	},
-	
+
 	/** The `playerTerritories` returns an array of the territories currently controlled by the
 	given `player` (or the active player by default).
 	*/
@@ -143,7 +143,7 @@ var Risk = exports.Risk = declare(Game, {
 			return t;
 		}).toArray();
 	},
-	
+
 	/** The `playerContinents` returns an array of the continents currently controlled by the
 	given `player` (or the active player by default).
 	*/
@@ -160,8 +160,8 @@ var Risk = exports.Risk = declare(Game, {
 			return c;
 		}).toArray();
 	},
-	
-	/**	The `playerPendingTerritories` method returns an object listing pending terrritories to 
+
+	/**	The `playerPendingTerritories` method returns an object listing pending terrritories to
 	complete the continent by the given `player` (or the active player by default).
 	*/
 	playerPendingTerritories: function playerPendingTerritories(player) {
@@ -174,36 +174,36 @@ var Risk = exports.Risk = declare(Game, {
 					if (game.playerOf(t) != player){
 						count = count + 1;
 					}
-					
+
 			});
 			cT[c] = count;
 		});
-		return cT; 
+		return cT;
 	},
-	
-	/** The `hasPresence` method return true if the given `player` (or the active player by default) 
+
+	/** The `hasPresence` method return true if the given `player` (or the active player by default)
 	has presence in continent.
 	*/
 	hasPresence: function hasPresence(player, continent) {
 		player = player || this.activePlayer();
 		var game = this,
 			aux = false;
-		iterable(this.boardMap.continentTerritories[continent]).forEach(function (t) { 
+		iterable(this.boardMap.continentTerritories[continent]).forEach(function (t) {
 			if (game.playerOf(t) === player){
 				aux = true; //como hago para cortar?
 			}
 		});
-		return aux; 
+		return aux;
 	},
-	
-	/** The `continentAdyacent` method return true if the given `player` (or the active player by 
+
+	/** The `continentAdyacent` method return true if the given `player` (or the active player by
 	default) has a territory adyacent to (or in) continent.
 	*/
 	continentAdyacent: function continentAdyacent(player, continent) {
 		player = player || this.activePlayer();
 		var game = this,
 			aux = false;
-		iterable(game.boardMap.continentTerritories[continent]).forEach(function (t) { 
+		iterable(game.boardMap.continentTerritories[continent]).forEach(function (t) {
 			game.conflictFrontiers(player).forEach(function (a) {
 				//console.log(a);// + " - " + a[0] === t);
 				if( a[1] === t) {
@@ -212,11 +212,11 @@ var Risk = exports.Risk = declare(Game, {
 			});
 
 		});
-		return aux; 
+		return aux;
 	},
-	
-	
-	/** At the beginning of his turn every player gets an amount of reinforcements equal to the 
+
+
+	/** At the beginning of his turn every player gets an amount of reinforcements equal to the
 	number of territories he controls divided by 3 (rounded down).
 	*/
 	playerReinforcements: function playerReinforcements(player) {
@@ -225,15 +225,15 @@ var Risk = exports.Risk = declare(Game, {
 			cs = this.boardMap.bonus.apply(this.boardMap, this.playerContinents(player));
 		return Math.floor(Math.max(this.MIN_REINFORCEMENTS, ts) + cs);
 	},
-	
-	/** Still there is a minimum amount of reinforcements (`MIN_REINFORCEMENTS`, 3 by default) 
+
+	/** Still there is a minimum amount of reinforcements (`MIN_REINFORCEMENTS`, 3 by default)
 	defined so players always have a fighting chance.
 	*/
-	MIN_REINFORCEMENTS: 3,	
-	
+	MIN_REINFORCEMENTS: 3,
+
 	// ## Game ending and result ###################################################################
-	
-	/** The score for each player in the game is equal to the amount of armies that could be 
+
+	/** The score for each player in the game is equal to the amount of armies that could be
 	reinforced if it where each player's round beginning.
 	*/
 	scores: function scores() {
@@ -242,7 +242,7 @@ var Risk = exports.Risk = declare(Game, {
 			return [p, game.playerTerritories(p).length];
 		}).toObject();
 	},
-	
+
 	/** The board is `dominated` when all territories are controlled by the same player. If that is
 	the case this function returns this player, else returns `null`.
 	*/
@@ -261,8 +261,8 @@ var Risk = exports.Risk = declare(Game, {
 		}
 		return this.players[p1]; // Only one player is in the board if the loop did not abort.
 	},
-	
-	/** The board is `moreHalfDominated` when more than 50% of territories are controlled by the 
+
+	/** The board is `moreHalfDominated` when more than 50% of territories are controlled by the
 	same player. If that is the case this function returns this player, else returns `null`.
 	*/
 	moreHalfDominated: function moreHalfDominated() {
@@ -274,8 +274,8 @@ var Risk = exports.Risk = declare(Game, {
 			return null;
 		}
 	},
-	
-	/** A game of Risk is finished when the whole board is owned by the winner, or when the round 
+
+	/** A game of Risk is finished when the whole board is owned by the winner, or when the round
 	limit is reached.
 	*/
 	result: function result() {
@@ -301,9 +301,9 @@ var Risk = exports.Risk = declare(Game, {
 		}
 		return r;
 	},
-	
+
 	// ## Movement calculations ####################################################################
-	
+
 	/** The active player's `moves()` depend on the stage the turn is currently in.
 	*/
 	moves: function moves() {
@@ -326,7 +326,7 @@ var Risk = exports.Risk = declare(Game, {
 		}
 		return r;
 	},
-	
+
 	/** The moves for reinforcements are arrays of the form `["REINFORCE", territory, integer]`.
 	*/
 	reinforceMoves: function reinforceMoves() {
@@ -334,14 +334,14 @@ var Risk = exports.Risk = declare(Game, {
 			activePlayer = this.activePlayer(),
 			result = [];
 		if (this.stage[0] === this.STAGES.REINFORCE) {
-			result = Iterable.product(["REINFORCE"], 
-				this.playerTerritories(activePlayer), 
+			result = Iterable.product(["REINFORCE"],
+				this.playerTerritories(activePlayer),
 				Iterable.range(1, this.stage[1] + 1)
 			).toArray();
 		}
 		return result.length > 0 ? result : [this.PASS_MOVE];
 	},
-	
+
 	/** The `conflictFrontiers` of the board are pairs of adjacent territories that are owned one by
 	the given `player` (or the active player by default) and the other by a different player.
 	*/
@@ -361,11 +361,11 @@ var Risk = exports.Risk = declare(Game, {
 			}
 		}).flatten();
 	},
-	
+
 	/** The stages `ATTACK` and `FORTIFY` allow the player to pass the turn.
 	*/
 	PASS_MOVE: ["PASS"],
-	
+
 	/** The moves for attacks are arrays of the form `["ATTACK", territoryFrom, territoryTo, integer]`.
 	*/
 	attackMoves: function attackMoves() {
@@ -381,24 +381,24 @@ var Risk = exports.Risk = declare(Game, {
 		}
 		return result;
 	},
-	
+
 	/** There is a maximum amount of armies that can be used in any attack.
 	*/
 	MAX_ATTACK: 3,
-	
+
 	/** The moves for occupations are arrays of the form `["OCCUPY", integer]`.
 	*/
 	occupyMoves: function occupyMoves() {
 		if (this.stage[0] === this.STAGES.OCCUPY) {
 			var territoryFrom = this.stage[1];
 			return Iterable.range(1, this.armyCount(territoryFrom)).map(function (armyCount) {
-				return ["OCCUPY", armyCount]; 
+				return ["OCCUPY", armyCount];
 			}).toArray();
 		} else {
 			return [];
 		}
 	},
-	
+
 	/** The moves for fortifications are arrays of the form `["FORTIFY", territoryFrom, territoryTo, integer]`.
 	*/
 	fortifyMoves: function fortifyMoves() {
@@ -422,20 +422,20 @@ var Risk = exports.Risk = declare(Game, {
 		}
 		return result;
 	},
-	
+
 	// ## Movements validation #####################################################################
-	
-	isValidReinforce: function isValidReinforce(move, onError){ 
+
+	isValidReinforce: function isValidReinforce(move, onError){
 		var stage = this.stage;
 		if (stage[0] !== this.STAGES.REINFORCE) {
 			if (onError) onError("Cannot reinforce in this stage (" + stage + ")!");
 			return false;
-		}		
+		}
 		var remaining = stage[1] - move[2];
-		if (!Math.floor(remaining + 1) || remaining < 0 || move[2] < 1 ) { 
+		if (!Math.floor(remaining + 1) || remaining < 0 || move[2] < 1 ) {
 			if (onError) onError("Cannot reinforce " + move[2] + " armies!");
 			return false;
-		} 
+		}
 		var armies = this.uncompressGameState(this.armies),
 			activePlayer = this.activePlayer();
 		if (!armies[move[1]] || armies[move[1]][0] !== activePlayer) {
@@ -443,9 +443,9 @@ var Risk = exports.Risk = declare(Game, {
 			return false;
 		}
 		return true;
-		
+
 	},
-	
+
 	isValidAttack: function isValidAttack(move, onError){
 		var armies = this.uncompressGameState(this.armies),
 			stage = this.stage,
@@ -453,7 +453,7 @@ var Risk = exports.Risk = declare(Game, {
 		if (stage[0] !== this.STAGES.ATTACK) {
 			if (onError) onError("Cannot attack in this stage (" + stage + ")!");
 			return false;
-		}	
+		}
 		if (!armies[move[1]] || armies[move[1]][0] !== activePlayer) {
 			if (onError) onError("Cannot attack from " + move[1] + "!");
 			return false;
@@ -463,13 +463,13 @@ var Risk = exports.Risk = declare(Game, {
 			return false;
 		}
 		var remaining = armies[move[1]][1] - move[3];
-		if (!Math.floor(remaining + 1) || remaining < 1 || move[3] > 3 || move[3] < 1) { 
+		if (!Math.floor(remaining + 1) || remaining < 1 || move[3] > 3 || move[3] < 1) {
 			if (onError) onError("Cannot attack with " + move[3] + " armies!");
 			return false;
 		}
-		return true;	
+		return true;
 	},
-	
+
 	isValidOccupy: function isValidOccupy(move, onError){
 		var stage = this.stage;
 		if (stage[0] !== this.STAGES.OCCUPY) {
@@ -477,15 +477,15 @@ var Risk = exports.Risk = declare(Game, {
 			return false;
 		}
 		var armies = this.uncompressGameState(this.armies),
-			activePlayer = this.activePlayer(), 
+			activePlayer = this.activePlayer(),
 			remaining = armies[stage[1]][1] - move[1];
 		if (remaining < 1 || !Math.floor(move[1]) || armies[stage[1]][1] < move[1] || move[1] < 1) {
 			if (onError) onError("Cannot occupy territory " + stage[2] + " with " + move[1] + " armies!");
 			return false;
 		}
-		return true;	
+		return true;
 	},
-	
+
 	isValidFortify: function isValidFortify(move, onError){
 		var stage = this.stage;
 		if (stage[0] !== this.STAGES.FORTIFY) {
@@ -506,12 +506,12 @@ var Risk = exports.Risk = declare(Game, {
 			if (onError) onError("Cannot fortify with " + move[3] + " armies!");
 			return false;
 		}
-		return true;	
+		return true;
 	},
-	
+
 	// ## Application of moves #####################################################################
-	
-	/** The `next` method returns a new game state as a modification of this one. 
+
+	/** The `next` method returns a new game state as a modification of this one.
 	*/
 	next: function next(moves, haps) {
 		var activePlayer = this.activePlayer(),
@@ -526,14 +526,14 @@ var Risk = exports.Risk = declare(Game, {
 			default:          raise("Invalid move < ", JSON.stringify(move), " >!");
 		}
 	},
-	
+
 	/** A reinforcements increments the number of armies in one of the territories occupied by the
-	active player. The `move` should be in the form `["REINFORCE", territory, amount]` and the 
+	active player. The `move` should be in the form `["REINFORCE", territory, amount]` and the
 	game's `stage` should be in the form `[STAGES.REINFORCE, amount]`.
 	*/
 	nextReinforce: function nextReinforce(move) {
 		if (this.isValidReinforce(move, raise)) {
-			var stage = this.stage, 
+			var stage = this.stage,
 				armies = this.uncompressGameState(this.armies),
 				remaining = stage[1] - move[2],
 				activePlayer = this.activePlayer();
@@ -545,11 +545,11 @@ var Risk = exports.Risk = declare(Game, {
 				rounds: this.rounds,
 				armies: armies,
 				activePlayer: activePlayer
-			});	
-		}	
+			});
+		}
 	},
 
-	/** Attacks are the only instances of non-determinism in this game. The `move` 
+	/** Attacks are the only instances of non-determinism in this game. The `move`
 	should be in the form `["ATTACK", territoryFrom, territoryTo, amount]`, and the `haps` should
 	be in the form `{ attack: amount, defence: amount }`.
 	*/
@@ -560,7 +560,7 @@ var Risk = exports.Risk = declare(Game, {
 			var aleaKey = 'A'+ move[3] +'D'+ Math.min(2, this.armyCount(move[2])),
 				alea = ATTACK_ALEATORIES[aleaKey];
 			raiseIf(!alea, "Could not find aleatory for ", aleaKey, "!");
-			return new ludorum.Contingent({ rolls: alea }, this, base.obj(activePlayer, move));
+			return new ludorum.Contingent(this, base.obj(activePlayer, move), { rolls: alea });
 		} else if (this.isValidAttack(move, raise)) { // Dice rolls not available.
 			var armies = this.uncompressGameState(this.armies);
 			armies[move[1]][1] += haps.rolls.attack; // Change the board.
@@ -579,8 +579,8 @@ var Risk = exports.Risk = declare(Game, {
 			});
 		}
 	},
-	
-	/** After a successful attack the attacker must occupy the conquered territory. The `move` 
+
+	/** After a successful attack the attacker must occupy the conquered territory. The `move`
 	should be in the form `["OCCUPY", integer]`.
 	*/
 	nextOccupy: function nextOccupy(move) {
@@ -600,9 +600,9 @@ var Risk = exports.Risk = declare(Game, {
 			});
 		}
 	},
-	
-	/** The last move in a turn can be a fortification, which is a movement of armies from one of 
-	the active player's turn to another. The `move` should be in the form 
+
+	/** The last move in a turn can be a fortification, which is a movement of armies from one of
+	the active player's turn to another. The `move` should be in the form
 	`["FORTIFY", territoryFrom, territoryTo, amount]`.
 	*/
 	nextFortify: function nextFortify(move) {
@@ -621,7 +621,7 @@ var Risk = exports.Risk = declare(Game, {
 			}));
 		}
 	},
-	
+
 	/** Attacks and fortifications can be passed. The `move` should be in the form `["PASS"]`.
 	*/
 	nextPass: function nextPass(moves) {
@@ -636,7 +636,7 @@ var Risk = exports.Risk = declare(Game, {
 			case this.STAGES.REINFORCE:
 				params.stage = [this.STAGES.ATTACK];
 				break;
-			case this.STAGES.ATTACK: 
+			case this.STAGES.ATTACK:
 				params.stage = [this.STAGES.FORTIFY];
 				break;
 			case this.STAGES.OCCUPY:
@@ -648,7 +648,7 @@ var Risk = exports.Risk = declare(Game, {
 		}
 		return new this.constructor(params);
 	},
-	
+
 	/** To get to the next turn this method takes the `params` for the constructor and changes the
 	active player to the next player.
 	*/
@@ -666,9 +666,9 @@ var Risk = exports.Risk = declare(Game, {
 		}
 		return params;
 	},
-	
+
 	// ## Utility methods ##########################################################################
-	
+
 	/** Serialization and materialization using Sermat.
 	*/
 	'static __SERMAT__': {
@@ -677,8 +677,8 @@ var Risk = exports.Risk = declare(Game, {
 			return this.serializeAsProperties(obj, ['boardMap', 'stage', 'round', 'rounds', 'armies'], true);
 		}
 	},
-	
-	/** An `armyAleatoryDistribution` is an object with a property for every territory in the map, 
+
+	/** An `armyAleatoryDistribution` is an object with a property for every territory in the map,
 	mapping to an aleatory array `["<territory>", <armiesNumber>]`.
 	*/
 	'static armyAleatoryDistribution': function armyAleatoryDistribution(players, boardMap) {
@@ -696,8 +696,8 @@ var Risk = exports.Risk = declare(Game, {
 		});
 		return armies;
 	},
-	
-	/** An `armyDistribution` is an object with a property for every territory in the map, 
+
+	/** An `armyDistribution` is an object with a property for every territory in the map,
 	mapping to an array `["<territory>", <armiesNumber>]`.
 	*/
 	'static armyDistribution': function armyDistribution(players, boardMap) {
@@ -707,7 +707,7 @@ var Risk = exports.Risk = declare(Game, {
 			vec = vec0.slice(),
 			vecArmies = [20, 20, 20, 20, 20, 20],
 			count = 6;
-			
+
 		territories.forEach(function(t) {
 			if (vec.length < 1){
 				vec = vec0.slice();
@@ -719,5 +719,5 @@ var Risk = exports.Risk = declare(Game, {
 			vec.splice(aux, 1);
 		});
 		return armies;
-	}	
+	}
 }); // declare Risk
