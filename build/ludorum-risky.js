@@ -1,12 +1,12 @@
-(function (global, init) { "use strict";
-	if (typeof define === 'function' && define.amd) {
-		define(['creatartis-base', 'sermat', 'ludorum'], init); // AMD module.
-	} else if (typeof exports === 'object' && module.exports) {
-		module.exports = init(require('creatartis-base'), require('sermat'), require('ludorum')); // CommonJS module.
-	} else {
-		global.ludorum_risky = init(global, global.base, global.Sermat, global.ludorum); // Browser.
-	}
-})(this,/** Module wrapper and layout.
+(function (init) { "use strict";
+			if (typeof define === 'function' && define.amd) {
+				define(["creatartis-base","sermat","ludorum"], init); // AMD module.
+			} else if (typeof exports === 'object' && module.exports) {
+				module.exports = init(require("creatartis-base"),require("sermat"),require("ludorum")); // CommonJS module.
+			} else {
+				this.Sermat = init(this.base,this.Sermat,this.ludorum); // Browser.
+			}
+		}).call(this,/** Module wrapper and layout.
 */
 function __init__(base, Sermat, ludorum) { "use strict";
 	/** Imports synonyms */
