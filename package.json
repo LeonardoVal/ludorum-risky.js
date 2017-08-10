@@ -1,16 +1,21 @@
-﻿{
+{
 	"name": "ludorum-risky",
 	"description": "Implementation of Risk-like strategy board games for Ludorum.",
-	"keywords": [ "board game", "risk" ],
+	"keywords": [
+		"board game",
+		"risk"
+	],
 	"version": "0.0.1",
 	"author": {
 		"name": "Marcos González",
 		"email": "mgonzalezgallo@gmail.com"
 	},
-	"contributors": [{
-		"name": "Leonardo Val",
-		"email": "leonardo.val@creatartis.com"
-	}],
+	"contributors": [
+		{
+			"name": "Leonardo Val",
+			"email": "leonardo.val@creatartis.com"
+		}
+	],
 	"license": "MIT",
 	"dependencies": {
 		"ludorum": "~0.2.0",
@@ -22,25 +27,11 @@
 		"inveniemus": "~0.1.5",
 		"source-map-support": "~0.4.0",
 		"requirejs": "~2.1.22",
-			"requirejs-text": "~2.0.12",
-			"requirejs-plugins": "~1.0.2",
-		"grunt": "~0.4.5",
-			"grunt-contrib-concat": "~1.0.0",
-			"grunt-contrib-copy": "~1.0.0",
-			"grunt-contrib-jshint": "~1.0.0",
-			"grunt-contrib-uglify": "~1.0.0",
-			"grunt-docker": "~0.0.11",
-		"grunt-karma": "~0.12.1",
-			"karma": "~0.13.22",
-			"karma-jasmine": "~0.3.7",
-				"jasmine-core": "~2.4.1",
-			"karma-requirejs": "~0.2.5",
-			"karma-chrome-launcher": "~0.2.2",
-			"karma-firefox-launcher": "~0.1.7",
-			"karma-ie-launcher": "~0.2.0",
-			"karma-sourcemap-loader": "~0.3.7"
+		"requirejs-text": "~2.0.12",
+		"requirejs-plugins": "~1.0.2",
+		"creatartis-grunt": "~0.0.3",
+		"karma-chrome-launcher": "~0.2.2",
+		"karma-ie-launcher": "~0.2.0"
 	},
-	"scripts": {
-		"post install": "npm dedupe"
-	}
+	"scripts": {}
 }

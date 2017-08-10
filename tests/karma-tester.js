@@ -2,7 +2,7 @@
 // Polyfill (particularly for PhantomJS) ///////////////////////////////////////////////////////////
 
 // See <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind>
-if (!Function.prototype.bind) { 
+if (!Function.prototype.bind) {
 	Function.prototype.bind = function bind(oThis) {
 		if (typeof this !== 'function') {
 			throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
@@ -11,7 +11,7 @@ if (!Function.prototype.bind) {
 			fToBind = this,
 			fNOP    = function() {},
 			fBound  = function() {
-				return fToBind.apply(this instanceof fNOP ? this 
+				return fToBind.apply(this instanceof fNOP ? this
 					: oThis, aArgs.concat(Array.prototype.slice.call(arguments))
 				);
 			};
@@ -44,9 +44,9 @@ beforeEach(function() { // Add custom matchers.
 require.config({ // Configure RequireJS.
 	baseUrl: '/base', // Karma serves files under /base, which is the basePath from your config file
 	paths: {
-		'sermat': '/base/tests/lib/sermat',
-		'creatartis-base': '/base/tests/lib/creatartis-base',
-		'ludorum': '/base/tests/lib/ludorum',
+		'sermat': '/base/tests/lib/sermat-umd',
+		'creatartis-base': '/base/tests/lib/creatartis-base.min',
+		'ludorum': '/base/tests/lib/ludorum.min',
 		'ludorum-risky': '/base/tests/lib/ludorum-risky'
 	}
 });
@@ -54,8 +54,8 @@ require(Object.keys(window.__karma__.files) // Dynamically load all test files
 		.filter(function (file) { // Filter test modules.
 			return /\.test\.js$/.test(file);
 		}).map(function (file) { // Normalize paths to RequireJS module names.
-			return file.replace(/^\/base\//, '').replace(/\.js$/, ''); 
-		}), 
+			return file.replace(/^\/base\//, '').replace(/\.js$/, '');
+		}),
 	function () {
 		window.__karma__.start(); // we have to kickoff jasmine, as it is asynchronous
 	}
