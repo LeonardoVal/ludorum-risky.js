@@ -4,7 +4,7 @@
 			} else if (typeof exports === 'object' && module.exports) {
 				module.exports = init(require("creatartis-base"),require("sermat"),require("ludorum")); // CommonJS module.
 			} else {
-				this.Sermat = init(this.base,this.Sermat,this.ludorum); // Browser.
+				this["ludorum-risky"] = init(this.base,this.Sermat,this.ludorum); // Browser.
 			}
 		}).call(this,/** Module wrapper and layout.
 */
