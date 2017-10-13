@@ -9,11 +9,11 @@ a { color: black; text-decoration: none; }
 #reference tr td { padding: 0.5em; }
 .ref-code { font-family: "Courier New", Courier, monospace; background-color: black; color: white; }
 	</style>
-	<script src="lib/require.js"></script>
+	<script src="../node_modules/requirejs/require.js" data-main="require-config"></script>
 </head><body onload="main();">
 	<h1><a href="http://github.com/LeonardoVal/ludorum-risky.js" target="_blank">ludorum-risky</a> tester</h1>
 	<p>This page has the <code>ludorum-risky</code> library loaded. Open your browser Javascript console to test. In Windows use: Ctrl+Shift+J in Chrome, Ctrl+Shift+K in Firefox, F12 in Internet Explorer, Ctrl+Shift+I in Opera.</p>
-	
+
 	<h2>Reference</h2>
 	<table id="reference"><tr>
 		<td class="ref-code">ludorum_risky</td>
@@ -32,19 +32,11 @@ a { color: black; text-decoration: none; }
 		<td>Automatic players implementations.</td>
 	</tr></table>
 
-	<p style="text-align:center;"><a href="mailto:leonardo.val@creatartis.com">&copy; 2015-2016 Leonardo Val</a> - 
+	<p style="text-align:center;"><a href="mailto:leonardo.val@creatartis.com">&copy; 2015-2016 Leonardo Val</a> -
 		<a href="http://github.com/LeonardoVal/ludorum-risky.js" target="_blank">ludorum-risky.js@GitHub</a>
 	</p>
 	<script type="text/javascript">
 function main() {
-	require.config({ 
-		paths: {
-			'creatartis-base': 'lib/creatartis-base',
-			'sermat': 'lib/sermat',
-			'ludorum': 'lib/ludorum',
-			'ludorum-risky': 'lib/ludorum-risky'
-		},
-	});
 	require(['creatartis-base', 'sermat', 'ludorum', 'ludorum-risky'], function (base, Sermat, ludorum, ludorum_risky) {
 		window.base = base;
 		window.Sermat = Sermat;
