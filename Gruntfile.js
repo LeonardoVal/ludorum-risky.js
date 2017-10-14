@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 	require('creatartis-grunt').config(grunt, {
 		sourceNames: ['__prologue__',
 				'probabilities',
-				'maps',
+				'maps', 'maps/map-tests', 'maps/map-classic',
 				'Risk',
 				'players',
 				'scenarios',

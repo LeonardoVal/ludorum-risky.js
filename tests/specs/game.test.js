@@ -1,5 +1,5 @@
 ﻿define(['ludorum-risky', 'ludorum', 'creatartis-base', 'sermat'], function (ludorum_risky, ludorum, base, Sermat) {
-	var MAPS = ludorum_risky.MAPS;
+	var MAPS = ludorum_risky.maps;
 		Risk = ludorum_risky.Risk;
 
 	describe("Game", function () { /////////////////////////////////////////////////////////////////

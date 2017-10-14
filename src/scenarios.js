@@ -15,8 +15,8 @@ var scenarios = exports.scenarios = (function () {
 		Black = armies.bind(null, "Black");
 	return iterable({
 		/** ## White oceania #######################################################################
-		
-		This scenario asigns the whole Oceania and 3 adjacent territories in Asia to the White 
+
+		This scenario asigns the whole Oceania and 3 adjacent territories in Asia to the White
 		player. All other players are scattered evenly on the rest of the map.
 		*/
 		whiteOceania: [
@@ -337,7 +337,7 @@ var scenarios = exports.scenarios = (function () {
 			Yellow(4), //Western Australia
 			Yellow(3), //Western Europe
 			Red(3), //Western United States
-			Yellow(1) //Yakutsk	
+			Yellow(1) //Yakutsk
 		],
 		/** ## Spread out E1 #######################################################################
 		*/
@@ -429,7 +429,7 @@ var scenarios = exports.scenarios = (function () {
 			Green(1), //Western Australia
 			Red(2), //Western Europe
 			Yellow(1), //Western United States
-			White(6) //Yakutsk	
+			White(6) //Yakutsk
 		],
 		/** ## Black spread out ####################################################################
 		*/
@@ -475,7 +475,7 @@ var scenarios = exports.scenarios = (function () {
 			Green(1), //Western Australia
 			Red(2), //Western Europe
 			Yellow(1), //Western United States
-			Black(6) //Yakutsk	
+			Black(6) //Yakutsk
 		],
 		/** ## All totalities but White ############################################################
 		*/
@@ -570,6 +570,6 @@ var scenarios = exports.scenarios = (function () {
 			Black(6) //Yakutsk
 		]
 	}).mapApply(function (n, ts) { // Now turn the arrays into objects.
-		return [n, Iterable.zip(MAPS.classic.territories, ts).toObject()];
+		return [n, Iterable.zip(maps.classic.territories, ts).toObject()];
 	}).toObject();
 })();

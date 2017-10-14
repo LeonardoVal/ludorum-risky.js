@@ -34,7 +34,7 @@ var Risk = exports.Risk = declare(Game, {
 		initialize(this, params)
 			/** + `boardMap`: The board's map must be an instance of `BoardMap`.
 			*/
-			.object('boardMap', { defaultValue: MAPS.classic })
+			.object('boardMap', { defaultValue: maps.classic })
 			/** + `stage`: An array containing the current game stage information.
 			*/
 			.array('stage', { ignore: true })
