@@ -195,7 +195,7 @@ var CONQUEST_PROBABILITIES = exports.CONQUEST_PROBABILITIES = (function () {
 
 /** # Maps
 
-In Risk-like games, maps are defined by a set of territories, their frontiers and the continents 
+In Risk-like games, maps are defined by a set of territories, their frontiers and the continents
 they form.
 */
 var BoardMap = exports.BoardMap = declare({
@@ -204,11 +204,11 @@ var BoardMap = exports.BoardMap = declare({
 	constructor: function RiskyMap(territories, continents, bonuses) {
 		/** + the board must have at least 2 territories.
 		*/
-		raiseIf(!territories || Object.keys(territories).length < 2, "Illegal territory definition ", 
+		raiseIf(!territories || Object.keys(territories).length < 2, "Illegal territory definition ",
 			JSON.stringify(territories), "!");
 		continents = continents || {};
 		bonuses = bonuses || {};
-		
+
 		this.adjacents = Object.freeze(territories);
 		this.territories = Object.freeze(iterable(territories).mapApply(function (t, fs) {
 			/** + all territories must have at least one frontier.
@@ -217,7 +217,7 @@ var BoardMap = exports.BoardMap = declare({
 			fs.forEach(function (f) {
 				/** + all frontiers must be between declared territories.
 				*/
-				raiseIf(!territories.hasOwnProperty(f), "Territory ", t, 
+				raiseIf(!territories.hasOwnProperty(f), "Territory ", t,
 					" has a frontier with an unknown territory ", f, "!");
 				/** + a territory cannot have a frontier with itself.
 				*/
@@ -236,7 +236,7 @@ var BoardMap = exports.BoardMap = declare({
 			ts.forEach(function (t) {
 				/** + all continents' territories must be declared.
 				*/
-				raiseIf(!territories.hasOwnProperty(t), "Continent ", c, " has an unknown territory ", 
+				raiseIf(!territories.hasOwnProperty(t), "Continent ", c, " has an unknown territory ",
 					t, "!");
 			});
 			return c;
@@ -249,7 +249,7 @@ var BoardMap = exports.BoardMap = declare({
 		this.bonuses = Object.freeze(bonuses);
 		Object.freeze(this);
 	},
-	
+
 	/** The method `territoryContinent` return the continent of the given territory.
 	*/
 	territoryContinent: function (t) {
@@ -281,7 +281,7 @@ var BoardMap = exports.BoardMap = declare({
 			});
 		}).flatten();
 	},
-	
+
 	/** The `bonus` method returns the bonus for a continent or continents.
 	*/
 	bonus: function bonus() {
@@ -291,9 +291,9 @@ var BoardMap = exports.BoardMap = declare({
 		}
 		return result;
 	},
-	
+
 	// ## Utility methods ##########################################################################
-	
+
 	/** Serialization and materialization using Sermat.
 	*/
 	'static __SERMAT__': {
@@ -304,88 +304,104 @@ var BoardMap = exports.BoardMap = declare({
 	},
 }); // class BoardMap
 
-/** The `MAPS` object holds map definitions, like: */
-var MAPS = exports.MAPS = {
-	/** + `test01` is a very small and simple map meant for testing only.
-	*/
-	test01: new BoardMap({
-		"WhiteCountry": ["BlackCountry", "YellowCountry"],
-		"YellowCountry": ["WhiteCountry", "RedCountry"],
-		"RedCountry": ["YellowCountry", "GreenCountry"],
-		"GreenCountry": ["RedCountry", "BlueCountry"],
-		"BlueCountry": ["GreenCountry", "BlackCountry"],
-		"BlackCountry": ["BlueCountry", "WhiteCountry"]
-	}, { // continents
-		"GreyContinent": ["WhiteCountry", "BlackCountry"],
-		"OrangeContinent": ["YellowCountry", "RedCountry"],
-		"CyanContinent": ["GreenCountry", "BlueCountry"]
-	}, { // bonuses.
-		"GreyContinent": 2,
-		"OrangeContinent": 2,
-		"CyanContinent": 2
-	}),
-	
-	/** + `classic` is the map of the original Risk by Parker Brothers.
-	*/
-	classic: new BoardMap({ // territories.
-		"Alaska": ["Alberta", "Northwest Territory", "Kamchatka"],
-		"Alberta": ["Alaska", "Northwest Territory", "Ontario", "Western United States"],
-		"Central America": ["Eastern United States", "Western United States", "Venezuela"],
-		"Eastern United States": ["Alberta", "Central America", "Ontario", "Quebec", "Western United States"],
-		"Greenland": ["Northwest Territory", "Ontario", "Quebec", "Iceland"],
-		"Northwest Territory": ["Alaska", "Alberta", "Ontario", "Greenland"],
-		"Ontario": ["Alberta", "Eastern United States", "Greenland", "Northwest Territory", "Quebec", "Western United States"],
-		"Quebec": ["Eastern United States", "Greenland", "Ontario"],
-		"Western United States": ["Alberta", "Central America", "Eastern United States", "Ontario"],
-		"Argentina": ["Brazil", "Peru"],
-		"Brazil": ["Argentina", "Peru", "Venezuela", "North Africa"],
-		"Peru": ["Argentina", "Brazil", "Venezuela"],
-		"Venezuela": ["Brazil", "Peru", "Central America"],
-		"Great Britain": ["Iceland", "Northern Europe", "Scandinavia", "Western Europe"],
-		"Iceland": ["Great Britain", "Scandinavia", "Greenland"],
-		"Northern Europe": ["Great Britain", "Scandinavia", "Southern Europe", "Ukraine", "Western Europe"],
-		"Scandinavia": ["Great Britain", "Iceland", "Northern Europe", "Ukraine"],
-		"Southern Europe": ["Northern Europe", "Ukraine", "Western Europe", "Middle East", "Egypt", "North Africa"],
-		"Ukraine": ["Northern Europe", "Scandinavia", "Southern Europe", "Afghanistan", "Middle East", "Ural"],
-		"Western Europe": ["Great Britain", "Northern Europe", "Southern Europe", "North Africa"],
-		"Congo": ["East Africa", "North Africa", "South Africa"],
-		"East Africa": ["Congo", "Egypt", "Madagascar", "North Africa", "South Africa", "Middle East"],
-		"Egypt": ["East Africa", "North Africa", "Southern Europe", "Middle East"],
-		"Madagascar": ["East Africa", "South Africa"],
-		"North Africa": ["Congo", "East Africa", "Egypt", "Southern Europe", "Western Europe", "Brazil"],
-		"South Africa": ["Congo", "East Africa", "Madagascar"],
-		"Afghanistan": ["China", "India", "Middle East", "Ural", "Ukraine"],
-		"China": ["Afghanistan", "India", "Mongolia", "Siam", "Siberia", "Ural"],
-		"India": ["Afghanistan", "China", "Middle East", "Siam"],
-		"Irkutsk": ["Kamchatka", "Mongolia", "Siberia", "Yakutsk"],
-		"Japan": ["Kamchatka", "Mongolia"],
-		"Kamchatka": ["Irkutsk", "Japan", "Mongolia", "Yakutsk", "Alaska"],
-		"Middle East": ["Afghanistan", "India", "Southern Europe", "Ukraine", "East Africa", "Egypt"],
-		"Mongolia": ["China", "Irkutsk", "Japan", "Kamchatka", "Siberia"],
-		"Siam": ["China", "India", "Indonesia"],
-		"Siberia": ["China", "Irkutsk", "Mongolia", "Ural", "Yakutsk"],
-		"Ural": ["Afghanistan", "China", "Siberia", "Ukraine"],
-		"Yakutsk": ["Irkutsk", "Kamchatka", "Siberia"],
-		"Eastern Australia": ["New Guinea", "Western Australia"],
-		"Indonesia": ["New Guinea", "Western Australia", "Siam"],
-		"New Guinea": ["Eastern Australia", "Indonesia", "Western Australia"],
-		"Western Australia": ["Eastern Australia", "Indonesia", "New Guinea"]
-	}, { // continents.
-		"South America": ["Argentina", "Brazil", "Peru", "Venezuela"],
-		"Australia" : ["Eastern Australia", "Indonesia", "New Guinea", "Western Australia"],
-		"Africa" : ["Congo", "East Africa", "Egypt", "Madagascar", "North Africa", "South Africa"],
-		"Europe" : ["Great Britain", "Iceland", "Northern Europe", "Scandinavia", "Southern Europe", "Ukraine", "Western Europe"],
-		"North America" : ["Alaska", "Alberta", "Central America", "Eastern United States", "Greenland", "Northwest Territory", "Ontario", "Quebec", "Western United States"],
-		"Asia" : ["Afghanistan", "China", "India", "Irkutsk", "Japan", "Kamchatka", "Middle East", "Mongolia", "Siam", "Siberia", "Ural", "Yakutsk"]
-	}, { // bonuses.
-		"Asia" : 7,
-		"North America" : 5,
-		"Europe" : 5,
-		"Africa" : 3,
-		"Australia" : 2,
-		"South America" : 2
-	})
-}; // MAPS
+/** The `maps` object holds map definitions. */
+var maps = exports.maps = {};
+
+
+/** Test maps
+
+Definitions of maps use to test the implementation of the game.
+*/
+
+/** `test01` is a very small, simple and symmetric map.
+*/
+maps.test01 = new BoardMap({
+	"WhiteCountry": ["BlackCountry", "YellowCountry"],
+	"YellowCountry": ["WhiteCountry", "RedCountry"],
+	"RedCountry": ["YellowCountry", "GreenCountry"],
+	"GreenCountry": ["RedCountry", "BlueCountry"],
+	"BlueCountry": ["GreenCountry", "BlackCountry"],
+	"BlackCountry": ["BlueCountry", "WhiteCountry"]
+}, { // continents
+	"GreyContinent": ["WhiteCountry", "BlackCountry"],
+	"OrangeContinent": ["YellowCountry", "RedCountry"],
+	"CyanContinent": ["GreenCountry", "BlueCountry"]
+}, { // bonuses.
+	"GreyContinent": 2,
+	"OrangeContinent": 2,
+	"CyanContinent": 2
+});
+
+
+/** # Classic Risk map
+
+Definition of the classic Risk map to use with `ludorum-risky`.
+*/
+maps.classic = new BoardMap({
+/* Territories with their adjacencies.
+*/
+	"Alaska": ["Alberta", "Northwest Territory", "Kamchatka"],
+	"Alberta": ["Alaska", "Northwest Territory", "Ontario", "Western United States"],
+	"Central America": ["Eastern United States", "Western United States", "Venezuela"],
+	"Eastern United States": ["Alberta", "Central America", "Ontario", "Quebec", "Western United States"],
+	"Greenland": ["Northwest Territory", "Ontario", "Quebec", "Iceland"],
+	"Northwest Territory": ["Alaska", "Alberta", "Ontario", "Greenland"],
+	"Ontario": ["Alberta", "Eastern United States", "Greenland", "Northwest Territory", "Quebec", "Western United States"],
+	"Quebec": ["Eastern United States", "Greenland", "Ontario"],
+	"Western United States": ["Alberta", "Central America", "Eastern United States", "Ontario"],
+	"Argentina": ["Brazil", "Peru"],
+	"Brazil": ["Argentina", "Peru", "Venezuela", "North Africa"],
+	"Peru": ["Argentina", "Brazil", "Venezuela"],
+	"Venezuela": ["Brazil", "Peru", "Central America"],
+	"Great Britain": ["Iceland", "Northern Europe", "Scandinavia", "Western Europe"],
+	"Iceland": ["Great Britain", "Scandinavia", "Greenland"],
+	"Northern Europe": ["Great Britain", "Scandinavia", "Southern Europe", "Ukraine", "Western Europe"],
+	"Scandinavia": ["Great Britain", "Iceland", "Northern Europe", "Ukraine"],
+	"Southern Europe": ["Northern Europe", "Ukraine", "Western Europe", "Middle East", "Egypt", "North Africa"],
+	"Ukraine": ["Northern Europe", "Scandinavia", "Southern Europe", "Afghanistan", "Middle East", "Ural"],
+	"Western Europe": ["Great Britain", "Northern Europe", "Southern Europe", "North Africa"],
+	"Congo": ["East Africa", "North Africa", "South Africa"],
+	"East Africa": ["Congo", "Egypt", "Madagascar", "North Africa", "South Africa", "Middle East"],
+	"Egypt": ["East Africa", "North Africa", "Southern Europe", "Middle East"],
+	"Madagascar": ["East Africa", "South Africa"],
+	"North Africa": ["Congo", "East Africa", "Egypt", "Southern Europe", "Western Europe", "Brazil"],
+	"South Africa": ["Congo", "East Africa", "Madagascar"],
+	"Afghanistan": ["China", "India", "Middle East", "Ural", "Ukraine"],
+	"China": ["Afghanistan", "India", "Mongolia", "Siam", "Siberia", "Ural"],
+	"India": ["Afghanistan", "China", "Middle East", "Siam"],
+	"Irkutsk": ["Kamchatka", "Mongolia", "Siberia", "Yakutsk"],
+	"Japan": ["Kamchatka", "Mongolia"],
+	"Kamchatka": ["Irkutsk", "Japan", "Mongolia", "Yakutsk", "Alaska"],
+	"Middle East": ["Afghanistan", "India", "Southern Europe", "Ukraine", "East Africa", "Egypt"],
+	"Mongolia": ["China", "Irkutsk", "Japan", "Kamchatka", "Siberia"],
+	"Siam": ["China", "India", "Indonesia"],
+	"Siberia": ["China", "Irkutsk", "Mongolia", "Ural", "Yakutsk"],
+	"Ural": ["Afghanistan", "China", "Siberia", "Ukraine"],
+	"Yakutsk": ["Irkutsk", "Kamchatka", "Siberia"],
+	"Eastern Australia": ["New Guinea", "Western Australia"],
+	"Indonesia": ["New Guinea", "Western Australia", "Siam"],
+	"New Guinea": ["Eastern Australia", "Indonesia", "Western Australia"],
+	"Western Australia": ["Eastern Australia", "Indonesia", "New Guinea"]
+}, {
+/* Continents and the territories inside them.
+*/
+	"South America": ["Argentina", "Brazil", "Peru", "Venezuela"],
+	"Australia" : ["Eastern Australia", "Indonesia", "New Guinea", "Western Australia"],
+	"Africa" : ["Congo", "East Africa", "Egypt", "Madagascar", "North Africa", "South Africa"],
+	"Europe" : ["Great Britain", "Iceland", "Northern Europe", "Scandinavia", "Southern Europe", "Ukraine", "Western Europe"],
+	"North America" : ["Alaska", "Alberta", "Central America", "Eastern United States", "Greenland", "Northwest Territory", "Ontario", "Quebec", "Western United States"],
+	"Asia" : ["Afghanistan", "China", "India", "Irkutsk", "Japan", "Kamchatka", "Middle East", "Mongolia", "Siam", "Siberia", "Ural", "Yakutsk"]
+}, {
+/* Reinforcement bonuses for each continent.
+*/
+	"Asia" : 7,
+	"North America" : 5,
+	"Europe" : 5,
+	"Africa" : 3,
+	"Australia" : 2,
+	"South America" : 2
+});
+
 
 /** # Risk.
 
@@ -423,7 +439,7 @@ var Risk = exports.Risk = declare(Game, {
 		initialize(this, params)
 			/** + `boardMap`: The board's map must be an instance of `BoardMap`.
 			*/
-			.object('boardMap', { defaultValue: MAPS.classic })
+			.object('boardMap', { defaultValue: maps.classic })
 			/** + `stage`: An array containing the current game stage information.
 			*/
 			.array('stage', { ignore: true })
@@ -1129,13 +1145,13 @@ players.heuristics = {
 	territoryCount: function territoryCount(game, player) {
 		return game.playerTerritories(player).length / game.boardMap.territories.length;
 	},
-	
+
 	/** + `continentCount` returns the proportion of continents a given player controls.
 	*/
 	continentCount: function continentCount(game, player) {
 		return game.playerContinents(player).length / game.boardMap.continents.length;
 	},
-	
+
 	/** + ``
 	*/
 	territoryHeuristic: function territoryHeuristic(game, player) {
@@ -1154,10 +1170,10 @@ players.heuristics = {
 			if (countMin > c) countMin = c;
 			playerCount++;
 		});
-		return countMax === countMin ? 0 
+		return countMax === countMin ? 0
 			: ((counts[player] |0) - totalCount / playerCount) / (countMax - countMin);
 	},
-	
+
 	heuristicPru: function heuristicPru(game, player) {
 		//return ((game.playerContinents(player).length + 1) / game.boardMap.continents.length) * (game.playerTerritories(player).length / game.boardMap.territories.length);
 		return (game.playerContinents(player).length * 4 + game.playerTerritories(player).length) / (game.boardMap.continents.length * 4 + game.boardMap.territories.length);
@@ -1171,7 +1187,7 @@ players.heuristics = {
 			var c1 = game.armyCount(t1),
 				c2 = game.armyCount(t2);
 			count++;
-			return conquestProbability(c1, c2) - conquestProbability(c2, c1); 
+			return conquestProbability(c1, c2) - conquestProbability(c2, c1);
 		}).sum() / count;
 	},
 	heuristic2: function heuristic2(game, player) {
@@ -1179,24 +1195,30 @@ players.heuristics = {
 		return b * Risk.heuristics.heuristicPru(game, player) +
 			(1 - b) * Risk.heuristics.heuristicConquestProbability(game, player);
 	}
-	//TODO
-};	
+};
 
-/** ## Simple player ###############################################################################
 
-TODO
+/** # Simple Risk player
+
+
 */
 players.RiskSimplePlayer = declare(Player, {
+	/** The player's constructor takes the following parameters:
+	*/
 	constructor: function RiskSimplePlayer(params) {
 		Player.call(this, params);
+		/** + `random`: an instance of `creatartis-base.Randomness`.
+		*/
 		this.random = params.random || Randomness.DEFAULT;
 	},
-	
+
+	/** The `decision` for each stage is considered separately.
+	*/
 	decision: function decision(game, role) {
 		var moves = game.moves()[role],
 			random = this.random,
 			move;
-		switch (game.stage[0]) { 
+		switch (game.stage[0]) {
 			case game.STAGES.REINFORCE:
 				return this.decisionReinforce(game, role);
 			case game.STAGES.ATTACK:
@@ -1208,7 +1230,10 @@ players.RiskSimplePlayer = declare(Player, {
 		}
 		raise("Unsupported stage ", game.stage[0], "!");
 	},
-	
+
+	/** The choice of territories to reinforce is random, yet it is biased towards territories with
+	more conflicting frontiers.
+	*/
 	decisionReinforce: function decisionReinforce(game, role) {
 		var moves = game.moves()[role],
 			random = this.random;
@@ -1219,13 +1244,15 @@ players.RiskSimplePlayer = declare(Player, {
 		moves = moves.filter(function (m) {
 			return frontiers.hasOwnProperty(m[1]);
 		});
-		moves.sort(function (m1, m2) {
-			return frontiers[m2] - frontiers[m1]; // Descending order of frontier count.
+		moves.sort(function (m1, m2) { // Descending order of frontier count.
+			return frontiers[m2] - frontiers[m1];
 		});
-		// Random biased towards territories with more conflicting frontiers.
 		return moves[Math.min(random.randomInt(moves.length), random.randomInt(moves.length))];
 	},
-	
+
+	/** This player waits until it can attack with the maximum amount of armies. If there is more
+	than one possible attack, the move is chosen randomly.
+	*/
 	decisionAttack: function decisionAttack(game, role) {
 		var moves = game.moves()[role],
 			random = this.random;
@@ -1235,13 +1262,18 @@ players.RiskSimplePlayer = declare(Player, {
 		});
 		return random.choice(moves) || game.PASS_MOVE;// como ponderar para que tenga preferencia el ataque por territorio que determina conq de cont
 	},
-	
+
+	/** This player always occupies with as much armies as possible.
+	*/
 	decisionOccupy: function decisionOccupy(game, role) {
 		var moves = game.moves()[role];
 		var maxCount = iterable(moves).select(1).max();
 		return maxCount < 2 ? moves[0] : ["OCCUPY", maxCount - 1];
 	},
-	
+
+	/** The choice of territory to fortify is also random, yet it is biased towards greater
+	movements of armies.
+	*/
 	decisionFortify: function decisionFortify(game, role) {
 		var moves = game.moves()[role],
 			random = this.random;
@@ -1251,12 +1283,13 @@ players.RiskSimplePlayer = declare(Player, {
 		moves.sort(function (m1, m2) {
 			return m2[3] - m1[3]; // Descending order of amount.
 		});
-		// Random biased towards greater moves of armies. 
 		return moves.length < 1 ? game.PASS_MOVE : moves[Math.min(random.randomInt(moves.length), random.randomInt(moves.length))];
 	},
-	
+
 	// ### Utilities ###############################################################################
-	
+
+	/** Player serialization uses `Sermat`.
+	*/
 	'static __SERMAT__': {
 		identifier: 'RiskSimplePlayer',
 		serializer: function serialize_RiskSimplePlayer(obj) {
@@ -1269,21 +1302,29 @@ players.RiskSimplePlayer = declare(Player, {
 });
 
 
-/** 
-TODO
+/** # Risk continent player
+
+The `RiskContinentPlayer` focuses on conquering continents, seeking an advantage in the continents'
+bonuses for reinforcements.
 */
 players.RiskContinentPlayer = declare(Player, {
+	/** The player's constructor takes the following parameters:
+	*/
 	constructor: function RiskContinentPlayerPlayer(params) {
 		params = params || {};
 		Player.call(this, params);
+		/** + `random`: an instance of `creatartis-base.Randomness`.
+		*/
 		this.random = params.random || Randomness.DEFAULT;
 	},
-	
+
+	/** The `decision` for each stage is considered separately.
+	*/
 	decision: function decision(game, role) {
 		var moves = game.moves()[role],
 			random = this.random,
 			move;
-		switch (game.stage[0]) { 
+		switch (game.stage[0]) {
 			case game.STAGES.REINFORCE:
 				return this.decisionReinforce(game, role);
 			case game.STAGES.ATTACK:
@@ -1295,12 +1336,15 @@ players.RiskContinentPlayer = declare(Player, {
 		}
 		raise("Unsupported stage ", game.stage[0], "!");
 	},
-	
+
+	/** The player always strives to conquer one `targetContinent` entirely. This `targetContinent`
+	is the easier to conquer in the current game state, i.e. the one with more territories
+	controled by the player.
+	*/
 	targetContinent: function targetContinent(game, role) {
 		var continent = "",
 			count = 13;
 		iterable(game.playerPendingTerritories(role)).forEachApply(function (c, a) {
-			
 			if (a !== 0 && a < count && game.continentAdyacent(role, c)){
 				count = a;
 				continent = c;
@@ -1308,7 +1352,9 @@ players.RiskContinentPlayer = declare(Player, {
 		});
 		return continent;
 	},
-	
+
+	/**
+	*/
 	decisionReinforce: function decisionReinforce(game, role) {
 		var moves = game.moves()[role],
 			random = this.random;
@@ -1322,17 +1368,18 @@ players.RiskContinentPlayer = declare(Player, {
 
 		moves = moves.filter(function (m) {
 			return frontiers.hasOwnProperty(m[1]);
-			
+
 
 		});
 		moves.sort(function (m1, m2) {
-			return frontiers[m2] - frontiers[m1]; 
+			return frontiers[m2] - frontiers[m1];
 		});
 
 		return moves[Math.min(random.randomInt(moves.length), random.randomInt(moves.length))];
 	},
-	
 
+	/**
+	*/
 	decisionAttack: function decisionAttack(game, role) {
 		var moves = game.moves()[role],
 			random = this.random,
@@ -1342,28 +1389,25 @@ players.RiskContinentPlayer = declare(Player, {
 		});
 		return random.choice(moves) || game.PASS_MOVE;
 	},
-	
+
+	/** This player always occupies with as much armies as possible.
+	*/
 	decisionOccupy: function decisionOccupy(game, role) {
 		var moves = game.moves()[role];
 		var maxCount = iterable(moves).select(1).max();
 		return maxCount < 2 ? moves[0] : ["OCCUPY", maxCount - 1];
 	},
-	
+
+	/** This player never fortifies.
+	*/
 	decisionFortify: function decisionFortify(game, role) {
-		/*var moves = game.moves()[role],
-			random = this.random;
-		moves = moves.filter(function (m) {
-			return m[0] === 'FORTIFY' && game.armyCount(m[1]) - m[3] >= game.armyCount(m[2]);
-		});
-		moves.sort(function (m1, m2) {
-			return m2[3] - m1[3]; // Descending order of amount.
-		});
-		// Random biased towards greater moves of armies. */
-		return ["PASS"];//moves.length < 1 ? game.PASS_MOVE : moves[Math.min(random.randomInt(moves.length), random.randomInt(moves.length))];
+		return ["PASS"];
 	},
-	
+
 	// ## Utilities ################################################################################
-	
+
+	/** Player serialization uses `Sermat`.
+	*/
 	'static __SERMAT__': {
 		identifier: 'RiskContinentPlayer',
 		serializer: function serialize_RiskContinentPlayer(obj) {
@@ -1374,6 +1418,7 @@ players.RiskContinentPlayer = declare(Player, {
 		}
 	}
 });
+
 
 /** # Scenarios
 
@@ -1392,8 +1437,8 @@ var scenarios = exports.scenarios = (function () {
 		Black = armies.bind(null, "Black");
 	return iterable({
 		/** ## White oceania #######################################################################
-		
-		This scenario asigns the whole Oceania and 3 adjacent territories in Asia to the White 
+
+		This scenario asigns the whole Oceania and 3 adjacent territories in Asia to the White
 		player. All other players are scattered evenly on the rest of the map.
 		*/
 		whiteOceania: [
@@ -1714,7 +1759,7 @@ var scenarios = exports.scenarios = (function () {
 			Yellow(4), //Western Australia
 			Yellow(3), //Western Europe
 			Red(3), //Western United States
-			Yellow(1) //Yakutsk	
+			Yellow(1) //Yakutsk
 		],
 		/** ## Spread out E1 #######################################################################
 		*/
@@ -1806,7 +1851,7 @@ var scenarios = exports.scenarios = (function () {
 			Green(1), //Western Australia
 			Red(2), //Western Europe
 			Yellow(1), //Western United States
-			White(6) //Yakutsk	
+			White(6) //Yakutsk
 		],
 		/** ## Black spread out ####################################################################
 		*/
@@ -1852,7 +1897,7 @@ var scenarios = exports.scenarios = (function () {
 			Green(1), //Western Australia
 			Red(2), //Western Europe
 			Yellow(1), //Western United States
-			Black(6) //Yakutsk	
+			Black(6) //Yakutsk
 		],
 		/** ## All totalities but White ############################################################
 		*/
@@ -1947,9 +1992,10 @@ var scenarios = exports.scenarios = (function () {
 			Black(6) //Yakutsk
 		]
 	}).mapApply(function (n, ts) { // Now turn the arrays into objects.
-		return [n, Iterable.zip(MAPS.classic.territories, ts).toObject()];
+		return [n, Iterable.zip(maps.classic.territories, ts).toObject()];
 	}).toObject();
 })();
+
 
 /** See __prologue__.js
 */
