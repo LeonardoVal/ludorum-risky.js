@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 				'probabilities',
 				'maps', 'maps/map-tests', 'maps/map-classic',
 				'Risk',
-				'players',
+				'players', 'players/player-simple', 'players/player-continent',
 				'scenarios',
 			'__epilogue__'],
 		deps: [
