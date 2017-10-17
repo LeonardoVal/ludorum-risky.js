@@ -576,9 +576,9 @@ var Risk = exports.Risk = declare(Game, {
 		iterable(this.boardMap.continentTerritories).forEachApply(function (c, ts) {
 			var count = 0;
 			ts.forEach(function(t) {
-					if (game.playerOf(t) != player){
-						count = count + 1;
-					}
+				if (game.playerOf(t) != player){
+					count = count + 1;
+				}
 
 			});
 			cT[c] = count;
@@ -697,7 +697,7 @@ var Risk = exports.Risk = declare(Game, {
 				if (ps[0] > ps[1]) {
 					r = this.victory(ps[0]);
 				} else { // Tied game.
-					r = this.draw();
+					r = this.tied();
 				}
 			} else {
 				r = null; // Game goes on.
