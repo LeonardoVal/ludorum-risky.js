@@ -10,17 +10,29 @@ var path = require('path'),
 	Sermat = require('sermat'),
 	ludorum = require('ludorum'),
 	capataz = require('capataz'),
-	ludorum_risky = require('./lib/ludorum-risky'),
-	
+	ludorum_risky = require('../build/ludorum-risky'),
+
 	Future = base.Future,
 	Iterable = base.Iterable,
-	
+
 	server = capataz.Capataz.run({
-		port: 80,
-		workerCount: 3,
+		port: 8088,
+		//workerCount: 3,
 		desiredEvaluationTime: 10000, // 10 seconds.
 		customFiles: path.dirname(module.filename) + '/lib',
 		logFile: base.Text.formatDate(null, '"./tests/logs/simulation-"yyyymmdd-hhnnss".txt"')
+	});
+	server.expressApp.get(server.config.staticRoute +'/sermat.js', function (request, response) {
+		response.sendFile(path.join(__dirname, '../node_modules/creatartis-base/build/sermat-umd.js'));
+	});
+	server.expressApp.get(server.config.staticRoute +'/creatartis-base.js', function (request, response) {
+		response.sendFile(path.join(__dirname, '../node_modules/creatartis-base/build/creatartis-base.min.js'));
+	});
+	server.expressApp.get(server.config.staticRoute +'/ludorum.js', function (request, response) {
+		response.sendFile(path.join(__dirname, '../node_modules/ludorum/build/ludorum.min.js'));
+	});
+	server.expressApp.get(server.config.staticRoute +'/ludorum-risky.js', function (request, response) {
+		response.sendFile(path.join(__dirname, '../build/ludorum-risky.js'));
 	});
 
 // ## Scenario test. ###############################################################################
@@ -31,17 +43,17 @@ function scenarioTest(name, players, matchCount, maxRounds, stats) {
 			return m.run().then(function () {
 				var finalState = m.state();
 				return {
-					result: m.result(), 
-					scores: finalState.scores(), 
-					round: finalState.round 
+					result: m.result(),
+					scores: finalState.scores(),
+					round: finalState.round
 				};
 			});
 		});
-		
+
 	var armies = ludorum_risky.scenarios[name],
 		game = new ludorum_risky.Risk({ rounds: maxRounds, armies: armies }),
 		match = new ludorum.Match(game, players);
-	
+
 	return Future.all(Iterable.range(matchCount).map(function (i) {
 		var m = Sermat.ser(match, { mode: 2 });
 		return server.schedule({
@@ -65,20 +77,20 @@ function scenarioTest(name, players, matchCount, maxRounds, stats) {
 		});
 	}))
 } // function scenarioTest
-	
+
 // ## Main #########################################################################################
-	
+
 var PARAMS_MAX_ROUNDS = [50],//5, 10, 20/*, 30*/],
 	PARAMS_SCENARIOS = ['whiteOceania', 'whiteAfrica', 'spreadOut', 'whiteSpreadOut', 'allTotalitiesButWhite'],
 	MATCH_COUNT = 100,
 	STATISTICS = new base.Statistics();
-	
+
 Future.sequence(Iterable.product(PARAMS_MAX_ROUNDS, PARAMS_SCENARIOS), function (args) {
 	var continentPlayers = [1, 2, 3, 4, 5, 6].map(function () {
 			return new ludorum_risky.players.RiskContinentPlayer();
 			//return new ludorum.players.RandomPlayer();
 		});
-	
+
 	//var randomPlayers = Iterable.repeat(new ludorum.players.RandomPlayer(), 6).toArray();
 	return scenarioTest(args[1], continentPlayers, MATCH_COUNT, args[0], STATISTICS);
 }).then(function () {
