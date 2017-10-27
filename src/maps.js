@@ -6,7 +6,7 @@ they form.
 var BoardMap = exports.BoardMap = declare({
 	/** The `BoardMap` constructor makes the following checks:
 	*/
-	constructor: function RiskyMap(territories, continents, bonuses) {
+	constructor: function BoardMap(territories, continents, bonuses) {
 		/** + the board must have at least 2 territories.
 		*/
 		raiseIf(!territories || Object.keys(territories).length < 2, "Illegal territory definition ",
