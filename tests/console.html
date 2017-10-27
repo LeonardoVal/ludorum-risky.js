@@ -7,44 +7,46 @@ body { font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", seri
 h1 { text-align: center; }
 a { color: black; text-decoration: none; }
 #reference tr td { padding: 0.5em; }
+#reference tr td:nth-child(1) { font-family:"Courier New",Courier,monospace; background-color:black; color:white; }
+#reference tr td:nth-child(1) a { color:white; }
 .ref-code { font-family: "Courier New", Courier, monospace; background-color: black; color: white; }
 	</style>
-	<script src="../node_modules/requirejs/require.js" data-main="require-config"></script>
-</head><body onload="main();">
+	<script src="../node_modules/requirejs/require.js"></script>
+</head><body>
 	<h1><a href="http://github.com/LeonardoVal/ludorum-risky.js" target="_blank">ludorum-risky</a> tester</h1>
 	<p>This page has the <code>ludorum-risky</code> library loaded. Open your browser Javascript console to test. In Windows use: Ctrl+Shift+J in Chrome, Ctrl+Shift+K in Firefox, F12 in Internet Explorer, Ctrl+Shift+I in Opera.</p>
 
 	<h2>Reference</h2>
 	<table id="reference"><tr>
-		<td class="ref-code">ludorum_risky</td>
+		<td><a href="javascript:console.info('ludorum_risky');console.dir(ludorum_risky);">ludorum_risky</a></td>
 		<td>Namespace of the library at <code>window</code> level.</td>
 	</tr><tr>
-		<td class="ref-code">base <i>// creatartis.js</i><br/>Sermat <i>// sermat.js</i><br/>ludorum <i>// ludorum.js</i></td>
-		<td>Dependencies are also available at <code>window</code> level.</td>
+		<td><a href="javascript:">var MAP = ludorum_risky.maps.classic; MAP;</a></td>
+		<td>Classic map to use with <code>ludorum_risky.Risk</code>.</td>
 	</tr><tr>
-		<td class="ref-code">ludorum_risky.Risk</td>
+		<td><a href="javascript:">var GAME = new ludorum_risky.Risk({ boardgame: MAP }); GAME;</a></td>
 		<td>Implementation of Risk-like games as a subclass of <code>ludorum.Game</code>. The constructor can be used like this: <code><b>new</b> ludorum_risky.Risk({ boardMap: ludorum_risky.MAPS.classic, rounds: 100 })</code>.</td>
 	</tr><tr>
-		<td class="ref-code">ludorum_risky.MAPS<br/>ludorum_risky.MAPS.classic</td>
-		<td>Map definitions to use with <code>ludorum_risky.Risk</code>.</td>
-	</tr><tr>
-		<td class="ref-code">ludorum_risky.players<br/>ludorum_risky.players.RiskContinentPlayer</td>
-		<td>Automatic players implementations.</td>
+		<td><a href="javascript:">var PLAYER = new RiskContinentPlayer(); PLAYER;</td>
+		<td>Automatic players implementation, with a priority on continent conquest.</td>
 	</tr></table>
 
 	<p style="text-align:center;"><a href="mailto:leonardo.val@creatartis.com">&copy; 2015-2016 Leonardo Val</a> -
 		<a href="http://github.com/LeonardoVal/ludorum-risky.js" target="_blank">ludorum-risky.js@GitHub</a>
 	</p>
-	<script type="text/javascript">
-function main() {
-	require(['creatartis-base', 'sermat', 'ludorum', 'ludorum-risky'], function (base, Sermat, ludorum, ludorum_risky) {
-		window.base = base;
-		window.Sermat = Sermat;
-		window.ludorum = ludorum;
-		window.ludorum_risky = ludorum_risky;
-	}, function (error) {
-		throw error;
-	});
-}
-	</script>
+	<script type="text/javascript"> require(['require-config'], function (init) {
+		init(['creatartis-base', 'sermat', 'ludorum', 'ludorum-risky'],
+		function (base, Sermat, ludorum, ludorum_risky) {
+			Array.prototype.slice.call(document.querySelectorAll('#reference tr td a'))
+			.forEach(function (jsLink) {
+				var code;
+				if (jsLink.href === "javascript:") {
+					code = JSON.stringify(''+
+						(jsLink.getAttribute('data-code') || jsLink.textContent)
+					);
+					jsLink.href="javascript:console.info("+ code +");console.log(eval("+ code +"));";
+				}
+			});
+		});
+	}); </script>
 </body></html>
