@@ -11,6 +11,8 @@ var Risk = exports.Risk = declare(Game, {
 
 	/** The active player can be in one of the following stages in his turn:
 
+	+ `PLACE`: Territories are being allocated among the players.
+
 	+ `REINFORCE`: The player is reinforcing the owned territories with more armies. This stage has
 	the number of reinforcements available.
 
@@ -24,7 +26,7 @@ var Risk = exports.Risk = declare(Game, {
 	another.
 	*/
 	STAGES: {
-		REINFORCE: 0, ATTACK: 1, OCCUPY: 2, FORTIFY: 3
+		PLACE: -1, REINFORCE: 0, ATTACK: 1, OCCUPY: 2, FORTIFY: 3
 	},
 
 	/** The constructor takes the following parameters:
@@ -60,7 +62,7 @@ var Risk = exports.Risk = declare(Game, {
 		}
 		/** The default stage is `REINFORCE`.
 		*/
-		if (!this.stage) {
+		if (!this.stage) { //FIXME Check placement.
 			this.stage = [this.STAGES.REINFORCE, this.playerReinforcements()];
 		}
 	},
@@ -315,6 +317,7 @@ var Risk = exports.Risk = declare(Game, {
 			} else {
 				r = {};
 				switch (this.stage[0]) {
+					case this.STAGES.PLACE:     r[activePlayer] = this.placeMoves(); break;
 					case this.STAGES.REINFORCE: r[activePlayer] = this.reinforceMoves(); break;
 					case this.STAGES.ATTACK:    r[activePlayer] = this.attackMoves(); break;
 					case this.STAGES.OCCUPY:    r[activePlayer] = this.occupyMoves(); break;
@@ -325,6 +328,43 @@ var Risk = exports.Risk = declare(Game, {
 			this.__moves__ = r;
 		}
 		return r;
+	},
+
+	/** The amount fo armies each player puts on the board at the start of the game depends on the
+	number of players.
+	*/
+	initialArmyCount: function initialArmyCount(playerCount) {
+		return [-1,-1,40,35,30,25,20][playerCount || this.players.length]; // See rules.
+	},
+
+	/** The moves for placement are array sof the form `["PLACE", territory]`.
+	*/
+	placeMoves: function placeMoves() {
+		var game = this,
+			activePlayer = this.activePlayer(),
+			playerCount = game.players.length,
+			armyCount = game.initialArmyCount(playerCount),
+			armies = game.armies,
+			result = [];
+		if (game.stage[0] === this.STAGES.PLACE) {
+			result = iterable(armies).filter(function (chr, i) {
+				var isFree = chr === '\0'; // Unoccupied territory in the compressed game state.
+				if (!isFree && game.players[chr % this.players.length] === activePlayer) {
+					armyCount -= Math.floor(chr / this.players.length);
+				}
+				return isFree;
+			}, function (chr, i) {
+				return ['PLACE', i];
+			}).toArray();
+			if (result.length < 1 && armyCount > 0) {
+				result = iterable(armies).filter(function (chr, i) {
+					return game.players[chr % this.players.length] === activePlayer;
+				}, function (chr, i) {
+					return ['PLACE', i];
+				}).toArray();
+			}
+		}
+		return result.length > 0 ? result : [this.PASS_MOVE];
 	},
 
 	/** The moves for reinforcements are arrays of the form `["REINFORCE", territory, integer]`.
@@ -425,6 +465,20 @@ var Risk = exports.Risk = declare(Game, {
 
 	// ## Movements validation #####################################################################
 
+	isValidPlace: function isValidPlace(move, onError) {
+		var stage = this.stage;
+		if (stage[0] !== this.STAGES.PLACE) {
+			if (onError) onError("Cannot place in this stage (" + stage + ")!");
+			return false;
+		}
+		var territory = move[1];
+		if (this.playerOf(territory) !== "" && this.playerOf(territory) !== this.activePlayer()) {
+			if (onError) onError("Cannot place in territory "+ move[1] +" because it is not free nor owned by "+ activePlayer +"!");
+			return false;
+		}
+		return true;
+	},
+
 	isValidReinforce: function isValidReinforce(move, onError){
 		var stage = this.stage;
 		if (stage[0] !== this.STAGES.REINFORCE) {
@@ -518,12 +572,34 @@ var Risk = exports.Risk = declare(Game, {
 			move = moves[activePlayer];
 		raiseIf(!move, "Active player has no moves!");
 		switch (move[0]) {
+			case "PLACE":     return this.nextPlacement(move);
 			case "REINFORCE": return this.nextReinforce(move);
 			case "ATTACK":    return this.nextAttack(move, haps);
 			case "OCCUPY":    return this.nextOccupy(move);
 			case "FORTIFY":   return this.nextFortify(move);
 			case "PASS":      return this.nextPass(move);
 			default:          raise("Invalid move < ", JSON.stringify(move), " >!");
+		}
+	},
+
+	/** The placement of one army in a territory, as it should be done at the beginning of the
+	game. The `move` should be in the form `["PLACE", territory]`, and the game's stage should be
+	in the form `[STAGES.PLACE]`.
+	*/
+	nextPlacement: function nextPlacement(move) {
+		if (this.isValidReinforce(move, raise)) {
+			var stage = this.stage,
+				armies = this.uncompressGameState(this.armies),
+				activePlayer = this.activePlayer();
+			armies[move[1]][1] += 1;
+			return new this.constructor({
+				boardMap: this.boardMap,
+				stage: [this.STAGES.PLACE],
+				round: -1,
+				rounds: this.rounds,
+				armies: armies,
+				activePlayer: this.players[(this.players.indexOf(activePlayer) + 1) % this.players.length]
+			});
 		}
 	},
 
