@@ -12,12 +12,15 @@ module.exports = function (grunt) {
 				'Risk',
 				'players', 'players/player-simple', 'players/player-continent',
 				'scenarios',
+				'ui',
 			'__epilogue__'],
 		deps: [
 			{ id: 'creatartis-base', name: 'base' },
 			{ id: 'sermat', name: 'Sermat',
 				path: 'node_modules/sermat/build/sermat-umd.js' },
-			{ id: 'ludorum', name: 'ludorum' }
+			{ id: 'ludorum', name: 'ludorum' },
+			{ id: 'playtester', dev: true, module: false,
+				path: 'node_modules/ludorum/build/playtester-common.js' }
 		],
 		jshint: { loopfunc: true, boss: true, evil: true, proto: true },
 		karma: ['Firefox', 'Chrome', 'IE']

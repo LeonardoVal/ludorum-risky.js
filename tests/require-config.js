@@ -42,6 +42,7 @@
 		"ludorum-risky": "../build/ludorum-risky",
 		"creatartis-base": "../node_modules/creatartis-base/build/creatartis-base.min",
 		"sermat": "../node_modules/sermat/build/sermat-umd",
-		"ludorum": "../node_modules/ludorum/build/ludorum.min"
+		"ludorum": "../node_modules/ludorum/build/ludorum.min",
+		"playtester": "../node_modules/ludorum/build/playtester-common"
 	}
 });
