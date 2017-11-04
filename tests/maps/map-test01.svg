@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="450" version="1.1" viewBox="0 0 211.67 119.06" xmlns="http://www.w3.org/2000/svg">
+	<g id="background">
+		<rect x=".32768" y=".31999" width="211.01" height="118.41" style="fill:#dcdcdc;image-rendering:auto;stroke-width:.12563;stroke:#000"/>
+		<text x="105.91126" y="116.93793" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.26458;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve"><tspan x="105.91126" y="116.93793" style="font-family:serif;font-size:2.9766px;line-height:0.25;stroke-width:.26458;text-align:center;text-anchor:middle">ludorum-risky.js by Leonardo Val © 2017</tspan></text>
+		<text x="106.20393" y="5.6114831" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.26458;word-spacing:0px" xml:space="preserve"><tspan x="106.20393" y="5.6114831" style="font-family:serif;font-size:4.6302px;font-style:italic;line-height:0.25;stroke-width:.26458;text-align:center;text-anchor:middle">Test map #1</tspan></text>
+	</g>
+	<g id="continent-GreyContinent">
+		<path d="m111.38 59.5-11.065 19.099-22.073-.0334-11.007-19.132 11.065-19.099 22.073.0334z" style="fill:#fafafa;stroke-width:.26459;stroke:#000"/>
+		<path d="m67.23 59.43 44.145.0668" style="fill:none;stroke-width:.26459;stroke:#000"/>
+		<text transform="rotate(60)" x="96.460785" y="-24.931948" style="fill:#000000;font-family:sans-serif;font-size:12px;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="96.460785" y="-24.931948" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">GreyContinent</tspan></text>
+	</g>
+	<g id="continent-CyanContinent">
+		<path d="m144.46 78.66-11.065 19.099-22.073-.0334-11.007-19.132 11.065-19.099 22.073.0334z" style="fill:#fafafa;stroke-width:.26459;stroke:#000"/>
+		<path d="m133.39 97.76-22.015-38.264" style="fill:none;stroke-width:.26459;stroke:#000"/>
+		<text transform="rotate(-60)" x="-7.1524692" y="167.47427" style="fill:#000000;font-family:sans-serif;font-size:12px;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="-7.1524692" y="167.47427" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">CyanContinent</tspan></text>
+	</g>
+	<g id="continent-OrangeContinent">
+		<path d="m144.51 40.43-11.065 19.099-22.073-.0334-11.007-19.132 11.065-19.099 22.073.0334z" style="fill:#fafafa;stroke-width:.26459;stroke:#000"/>
+		<path d="m111.38 59.5 22.13-38.198" style="fill:none;stroke-width:.26459;stroke:#000"/>
+		<text transform="rotate(60)" x="96.290085" y="-106.32143" style="fill:#000000;font-family:sans-serif;font-size:12px;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="96.290085" y="-106.32143" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">OrangeContinent</tspan></text>
+	</g>
+	<g id="territory-BlackCountry" transform="translate(55.279 -197.8)">
+		<path d="m11.952 257.23 35.677.15425 4.2065 7.3313-6.8038 11.68-22.073-.0334z" style="fill:none;paint-order:markers stroke fill"/>
+		<text x="32.649124" y="267.2464" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="32.649124" y="267.2464" style="font-family:serif;font-size:3.74px;line-height:1.25;stroke-width:.23375">0</tspan></text>
+	</g>
+	<g id="territory-YellowCountry" transform="translate(55.279 -197.8)">
+		<path d="m45.09 238.17 11.065-19.099 22.073.0334-17.9 30.999-8.4523-.0227z" style="fill:none;paint-order:markers stroke fill"/>
+		<text transform="rotate(-60)" x="-172.60027" y="168.98831" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="-172.60027" y="168.98831" style="font-family:serif;font-size:3.74px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">0</tspan></text>
+	</g>
+	<g id="territory-RedCountry" transform="translate(55.279 -197.8)">
+		<path d="m60.327 250.1 17.9-30.999 11.007 19.132-11.065 19.099-13.636.0995z" style="fill:none;paint-order:markers stroke fill"/>
+		<text transform="rotate(-60)" x="-172.43326" y="187.79314" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="-172.43326" y="187.79314" style="font-family:serif;font-size:3.74px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">0</tspan></text>
+	</g>
+	<g id="territory-GreenCountry" transform="translate(55.279 -197.8)">
+		<path d="m64.534 257.43 13.636-.0994 11.007 19.132-11.065 19.099-17.824-30.823z" style="fill:none;paint-order:markers stroke fill"/>
+		<text transform="rotate(60)" x="274.20123" y="71.464279" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="274.20123" y="71.464279" style="font-family:serif;font-size:3.74px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">0</tspan></text>
+	</g>
+	<g id="territory-BlueCountry" transform="translate(55.279 -197.8)">
+		<path d="m60.288 264.74 17.824 30.823-22.073-.0334-11.007-19.132 6.8038-11.68z" style="fill:none;paint-order:markers stroke fill"/>
+		<text transform="rotate(60)" x="273.87222" y="89.126656" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="273.87222" y="89.126656" style="font-family:serif;font-size:3.74px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">0</tspan></text>
+	</g>
+	<g id="territory-WhiteCountry">
+		<path d="m67.231 59.426 11.065-19.099 22.073.0334 6.7854 11.911-4.2458 7.3086z" style="fill:none;paint-order:markers stroke fill"/>
+		<text x="87.67437" y="51.656113" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="87.67437" y="51.656113" style="font-family:serif;font-size:3.74px;line-height:1.25;stroke-width:.23375">0</tspan></text>
+	</g>
+	<g id="foreground">
+		<path id="center-divide" d="m119.81 59.63-4.2458 7.3086-8.4523-.0227-4.2065-7.3313 4.2458-7.3086 8.4523.0227z" style="fill:#dcdcdc;stroke-width:.26459;stroke:#000"/>
+		<text x="89.288025" y="77.470428" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="89.288025" y="77.470428" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">BlackCountry</tspan></text>
+		<text transform="rotate(-60.098)" x="28.639376" y="125.28312" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="28.639376" y="125.28312" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">YellowCountry</tspan></text>
+		<text transform="rotate(-61.816)" x="21.124638" y="144.93735" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="21.124638" y="144.93735" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">RedCountry</tspan></text>
+		<text transform="rotate(60.164)" x="131.64853" y="-68.15274" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="131.64853" y="-68.15274" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">GreenCountry</tspan></text>
+		<text transform="rotate(60.164)" x="129.46851" y="-49.156849" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="129.46851" y="-49.156849" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">BlueCountry</tspan></text>
+		<text x="87.80378" y="58.36034" style="fill:#000000;font-family:sans-serif;letter-spacing:0px;line-height:0%;stroke-width:.23375;word-spacing:0px" xml:space="preserve"><tspan x="87.80378" y="58.36034" style="font-family:serif;font-size:2.9766px;line-height:1.25;stroke-width:.23375;text-align:center;text-anchor:middle">WhiteCountry</tspan></text>
+	</g>
+</svg>
