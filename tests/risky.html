@@ -1,0 +1,24 @@
+﻿<!-- User interface to playtest the Risk implementation. -->
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="risky.css"/>
+	<script src="../node_modules/requirejs/require.js"></script>
+</head><body>
+	<header>
+		<h1>Ludorum-risky</h1>
+	</header>
+	<div id="container">
+		<div id="board">
+			<p>SVG</p>
+		</div>
+		<div id="controls">
+			<p>White is <select id="playerWhite"></select>. Yellow is <select id="playerYellow"></select>.</p>
+			<p>Red is <select id="playerRed"></select>. Green is <select id="playerGreen"></select>.</p>
+			<p>Blue is <select id="playerBlue"></select>. Black is <select id="playerBlack"></select>.</p>
+			<p><button id="reset">Reset</button></p>
+		</div>
+	</div>
+	<footer></footer>
+	<script src="risky.js"></script>
+</body></html>
