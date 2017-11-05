@@ -16,11 +16,12 @@ footer {
 
 #container {
 	margin: auto;
-	width: 40em;
+	width: 60em;
 }
 
 #board {
 	float: left;
+	width: 100%;
 }
 
 #controls {

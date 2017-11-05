@@ -4,6 +4,7 @@ function (ludorum_risky, ludorum, base, Sermat, PlayTesterApp) {
 
 	base.HttpRequest.get('maps/map-test01.svg').then(function (xhr) {
 		document.getElementById('board').innerHTML = xhr.response;
+		var svg = document.querySelector('#board svg');
 
 		/** PlayTesterApp initialization.
 		*/
