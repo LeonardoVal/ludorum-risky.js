@@ -8,16 +8,16 @@ module.exports = function (grunt) {
 			options: {
 				port: 8088,
 				keepalive: true,
-				base: ['tests/', 'build/',
-					'node_modules/requirejs/',
-					'node_modules/creatartis-base/build/', 
-					'node_modules/sermat/build/',
-					'node_modules/ludorum/build/'
-				]
+				base: '.'
 			},
 			playtester: {
 				options: {
-					open: 'http://localhost:8088/risky.html'
+					open: 'http://localhost:8088/tests/risky.html'
+				}
+			},
+			console: {
+				options: {
+					open: 'http://localhost:8088/tests/console.html'
 				}
 			}
 		}
@@ -41,12 +41,15 @@ module.exports = function (grunt) {
 				path: 'node_modules/ludorum/build/playtester-common.js' }
 		],
 		jshint: { loopfunc: true, boss: true, evil: true, proto: true },
-		bundled: ['src/maps/map-test01.svg'],
+		bundled: [
+			{ src: 'src/maps/map-test01.svg', dest: 'build/maps/map-test01.svg', nonull: true }
+		],
 		karma: ['Firefox', 'Chrome', 'IE']
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.registerTask('test-all', ['test', 'karma:chrome', 'karma:ie']);
 	grunt.registerTask('playtest', ['compile', 'connect:playtester']);
+	grunt.registerTask('console', ['compile', 'connect:console']);
 	grunt.registerTask('default', ['build']);
 };

@@ -1,22 +1,8 @@
-"use strict";
-require.config({
-	paths: {
-		"creatartis-base": "creatartis-base.min",
-		"sermat": "sermat-umd",
-		"ludorum": "ludorum.min",
-		"playtester": "playtester-common"
-	}
-});
-require(['ludorum-risky', 'ludorum', 'creatartis-base', 'sermat', 'playtester'],
+require(['require-config'], function (init) { "use strict";
+init(['ludorum-risky', 'ludorum', 'creatartis-base', 'sermat', 'playtester'],
 function (ludorum_risky, ludorum, base, Sermat, PlayTesterApp) {
-	console.log("Loaded ludorum_risky, ludorum, base, sermat and PlayTesterApp.");
-	Window.base = base;
-	Window.Sermat = Sermat;
-	Window.ludorum = ludorum;
-	Window.PlayTesterApp = PlayTesterApp;
-	Window.ludorum_risky = ludorum_risky;
 
-	base.HttpRequest.get('maps/map-test01.svg').then(function (xhr) {
+	base.HttpRequest.get('../build/maps/map-test01.svg').then(function (xhr) {
 		document.getElementById('board').innerHTML = xhr.response;
 		var svg = document.querySelector('#board svg');
 
@@ -35,7 +21,6 @@ function (ludorum_risky, ludorum, base, Sermat, PlayTesterApp) {
 				}
 		 	}),
 			new ludorum_risky.RiskSVGInterface(),
-			//new ludorum.players.UserInterface.BasicHTMLInterface({ container: document.getElementById('board') }),
 			{ bar: document.getElementsByTagName('footer')[0] });
 		APP.playerUI("You")
 			.playerRandom()
@@ -53,4 +38,5 @@ function (ludorum_risky, ludorum, base, Sermat, PlayTesterApp) {
 			.button('resetButton', document.getElementById('reset'), APP.reset.bind(APP))
 			.reset();
 	}); // HttpRequest.get
+}); // init()
 }); // require().
