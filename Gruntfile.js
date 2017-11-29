@@ -3,24 +3,6 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-
-		connect: {
-			options: {
-				port: 8088,
-				keepalive: true,
-				base: '.'
-			},
-			playtester: {
-				options: {
-					open: 'http://localhost:8088/tests/risky.html'
-				}
-			},
-			console: {
-				options: {
-					open: 'http://localhost:8088/tests/console.html'
-				}
-			}
-		}
 	});
 
 	require('creatartis-grunt').config(grunt, {
@@ -41,10 +23,14 @@ module.exports = function (grunt) {
 				path: 'node_modules/ludorum/build/playtester-common.js' }
 		],
 		jshint: { loopfunc: true, boss: true, evil: true, proto: true },
-		bundled: [
-			{ src: 'src/maps/map-test01.svg', dest: 'build/maps/map-test01.svg', nonull: true }
-		],
-		karma: ['Firefox', 'Chrome', 'IE']
+		copy: {
+			'build/maps/': 'src/maps/*.svg'
+		},
+		karma: ['Firefox', 'Chrome', 'IE'],
+		connect: {
+			console: 'tests/console.html',
+			playtester: 'tests/risky.html'
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-connect');
