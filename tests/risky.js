@@ -21,11 +21,12 @@ function (ludorum_risky, ludorum, base, Sermat, PlayTesterApp) {
 				}
 		 	}),
 			new ludorum_risky.RiskSVGInterface(),
-			{ bar: document.getElementsByTagName('footer')[0] });
+			{ bar: document.getElementsByTagName('footer')[0] },
+			[ludorum_risky]);
 		APP.playerUI("You")
 			.playerRandom()
+			.playerMonteCarlo("MCTS (10 sims)", false, 10)
 			/*
-			.playerMonteCarlo("MCTS (10 sims)", true, 10)
 			.playerMonteCarlo("MCTS (100 sims)", true, 100)
 			.playerUCT("UCT (10 sims)", true, 10)
 			.playerUCT("UCT (100 sims)", true, 100)
