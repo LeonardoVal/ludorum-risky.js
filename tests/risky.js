@@ -25,15 +25,10 @@ function (ludorum_risky, ludorum, base, Sermat, PlayTesterApp) {
 			[ludorum_risky]);
 		APP.playerUI("You")
 			.playerRandom()
-			.playerMonteCarlo("MCTS (10 sims)", false, 10)
-			/*
+			.playerMonteCarlo("MCTS (10 sims)", true, 10)
 			.playerMonteCarlo("MCTS (100 sims)", true, 100)
 			.playerUCT("UCT (10 sims)", true, 10)
 			.playerUCT("UCT (100 sims)", true, 100)
-			.playerAlfaBeta("MiniMax-\u03b1\u03b2 (4 plies)", true, 3)
-			.playerAlfaBeta("MiniMax-\u03b1\u03b2 (6 plies)", true, 5)
-			.playerMaxN("MaxN (6 plies)", true, 5)
-			*/
 			.selects(['playerWhite', 'playerYellow', 'playerRed', 'playerGreen', 'playerBlue',
 				'playerBlack'])
 			.button('resetButton', document.getElementById('reset'), APP.reset.bind(APP))
