@@ -750,7 +750,10 @@ var Risk = exports.Risk = declare(Game, {
 	'static __SERMAT__': {
 		identifier: 'Risk',
 		serializer: function serialize_Risk(obj) {
-			return this.serializeAsProperties(obj, ['boardMap', 'stage', 'round', 'rounds', 'armies'], true);
+			var args = this.serializeAsProperties(obj, 
+				['boardMap', 'stage', 'round', 'rounds', 'armies'], true);
+			args[0].activePlayer = obj.activePlayer();
+			return args;
 		}
 	},
 
