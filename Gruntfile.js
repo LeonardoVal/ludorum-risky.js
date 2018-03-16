@@ -24,7 +24,8 @@ module.exports = function (grunt) {
 		],
 		jshint: { loopfunc: true, boss: true, evil: true, proto: true },
 		copy: {
-			'build/maps/': 'src/maps/*.svg'
+			'build/maps/': 'src/maps/*.svg',
+			'build/': 'src/bundled/*.js'
 		},
 		karma: ['Firefox', 'Chrome', 'IE'],
 		connect: {
