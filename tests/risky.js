@@ -34,15 +34,11 @@ function (ludorum_risky, ludorum, base, Sermat, PlayTesterApp) {
 				'playerBlack'])
 			.button('resetButton', document.getElementById('reset'), APP.reset.bind(APP));
 		
-		APP.setAllPlayers = function setAllPlayers(p) {
-			this.elements.selects.forEach(function (select) {
-				select.value = p;
-				select.onchange();
-			});
-			this.reset();
+		var allPlayersClick = function (i, e) {
+			APP.setPlayers(null, i, !e.ctrlKey);
 		};
-		document.getElementById('all-random').onclick = APP.setAllPlayers.bind(APP, 1);
-		document.getElementById('all-MCTS10').onclick = APP.setAllPlayers.bind(APP, 2);
+		document.getElementById('all-random').onclick = allPlayersClick.bind(APP, 1);
+		document.getElementById('all-MCTS10').onclick = allPlayersClick.bind(APP, 2);
 
 		APP.reset();
 	}); // HttpRequest.get
