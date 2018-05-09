@@ -97,6 +97,15 @@ var BoardMap = exports.BoardMap = declare({
 		return result;
 	},
 
+	/** The `territoryIndex` is the index of the given territory name (`t`) in the `territories` 
+	array. 
+	*/
+	territoryIndex: function territoryIndex(t) {
+		var i = this.territories.indexOf(t);
+		raiseIf(i < 0, "Could not find index for territory '", t, "'!");
+		return i;
+	},
+
 	// ## Utility methods ##########################################################################
 
 	/** Serialization and materialization using Sermat.
