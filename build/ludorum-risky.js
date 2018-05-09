@@ -292,6 +292,15 @@ var BoardMap = exports.BoardMap = declare({
 		return result;
 	},
 
+	/** The `territoryIndex` is the index of the given territory name (`t`) in the `territories` 
+	array. 
+	*/
+	territoryIndex: function territoryIndex(t) {
+		var i = this.territories.indexOf(t);
+		raiseIf(i < 0, "Could not find index for territory '", t, "'!");
+		return i;
+	},
+
 	// ## Utility methods ##########################################################################
 
 	/** Serialization and materialization using Sermat.
@@ -431,7 +440,7 @@ var Risk = exports.Risk = declare(Game, {
 	another.
 	*/
 	STAGES: {
-		PLACE: -1, REINFORCE: 0, ATTACK: 1, OCCUPY: 2, FORTIFY: 3
+		PLACE: 0, REINFORCE: 1, ATTACK: 2, OCCUPY: 3, FORTIFY: 4
 	},
 
 	/** The constructor takes the following parameters:
@@ -1203,6 +1212,49 @@ var Risk = exports.Risk = declare(Game, {
 			vec.splice(aux, 1);
 		});
 		return armies;
+	},
+
+	// ## Dataset generation ######################################################################
+
+	/** 
+	*/
+	caseBoardCode: function caseBoardCode() {
+		var armies = this.uncompressGameState(this.armies),
+			activePlayer = this.activePlayer(),
+			activePlayerIndex = this.players.indexOf(activePlayer),
+			players = this.players.slice(activePlayerIndex).concat(this.players.slice(0, activePlayerIndex)),
+			playerCount = players.length;
+		return this.boardMap.territories.map(function (t) {
+			var armyCount = Math.min(30, armies[t][1]),
+				playerIndex = players.indexOf(armies[t][0]);
+			if (armyCount > 10) {
+				armyCount = armyCount / 2 + 5;
+			}
+			return String.fromCharCode(armyCount * playerCount + playerIndex);
+		}).join('');
+	},
+
+	/** 
+	*/
+	caseActionCode: function caseActionCode(action) {
+		var r = 0;
+		switch (action[0]) {
+			case "PASS":      break;
+			case "PLACE":     r = this.boardMap.territoryIndex(action[1]) * 8 + 1; break;
+			case "REINFORCE": r = this.boardMap.territoryIndex(action[1]) * 8 + 2; break;
+			case "ATTACK":    r = this.boardMap.territoryIndex(action[2]) * 8 + 3; break;
+			case "OCCUPY":    r = action[1] * 8 + 4; break;
+			case "FORTIFY":   r = this.boardMap.territoryIndex(action[2]) * 8 + 5; break;
+			default:          raise("Invalid action < ", JSON.stringify(action), " >!");
+		}
+		return String.fromCharCode(r);
+	},
+
+	/**
+	*/
+	caseCode: function caseCode(action, game) {
+		game = game || this;
+		return game.caseActionCode(action) +' '+ game.caseBoardCode();
 	}
 }); // declare Risk
 
