@@ -2,11 +2,20 @@
 
 User interface for playtesters based on [Scalable Vector Graphics (SVG)](https://www.w3.org/Graphics/SVG/).
 
-*/
+Each territory and continent must be defined as a group (`<g>` element), with the identifier 
+`territory-name` or `continent-name`. Territory groups must include a path element (`<path>`) 
+demarking the territory area, and a text element (`<text>`) to indicate the amount of armies present
+in the territory. The player owning each territory is indicated with their colour.
 
-/** ## User interface ##############################################################################
+It is recommended to include any other drawings or details of the board in two groups called 
+`foreground` and `background`.  
 */
 exports.RiskSVGInterface = base.declare(ludorum.players.UserInterface, {
+	/** The constructor takes the `config` argument all ludorum's `UserInterface` take. The 
+	`container` key defines the SVG element to use. This can be a reference to the SVG element 
+	itself, or its `id` as a string. If it is missing, the first SVG element in the document is
+	used.  
+	*/
 	constructor: function RiskSVGInterface(config) {
 		config = config || {};
 		ludorum.players.UserInterface.call(this, config);
@@ -19,6 +28,10 @@ exports.RiskSVGInterface = base.declare(ludorum.players.UserInterface, {
 		}
 	},
 
+	/** Conquered territories must be highlighted with the corresponding colour of the player that
+	owns them. The `fillColours` property defines the colours (in CSS format) that are assigned to 
+	the areas in the SVG for each territory.
+	*/
 	fillColours: {
 		White:  'rgba(255,255,255,0.66)',
 		Yellow: 'rgba(255,255, 50,0.66)',
@@ -28,12 +41,15 @@ exports.RiskSVGInterface = base.declare(ludorum.players.UserInterface, {
 		Black:  'rgba(128,128,128,0.66)'
 	},
 
-	/**
+	/** The given SVG element must be checked to include all territories and continents defined in
+	the game's `BoardMap`.
 	*/
 	__checkSVG__: function __checkSVG__(game, svg) {
 		//TODO
 	},
 
+	/** The display of the board simply updates army counts and territory colours.
+	*/
 	display: function display(game) {
 		if (game.isContingent) {
 			return;
