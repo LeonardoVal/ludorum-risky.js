@@ -1,5 +1,5 @@
 {
-	"name": "ludorum-risky",
+	"name": "@creatartis/ludorum-risky",
 	"description": "Implementation of Risk-like strategy board games for Ludorum.",
 	"keywords": [
 		"board game",
@@ -7,19 +7,24 @@
 	],
 	"version": "0.0.1",
 	"author": {
-		"name": "Marcos González",
-		"email": "mgonzalezgallo@gmail.com"
+		"name": "Leonardo Val",
+		"email": "leonardo.val@creatartis.com"
 	},
-	"contributors": [
-		{
-			"name": "Leonardo Val",
-			"email": "leonardo.val@creatartis.com"
-		}
-	],
+	"contributors": [],
 	"license": "MIT",
+	"homepage": "http://creatartis.com",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/LeonardoVal/ludorum-risky.js"
+	},
+	"main": "build/ludorum-risky.min.js",
+	"files": [
+		"build",
+		"LICENSE.md"
+	],
 	"dependencies": {
-		"creatartis-base": "~0.1.7",
-		"ludorum": "^0.2.1-beta",
+		"creatartis-base": "~0.1.8",
+		"ludorum": "^0.2.1",
 		"sermat": "~0.0.9"
 	},
 	"devDependencies": {
@@ -29,7 +34,7 @@
 		"requirejs": "~2.1.22",
 		"requirejs-text": "~2.0.12",
 		"requirejs-plugins": "~1.0.2",
-		"creatartis-grunt": "~0.0.12",
+		"creatartis-grunt": "~0.0.14",
 		"karma-chrome-launcher": "~0.2.2",
 		"karma-ie-launcher": "~0.2.0"
 	},
