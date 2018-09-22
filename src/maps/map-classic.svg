@@ -151,249 +151,249 @@
 			<polygon class="st90" points="299.5,1174.1 246.1,1120.8 254.3,1120.8 " id="polygon545" style="fill:#8499a5" />
 		</g>
 	</g>
-	<g inkscape:label="territories" id="colores">
-		<g inkscape:label="territory-Indonesia" id="g74">
+	<g id="territories">
+		<g id="territory-Indonesia">
 			<polyline style="fill:none" id="polyline4" points="1460.7,873 1553,992.3 1557.7,989 1549.6,929.9 1588.2,954.7 1602.6,939.1 1610.3,969.8       1621.2,966.3 1624,954.1 1644.4,964.9 1647.5,948.7 1637,927.7 1647.1,922.7 1661.7,891.8 1646.1,889.2 1613.1,910.2       1622.1,861.1 1587.7,840.1 1547.5,898.9 1532.2,898.3 1514.7,895.9 1485.3,862.2 1460,871.3     " class="st0" />
 			<polyline class="st0" points="1569.4,971.9 1626.2,976.2 1632,988.7 1563.8,999.5 1562.2,985.8 1571.7,974     " id="polyline352" style="fill:none" />
 			<text id="text3870-2-1-0-1-0" y="891.61084" x="1578.0217" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="891.61084" x="1578.0217" id="tspan3868-59-2-3-4-9" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Iceland" id="g116">
+		<g id="territory-Iceland">
 			<polyline class="st17" points="805.8,293.2 861.7,302.3 904.1,265.9 899.1,243.9 875,225.7 836.6,235 833.4,243.8 829.1,242.2        827.2,237.4 807.6,229.7 801.2,231.4 795.2,255.9 799.7,258.3 806.5,290.9      " id="polyline76" style="fill:none" />
 			<text id="text3870-2-9-2" y="260.83081" x="854.36493" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="260.83081" x="854.36493" id="tspan3868-59-4-6" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-GreatBritain" id="g210">
+		<g id="territory-GreatBritain">
 			<polyline class="st17" points="817.6,315.8 846.4,339.5 823.9,365.6 877.2,421.5 873.2,432.4 870.1,433.5 869.9,449.5        820.2,465.8 816.4,472.4 785,475.7 792,456.7 798.8,454.6 796.7,447.4 788.4,446.4 802.5,437.4 802,422 784.4,425.9 771.5,464        733.7,461.8 727.1,444.1 742.4,435.3 744.4,404.9 781.4,380.2 786.6,384.4 789.4,376.2 783.8,367.3 798.4,315.5 812.6,312        820.7,316.7      " id="polyline118" style="fill:none" />
 			<text id="text3870-2-9" y="389.9238" x="798.13464" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="389.9238" x="798.13464" id="tspan3868-59-4" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Greenland" id="g272">
+		<g id="territory-Greenland">
 			<polyline style="fill:none" id="polyline214" points="646.5,264.6 678.4,288.5 684,288.5 700.1,229.4 773,182.1 768.8,177.8 787.6,176.7 777.4,161.9       810,64.1 748.8,79.3 773.1,61.3 702.4,48.3 642,80.9 635.1,74.9 586.9,95.9 572.6,151.8 577.2,154.4 603.3,149.6 641.4,173.5       645.6,266.6     " class="st43" />
 			<text id="text3870-2-9-5" y="181.6013" x="685.24774" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="181.6013" x="685.24774" id="tspan3868-59-4-61" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-NorthWestTerritory" id="g6862">
+		<g id="territory-NorthWestTerritory">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon274" points="505,215.1 547.9,180.4 532.2,158.3 526.2,158.2 522.4,162.4 498.8,155.9 512,108.2 477.9,132.6 479.6,171.2 459.6,154.4 436.8,152.4 454.1,166.2 410.4,165.7 407.2,183 256,155.4 247.4,233.7 263.8,241.5 416.1,248.5 482.4,241.9 504.5,222.2 " class="st56" />
 			<text id="text3870-2-1-0-1-5-5-7-6-8-80" y="199.71979" x="309.66516" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="199.71979" x="309.66516" id="tspan3868-59-2-3-4-6-6-8-3-8-4" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-WesternUnitedStates" id="g6841">
+		<g id="territory-WesternUnitedStates">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon276" points="398.3,369.9 285.5,373.3 289,381.8 277.9,392.6 271.9,475.7 285.1,510.7 353.2,528.6 353.2,539.9 379.7,551.2 375.9,517.2 436.4,468.1 440.1,373.4 " class="st57" />
 			<text id="text3870-2-1-0-1-5-5-7-6-8-8" y="411.24725" x="341.34818" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="411.24725" x="341.34818" id="tspan3868-59-2-3-4-6-6-8-3-8-1" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Ontario" id="g6820">
+		<g id="territory-Ontario">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon282" points="515.9,396.4 517.9,337 499.3,300.9 476.4,292.6 460.2,261.8 482.4,241.9 416.1,248.5 406.5,368.7 398.3,369.9 440.1,373.4 443.9,369.8 " class="st59" />
 			<text id="text3870-2-1-0-1-5-5-7-6-8" y="314.84027" x="436.03946" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="314.84027" x="436.03946" id="tspan3868-59-2-3-4-6-6-8-3-8" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-CentralAmerica" id="g6799">
+		<g id="territory-CentralAmerica">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon284" points="310.2,606.6 326.6,605.1 304.1,534 339,595.7 345.7,625.9 376.8,638.2 393.9,693 422.3,726.2 451.5,675.2 416.3,673.9 431.2,647.9 418.8,623.2 439.6,604.8 419,588.7 402.3,604.6 382.6,604.4 399.3,570.7 383.5,555 379.1,549.5 379.7,551.2 353.2,539.9 353.2,528.6 285.1,510.7 289.5,522.3 " class="st60" />
 			<text id="text3870-2-1-0-1-5-5-7-6-3" y="664.3515" x="339.29898" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="664.3515" x="339.29898" id="tspan3868-59-2-3-4-6-6-8-3-3" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-EasternUnitedStates" id="g6778">
+		<g id="territory-EasternUnitedStates">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon286" points="517.4,400.8 512,403.8 517.4,400.8 519.2,399.7 515.8,400 515.9,396.4 443.9,369.8 440.1,373.4 436.4,468.1 375.9,517.2 379.1,549.5 383.5,555 399.3,570.7 407.1,555 489.9,543.6 485.4,590.9 511,585.3 533.7,538 549.6,504.9 561,481.2 587.3,426.4 591.4,396.3 572.5,396.3 572.5,411.4 523.3,400 " class="st61" />
 			<text id="text3870-2-1-0-1-5-5-7-6" y="452.6824" x="483.42041" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="452.6824" x="483.42041" id="tspan3868-59-2-3-4-6-6-8-3" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Quebec" id="g6757">
+		<g id="territory-Quebec">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon288" points="591.4,396.3 587.3,426.4 588,425 593.3,448.2 625.8,396.5 612.1,396.4 604.2,368.4 663.4,345 610.4,260.7 595.1,275.1 576.1,236.9 541.3,255.8 522.4,345.7 517.9,337 515.8,400 572.5,411.4 572.5,396.3 " class="st60" />
 			<text id="text3870-2-1-0-1-5-5-7" y="318.4393" x="562.75458" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="318.4393" x="562.75458" id="tspan3868-59-2-3-4-6-6-8" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Alberta" id="g6736">
+		<g id="territory-Alberta">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon290" points="408.6,342.5 416.1,248.5 263.8,241.5 281.4,298 260.5,311.8 285.5,373.3 406.5,368.7 " class="st56" />
 			<text id="text3870-2-1-0-1-5-5" y="287.1167" x="333.26797" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="287.1167" x="333.26797" id="tspan3868-59-2-3-4-6-6" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Alaska" id="g6715">
+		<g id="territory-Alaska">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon292" points="111,243.4 148.4,277.8 123.8,303.5 176.6,267.6 194.5,271.2 198.6,253.3 250.8,287.9 249.9,285.6 252.4,288.9 250.8,287.9 260.5,311.8 281.4,298 263.8,241.5 247.4,233.7 256,155.4 178.9,141.4 159.9,156.6 158.3,162.2 139.5,158.4 145.7,186.7 119.4,189.3 130,204.9 150.4,210.3 127.8,212.3 " class="st59" />
 			<text id="text3870-2-1-0-1-5" y="192.11096" x="184.901" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="192.11096" x="184.901" id="tspan3868-59-2-3-4-6" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Argentina" id="g6552">
+		<g id="territory-Argentina">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon300" points="486.1,1071.6 493.5,1101.6 501.3,1133.2 519.8,1208.4 539.1,1212.8 554.3,1203.6 538.7,1190.3 536.5,1181.8 554.1,1142.3 534.5,1135.2 601.5,1048.3 591.3,1034 616.8,1001.5 617.8,989.7 602.7,989.7 610.3,982.2 595.1,982.2 606.9,958.5 580,963.3 515.8,914.1 515.8,929.3 493.1,914.1 476.1,917.9 472.8,924.2 486.6,1015.7 476.8,1033.6 " class="st57" />
 			<text id="text3870-2-1-0-1" y="991.8587" x="529.57709" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="991.8587" x="529.57709" id="tspan3868-59-2-3-4" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Peru" id="g6521">
+		<g id="territory-Peru">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon302" points="606.9,958.5 591.4,914.1 527.1,849.9 515.8,834.8 481.7,838.5 489.3,827.2 455.3,797 474.5,774.6 412.8,742.6 386.2,789.1 476.6,917 476.1,917.9 493.1,914.1 515.8,929.3 515.8,914.1 580,963.3 " class="st61" />
 			<text id="text3870-2-1-0" y="858.84595" x="453.90518" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="858.84595" x="453.90518" id="tspan3868-59-2-3" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Brazil" id="g6500">
+		<g id="territory-Brazil">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon304" points="654,756.3 629.7,717.8 546,736.5 553.6,721.4 527.1,728.9 527.1,747.8 485.5,778.1 474.5,774.6 455.3,797 489.3,827.2 481.7,838.5 515.8,834.8 527.1,849.9 591.4,914.1 595.1,982.2 610.3,982.2 602.7,989.7 617.8,989.7 616.8,1001.5 754.8,825 742.2,784.4 " class="st61" />
 			<text id="text3870-2-1" y="804.99982" x="612.9104" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="804.99982" x="612.9104" id="tspan3868-59-2" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Venezuela" id="g6489">
+		<g id="territory-Venezuela">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon306" points="527.1,728.9 553.6,721.4 546,736.5 629.7,717.8 626.7,712.9 593.3,714.1 552.6,677.9 507.3,675.2 479.9,659 451.5,675.2 412.8,742.6 474.5,774.6 485.5,778.1 527.1,747.8 " class="st59" />
 			<text id="text3870-2" y="749.6203" x="472.82693" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="749.6203" x="472.82693" id="tspan3868-59" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Madagascar" id="g350">
+		<g id="territory-Madagascar">
 			<polyline style="fill:none" id="polyline310" points="1263.2,1022 1280.9,1055.9 1217.3,1178.4 1212.8,1176.5 1201,1183 1191.5,1178.4 1204.6,1067.8       1230,1061 1238.9,1036.9 1257.1,1035.1 1261,1020.1     " class="st63" />
 			<text id="text3870-7-9-9-0-3" y="1131.4911" x="1262.014" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="1131.4911" x="1262.014" id="tspan3868-5-5-6-0-0" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-NewGuinea" id="g428">
+		<g id="territory-NewGuinea">
 			<polyline style="fill:none;fill-opacity:1" id="polyline380" points="1697.8,844.4 1692.9,822.7 1673.5,814.7 1653,834.9 1669.2,862.8 1677.5,865.6 1699.9,904.8       1749.6,917.4 1755.3,907 1798.2,928.6 1806,925.1 1774.3,847.7 1716.8,819.6 1702.7,827.3 1704.2,843.7 1695.1,844.2     " class="st0" />
 			<text id="text3870-7-9-9-1" y="871.7923" x="1694.4185" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="871.7923" x="1694.4185" id="tspan3868-5-5-6-5" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-WesternAustralia" id="g6418">
+		<g id="territory-WesternAustralia">
 			<polygon class="st86" points="1583,1183 1574.3,1187.5 1576.9,1195.6 1706.8,1150.3 1727.7,1183.5 1743.8,1161.7 1757.1,1194.9 1764,1102.3 1759.4,1109.3 1698.9,1101.7 1698.9,1109.3 1686,968 1671.7,990.4 1662.8,981.2 1631.1,1014.7 1623.4,1007.4 1610,1043.3 1551.9,1079.9 1559.6,1084.5 1589.4,1166.7 " id="polygon430" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-7-9-9-0" y="1064.0471" x="1635.0621" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="1064.0471" x="1635.0621" id="tspan3868-5-5-6-0" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-EasternAustralia" id="g6397">
+		<g id="territory-EasternAustralia">
 			<polygon class="st86" points="1761.5,1009.9 1733.9,986.8 1732.9,972.9 1742.9,962.1 1695.7,952.9 1686,968 1698.9,1109.3 1698.9,1101.7 1759.4,1109.3 1764,1102.3 1763.2,1098 1764,1102.3 1757.1,1194.9 1759.9,1202 1810.8,1215.1 1874.1,1126.8 1776.8,937 1762,1010.7 " id="polygon434" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-7-9-9" y="1134.3862" x="1787.2236" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="1134.3862" x="1787.2236" id="tspan3868-5-5-6" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Japan" id="g6376">
+		<g id="territory-Japan">
 			<polygon class="st59" points="1773.9,409.9 1761.3,399.4 1760,385 1775.3,380.2 1787.9,351.5 1737.5,343.3 1728.4,345.6 1734.7,361.7 1729.8,376.6 1746.3,398.5 1730.9,410.8 1716.3,477.9 1703.2,478.9 1683.2,526.5 1708,549 1785,451.5 " id="polygon436" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0-3-5-1-9-5" y="442.52786" x="1739.3507" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="442.52786" x="1739.3507" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9-4-4-7-4-9" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-WesternEurope" id="g6355">
+		<g id="territory-WesternEurope">
 			<path class="st60" d="m 906.7,488.2 -10.8,-30.6 -12,-1.4 -80.1,52 20.8,35.1 -52.4,29.7 12.4,44.1 -8.4,15.3 10.5,22.2 83.3,-2 28.9,-77.1 18.2,-4.7 -6.1,-69.6 z" id="path440" inkscape:connector-curvature="0" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0-3-5-1-6-5" y="537.18597" x="837.80481" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="537.18597" x="837.80481" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9-4-4-7-5-5" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-NorthernEurope" id="g6334">
+		<g id="territory-NorthernEurope">
 			<polygon class="st56" points="1022.3,479.4 1033.6,453 1056.3,437.8 1022.5,362.5 956.5,367.9 963.6,350.9 953.5,337.5 937.2,379.1 939.4,384.9 891.5,444.4 891.9,445.6 905,458.6 895.8,457.6 908.9,494.5 910.9,501.3 927.8,502.1 980.7,479.4 1003.4,487 1003.4,498.3 992.1,498.3 1022.3,509.7 " id="polygon442" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0-3-5-1-6" y="400.4209" x="966.38867" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="400.4209" x="966.38867" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9-4-4-7-5" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-India" id="g6313">
+		<g id="territory-India">
 			<polygon class="st86" points="1374,703.2 1394.3,829.5 1410.5,842.8 1468.7,697.9 1468.8,698 1498.6,645.7 1500.9,637.2 1494.8,626.8 1438.1,611.7 1407.9,551.2 1362.5,562.6 1305.8,577.7 1317.3,671.5 1318.9,670.9 1354.7,701.7 1344.9,702.9 " id="polygon444" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0-3-5-1-9" y="642.95013" x="1392.2859" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="642.95013" x="1392.2859" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9-4-4-7-4" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Ukraine" id="g6292">
+		<g id="territory-Ukraine">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon450" points="1055.1,333.1 1031.2,323.3 1024.3,362.3 1022.5,362.5 1056.3,437.8 1033.6,453 1036.4,463.9 1037.4,464.3 1067.2,528.8 1073.8,510 1076.5,508.2 1107.7,535.3 1116.4,522.5 1107.4,505.2 1141.1,497.6 1129,527 1164.8,570.4 1156.8,569.2 1158.4,570.1 1207.5,555 1219.9,538.5 1198.7,477.3 1207.1,470.6 1181.1,418.9 1192.4,415.2 1188.6,400 1241.5,373.6 1252.9,388.7 1260.4,373.6 1286.9,347.1 1268,347.1 1286.9,324.4 1268,320.7 1279.3,211 1283.2,182.1 1259.8,167 1259.1,166.7 1141,190.5 1157.5,209.5 1131.4,236.1 1107.7,222.2 1106.9,241.1 1084.9,213.1 1142.7,206.4 1071.5,172.2 1067.7,184.6 1056.8,294.5 1061.8,298.7 1045.5,299.8 1031.1,301.8 " class="st59" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0-3-5-1-5" y="333.62024" x="1127.103" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="333.62024" x="1127.103" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9-4-4-7-1" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-MiddleEast" id="g6271">
+		<g id="territory-MiddleEast">
 			<polygon class="st60" points="1306.6,733.2 1274.2,702.5 1248.5,709 1237.1,699.6 1244,653 1248.2,678.7 1261.5,691.3 1317.3,671.5 1305.8,579 1249.1,550.9 1248.7,554.5 1229.7,566.7 1219.9,538.5 1207.5,555 1158.4,570.1 1156.8,569.2 1058.1,554.6 1065.6,533.2 1063.9,536.1 1047.1,611.8 1048.3,616.9 1118.2,632 1108.2,687.2 1131.5,732.4 1141.9,735.7 1195.2,824.5 1202.9,825.6 1286.6,778.6 " id="polygon454" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0-3-5-1" y="622.70306" x="1165.6438" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="622.70306" x="1165.6438" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9-4-4-7" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Afghanistan" id="g6250">
+		<g id="territory-Afghanistan">
 			<polygon class="st61" points="1241.5,373.6 1188.6,400 1192.4,415.2 1181.1,418.9 1207.1,470.6 1223.1,458 1226.2,460.5 1220.4,488.9 1225.9,499.6 1231.6,502 1231.4,523 1241,529 1234.8,542.8 1249.1,550.7 1249.1,550.9 1305.8,579 1305.8,577.7 1362.5,562.6 1371.7,547 1351.2,521 1389.2,447.2 1377.6,430.3 1328.5,403.8 1309.6,407.6 1294.5,373.6 1274,360 1260.4,373.6 1252.9,388.7 " id="polygon456" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0-3-5" y="446.83292" x="1291.2006" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="446.83292" x="1291.2006" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9-4-4" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Ural" id="g6227">
+		<g id="territory-Ural">
 			<polygon class="st57" points="1328.9,184.1 1315.6,202.5 1297.9,202.6 1297.5,152.4 1310.6,134.7 1282.8,115.2 1256.6,150.8 1275.9,172.9 1282.3,180.3 1284.8,183.1 1283.2,182.1 1279.3,211 1268,320.7 1286.9,324.4 1268,347.1 1286.9,347.1 1274,360 1294.5,373.6 1309.6,407.6 1328.5,403.8 1377.6,430.3 1389.2,447.2 1400.3,415.2 1419.2,403.8 1366.3,362.2 1373.9,305.5 1389,294.2 1358.7,222.4 1339.8,207.3 1336,200 1335.6,201.4 " id="polygon458" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0-3" y="288.18716" x="1314.3175" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="288.18716" x="1314.3175" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9-4" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Siberia" id="g6204">
+		<g id="territory-Siberia">
 			<polygon class="st60" points="1525.1,124.1 1513.7,116.5 1515.8,92.7 1435.6,115 1470.3,88.2 1454.7,66.5 1358,91.6 1342.1,84.6 1337.5,125.6 1320.1,114.6 1339.4,150.4 1317.1,137.4 1321,161.2 1340.8,179.2 1336,200 1339.8,207.3 1358.7,222.4 1389,294.2 1373.9,305.5 1366.3,362.2 1419.2,403.8 1412.5,409.3 1449.5,426.5 1457,441.6 1465.2,441.5 1472.1,388.7 1453.2,377.4 1453.2,324.4 1472.1,324.4 1472.1,309.3 1483.5,324.4 1509.9,286.6 1514.3,263.3 1509.9,264 1475.9,180.8 1517.5,165.7 " id="polygon460" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4-0" y="187.8542" x="1412.8978" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="187.8542" x="1412.8978" id="tspan3868-9-7-6-0-9-3-4-6-5-3-9" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Mongolia" id="g6181">
+		<g id="territory-Mongolia">
 			<polygon class="st57" points="1618.8,489.1 1630.7,472.9 1636.6,488.5 1646.5,485.3 1668.2,520.7 1681.6,487.5 1668.2,480.1 1662.5,436.2 1666.8,433.4 1657.4,426.5 1649.8,407.6 1634.7,400 1638.3,383.1 1600.7,343.3 1581.8,343.3 1483.5,384.9 1483.5,388.7 1471.9,388.2 1472.1,388.7 1465.2,441.5 1472.1,468.1 1517.5,509.7 1540.2,509.7 1547.7,498.3 1566.6,513.4 1629.3,521.5 1639.1,510.6 1637.8,496.9 1630.8,500.8 " id="polygon462" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1-4" y="413.87106" x="1551.9827" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="413.87106" x="1551.9827" id="tspan3868-9-7-6-0-9-3-4-6-5-3" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-China" id="g6158">
+		<g id="territory-China">
 			<polygon class="st86" points="1400.3,415.2 1389.2,447.2 1351.2,521 1371.7,547 1362.5,562.6 1407.9,551.2 1438.1,611.7 1494.8,626.8 1500.9,637.2 1528.8,642 1528.8,660.9 1574.2,653.3 1589.4,674.5 1597.1,679.6 1651.5,619.7 1627.4,523.6 1629.3,521.5 1566.6,513.4 1547.7,498.3 1540.2,509.7 1517.5,509.7 1472.1,468.1 1465.2,441.5 1457,441.6 1449.5,426.5 1412.5,409.3 " id="polygon464" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7-1" y="554.02258" x="1494.1846" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="554.02258" x="1494.1846" id="tspan3868-9-7-6-0-9-3-4-6-5" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Irkutsk" id="g6135">
+		<g id="territory-Irkutsk">
 			<polygon class="st60" points="1638.3,383.1 1646,347.1 1623.3,316.9 1604.4,324.4 1570.4,233.7 1570.7,233.4 1532.6,237.5 1528.8,267.7 1514.3,263.3 1509.9,286.6 1483.5,324.4 1472.1,309.3 1472.1,324.4 1453.2,324.4 1453.2,377.4 1471.9,388.2 1483.5,388.7 1483.5,384.9 1581.8,343.3 1600.7,343.3 " id="polygon466" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4-7" y="299.35028" x="1536.1302" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="299.35028" x="1536.1302" id="tspan3868-9-7-6-0-9-3-4-6" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Yakutsk" id="g6112">
+		<g id="territory-Yakutsk">
 			<polygon class="st61" points="1560.8,119.9 1537.4,86.8 1515.8,92.7 1513.7,116.5 1525.1,124.1 1517.5,165.7 1475.9,180.8 1509.9,264 1528.8,267.7 1532.6,237.5 1570.7,233.4 1581.8,222.4 1604.4,192.1 1642.2,188.4 1671.4,115.9 1666.3,115.3 1663.4,116.9 1633.7,93.8 1617,107.5 1593.6,90.2 1588.1,111.6 " id="polygon468" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9-4" y="160.21358" x="1548.6348" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="160.21358" x="1548.6348" id="tspan3868-9-7-6-0-9-3-4" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Kamchatka" id="g6089">
+		<g id="territory-Kamchatka">
 			<polygon class="st61" points="1727.7,235.3 1732.1,217.9 1737.8,223.7 1716.2,270.5 1724.4,311.3 1753.4,335.2 1762.2,328.1 1747.9,239 1757.1,233.1 1766.4,238.5 1802.5,197.3 1784.5,182.8 1786.4,172.8 1826.3,186.6 1820.4,193.3 1816,193.2 1828.6,193.7 1833.9,162.6 1794.4,153.9 1776,129.7 1671.4,115.9 1642.2,188.4 1604.4,192.1 1581.8,222.4 1570.4,233.7 1604.4,324.4 1623.3,316.9 1646,347.1 1634.7,400 1649.8,407.6 1657.4,426.5 1666.8,433.4 1677.7,426.7 1675.6,311.3 1642.8,300.7 1635.1,282.8 1654,254.8 1680,253.5 1687.9,243.7 1699.8,255.1 1714.1,247 1704.8,223.6 " id="polygon470" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1-9" y="172.66086" x="1683.8708" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="172.66086" x="1683.8708" id="tspan3868-9-7-6-0-9-3" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Siam" id="g6066">
+		<g id="territory-Siam">
 			<polygon class="st86" points="1528.2,737.5 1534.4,780.4 1572,817.3 1554.8,758.8 1584.5,804.1 1604,730.6 1579.4,702.7 1583.5,670.4 1589.4,674.5 1574.2,653.3 1528.8,660.9 1528.8,642 1500.9,637.2 1498.6,645.7 1468.8,698 " id="polygon472" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1-1" y="701.93317" x="1525.0781" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="701.93317" x="1525.0781" id="tspan3868-9-7-6-0-9" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Scandinavia" id="g6043">
+		<g id="territory-Scandinavia">
 			<polygon class="st61" points="1056.8,294.5 1067.7,184.6 1071.5,172.2 1059.3,166.4 980,186.7 916.1,274 920.8,314 939.4,326.2 948.9,322.2 988.8,349.9 1007.4,308.4 1002.3,284.5 1030.2,253 1024,278.4 1041.1,295.1 1053.5,291.8 " id="polygon474" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8-1" y="250.01743" x="954.39551" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="250.01743" x="954.39551" id="tspan3868-9-7-6-0" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-SouthernEurope" id="g6020">
+		<g id="territory-SouthernEurope">
 			<polygon class="st56" points="1067.2,528.8 1033.6,453 1029.4,462.9 1022.3,479.4 1022.3,509.7 992.1,498.3 1003.4,498.3 1003.4,487 980.7,479.4 927.8,502.1 910.9,501.3 917.1,570.8 923.7,569.1 945.1,616.8 914.5,620 938.4,630.2 969.9,621.3 978,600.6 989.6,604 966.8,550.7 999.3,584.3 1005.8,629.7 1033,644.3 1040,614.2 1029,606.1 1045.9,607 1047.1,611.8 1063.9,536.1 1065.6,533.2 " id="polygon476" style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" />
 			<text id="text3870-6-9-8" y="578.69135" x="1004.5474" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="578.69135" x="1004.5474" id="tspan3868-9-7-6" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-EastAfrica" id="g5988">
+		<g id="territory-EastAfrica">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon478" points="1254.4,855.7 1192.9,862 1142.5,773.6 1042.6,794.6 1042.6,855.8 1045,857.4 1139.5,914.1 1101.7,989.7 1120.6,1061.6 1162.2,1012.4 1171.8,1015.1 1173.6,968.3 1257,863.5 " class="st56" />
 			<text id="text3870-6-9" y="854.99976" x="1105.2068" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="854.99976" x="1105.2068" id="tspan3868-9-7" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Congo" id="g5965">
+		<g id="territory-Congo">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon480" points="1094.1,1008.6 1111.1,1006 1101.7,989.7 1139.5,914.1 1045,857.4 1042.6,855.8 1041.2,857.4 1014.7,917.9 974.5,923.5 975.9,976.1 1003.4,970.8 1003.4,982.2 1022.3,982.2 1022.3,993.5 1037.4,989.7 1086.6,1027.5 " class="st59" />
 			<text id="text3870-6" y="934.0603" x="1040.6958" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="934.0603" x="1040.6958" id="tspan3868-9" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-SouthAfrica" id="g5942">
+		<g id="territory-SouthAfrica">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon482" points="1022.3,982.2 1003.4,982.2 1003.4,970.8 975.9,976.1 978.3,1061.9 980.3,1061.9 975.2,1069.2 981.7,1073.7 982.8,1080.4 982,1081.3 1009.7,1198 1056.9,1209.5 1175.6,1060.4 1173.6,1040.4 1170.8,1038.5 1171.8,1015.1 1162.2,1012.4 1120.6,1061.6 1111.1,1006 1094.1,1008.6 1086.6,1027.5 1037.4,989.7 1022.3,993.5 " class="st57" />
 			<text id="text3870-7-9" y="1062.9597" x="1039.3252" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="1062.9597" x="1039.3252" id="tspan3868-5-5" sodipodi:role="line">0</tspan>
 			</text>
 		</g>
-		<g inkscape:label="territory-Egypt" id="g5919">
+		<g id="territory-Egypt">
 			<polygon style="fill:none;stroke:#000000;stroke-width:0.62629998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:5.0106, 5.0106" id="polygon484" points="1108.2,687.2 1107.1,693.4 1043.5,679.1 1028.3,707 996,677.5 980.7,747.8 1042.6,794.6 1142.5,773.6 1116.3,727.6 1131.5,732.4 " class="st60" />
 			<text id="text3870-7" y="730.83984" x="1048.9551" style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve">
 				<tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'" y="730.83984" x="1048.9551" id="tspan3868-5" sodipodi:role="line">0</tspan>
