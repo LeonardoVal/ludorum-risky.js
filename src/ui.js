@@ -157,13 +157,13 @@ exports.RiskSVGInterface = base.declare(ludorum.players.UserInterface, {
 			action = ["PASS"];
 			return action;
 		}else{
-			if(this.constructedAction.actionCountry===undefined){
+			if(typeof this.constructedAction.actionCountry==="undefined"){
 			//No action country, Nothing I can do
 			}else{
-				if(this.constructedAction.numberOfArmies===undefined){
+				if(typeof this.constructedAction.numberOfArmies==="undefined"){
 					//Action country, but no number of armies, nothing I can do
 				}else{				
-					if(this.constructedAction.targetCountry===undefined){
+					if(typeof this.constructedAction.targetCountry==="undefined"){
 						//I have an action country and a number of armys
 
 						//It may be a reinforce
@@ -207,7 +207,6 @@ exports.RiskSVGInterface = base.declare(ludorum.players.UserInterface, {
 
 	performConstructedActionIfPossible : function(){
 		var action = this.generateAction();
-		console.log(action);
 		if(action!=="NaA"){
 			this.perform(action);
 		}
